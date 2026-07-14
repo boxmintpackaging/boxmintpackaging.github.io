@@ -1,26 +1,15 @@
 [
   {
     "id": 1,
-    "name": "Custom Kraft Boxes",
-    "price": "Starting from $0.50",
-    "image": "/images/product1.jpg",
-    "description": "Eco-friendly kraft boxes perfect for shipping and packaging.",
-    "category": "Kraft"
-  },
-  {
-    "id": 2,
-    "name": "Luxury Rigid Boxes",
-    "price": "Starting from $2.00",
-    "image": "/images/product2.jpg",
-    "description": "Premium rigid boxes for high-end products and gifts.",
-    "category": "Luxury"
-  },
-  {
-    "id": 3,
-    "name": "Corrugated Shipping Boxes",
-    "price": "Starting from $0.75",
-    "image": "/images/product3.jpg",
-    "description": "Durable corrugated boxes for safe shipping.",
-    "category": "Shipping"
+    "name": "Retail Boxes",
+    "image": "images/retail-boxes/RTB-01.jpeg",
+    "gallery": [
+      "images/retail-boxes/RTB-02.jpeg",
+      "images/retail-boxes/RTB-03.jpeg",
+      "images/retail-boxes/RTB-04.jpeg",
+      "images/retail-boxes/RTB-05.jpeg"
+    ],
+    "description": "Premium retail packaging boxes built for your brand.",
+    "category": "Retail"
   }
 ]
