@@ -1704,7 +1704,7 @@ function renderProducts(){
     var bHTML=p.badge?'<span class="product-badge '+p.badgeClass+'">'+p.badge+'</span>':'';
     html+='<div class="product-card" data-cat="'+p.cat+'" onclick="openModal(\''+p.id+'\')">';
     html+='<div class="p-img p-color-'+p.color+'">'+bHTML;
-    html+='<div class="p-mini-box" style="width:90%;height:90%;padding:0;overflow:hidden;background:#fff"><img src="'+p.code+'.jpeg" alt="'+p.name+'" style="width:100%;height:100%;object-fit:cover;border-radius:12px" onerror="this.outerHTML=\'<i class=&quot;fas '+p.icon+'&quot; style=&quot;font-size:45px;color:#3EC08A;margin-bottom:5px&quot;></i><div class=&quot;p-mini-brand&quot;>BOXMINT</div>\'"></div>';
+    html+='<img src="'+p.code+'.jpeg" alt="'+p.name+'" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:1" onerror="this.outerHTML=\'<div class=&quot;p-mini-box&quot;><i class=&quot;fas '+p.icon+'&quot;></i><div class=&quot;p-mini-brand&quot;>BOXMINT</div></div>\'">';
     html+='<div class="product-code">'+p.code+'</div></div>';
     html+='<div class="p-body"><h3>'+p.name+'</h3><p>'+p.desc+'</p>';
     html+='<div class="p-price"><span class="custom-price">Custom Pricing Available</span></div>';
@@ -1739,8 +1739,8 @@ function openModal(id){
   thumbs=thumbs.slice(0,4);
   var countryOptions='';
   for(var i=0;i<countries.length;i++){countryOptions+='<option>'+countries[i]+'</option>'}
-  var thumbsHtml='<div class="md-thumb active p-color-'+p.color+'" onclick="changeThumb(this,'+p.color+',\''+p.icon+'\')"><i class="fas '+p.icon+'"></i></div>';
-  for(var i=0;i<thumbs.length;i++){thumbsHtml+='<div class="md-thumb p-color-'+thumbs[i].color+'" onclick="changeThumb(this,'+thumbs[i].color+',\''+thumbs[i].icon+'\')"><i class="fas '+thumbs[i].icon+'"></i></div>'}
+  var thumbsHtml='';var codePrefix=p.code.split('-')[0];for(var t=1;t<=5;t++){var tNum=t<10?'0'+t:t;var imgFile=codePrefix+'-'+tNum+'.jpeg';var activeCls=(t===1)?'active':'';thumbsHtml+='<div class="md-thumb '+activeCls+'" onclick="changeThumbImg(this,\''+imgFile+'\',\''+p.icon+'\','+p.color+')" style="padding:0;overflow:hidden;background:#f5f5f5"><img src="'+imgFile+'" alt="'+p.name+' '+t+'" style="width:100%;height:100%;object-fit:cover;border-radius:8px" onerror="this.parentElement.style.background=\'var(--mint-light)\';this.outerHTML=\'<i class=&quot;fas '+p.icon+'&quot; style=&quot;font-size:28px;color:#3EC08A&quot;></i>\'"></div>';}
+  
   var relatedHtml='';
   for(var i=0;i<related.length;i++){
     var r=related[i];
@@ -1787,7 +1787,7 @@ function openModal(id){
 
 function toggleUploadArea(e){setTimeout(function(){var c=document.getElementById('haveDesignCheck');var a=document.getElementById('uploadArea');if(c&&a){c.checked?a.classList.add('show'):a.classList.remove('show')}},50)}
 function showFileName(input){if(input.files&&input.files[0]){var f=input.files[0];if(f.size>10*1024*1024){showToast('info','File too large! Max 10MB');input.value='';return}document.getElementById('fileName').innerText=f.name+' ('+(f.size/1024).toFixed(1)+' KB)';document.getElementById('filePreview').classList.add('show')}}
-function changeThumb(el,color,icon){var t=document.querySelectorAll('.md-thumb');for(var i=0;i<t.length;i++)t[i].classList.remove('active');el.classList.add('active');var m=document.getElementById('mdMain');m.className='md-visual p-color-'+color;m.innerHTML='<div class="md-brand-mark"><i class="fas fa-leaf"></i>BOXMINT</div><div class="md-main-icon"><i class="fas '+icon+'"></i><div class="md-big-brand">BOXMINT</div></div><div class="md-code-tag">CUSTOM</div>'}
+function changeThumbImg(el,imgFile,icon,color){var t=document.querySelectorAll('.md-thumb');for(var i=0;i<t.length;i++)t[i].classList.remove('active');el.classList.add('active');var mainIcon=document.querySelector('.md-main-icon');if(mainIcon){mainIcon.style.padding='0';mainIcon.style.overflow='hidden';mainIcon.style.background='#fff';mainIcon.innerHTML='<img src="'+imgFile+'" alt="Product" style="width:100%;height:100%;object-fit:cover;border-radius:20px" onerror="this.outerHTML=\'<i class=&quot;fas '+icon+'&quot; style=&quot;font-size:80px;color:#3EC08A;margin-bottom:10px&quot;></i><div class=&quot;md-big-brand&quot;>BOXMINT</div>\'">';}}function closeModal(){document.getElementById('modal')
 function closeModal(){document.getElementById('modal').classList.remove('show');document.body.style.overflow='auto'}
 
 function toggleFaq(el){var i=el.parentElement;var a=document.querySelector('.faq-item.active');if(a&&a!==i)a.classList.remove('active');i.classList.toggle('active')}
