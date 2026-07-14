@@ -1746,7 +1746,7 @@ function openModal(id){
     var r=related[i];
     relatedHtml+='<div class="md-related-card" onclick="openModal(\''+r.id+'\')">';
     relatedHtml+='<div class="md-r-visual p-color-'+r.color+'"><i class="fas '+r.icon+'"></i><div class="md-r-tag">'+r.code+'</div></div>';
-    relatedHtml+='<div class="md-r-body"><h4>'+r.name+'</h4><p>From $'+r.price.toFixed(2)+'/box</p><button class="md-r-btn">Customize</button></div>';
+    relatedHtml+='<div class="md-r-body"><h4>'+r.name+'</h4><p>Custom Pricing</p><button class="md-r-btn">Get Quote</button></div>';
     relatedHtml+='</div>';
   }
   var reviewCount=Math.floor(Math.random()*30+15);
@@ -1755,7 +1755,7 @@ function openModal(id){
   html+='<button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button></div>';
   html+='<div class="modal-body"><div class="md-left"><h1>Custom '+p.name+'</h1>';
   html+='<div class="md-rating">★★★★★ <span class="review-count">('+reviewCount+' reviews)</span></div>';
-  html+='<div class="md-price-tag"><span class="old">$'+p.oldPrice.toFixed(2)+'</span><span class="new">$'+p.price.toFixed(2)+'</span><small>Starting price per box | Bulk discount available</small></div>';
+  html+='<div class="md-price-tag"><span class="custom-price-big">Custom Pricing Available</span><small>Bulk discounts | Contact us for best rates</small></div>';
   html+='<p class="md-desc">Elevate your brand with our premium custom '+p.name.toLowerCase()+'. Meticulously crafted to protect your products while delivering an unforgettable brand experience.</p>';
   html+='<p class="md-desc">Choose from luxury finishes, custom shapes, and sustainable materials.</p>';
   html+='<div class="md-form-title">Get a Free Quote</div>';
