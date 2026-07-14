@@ -1704,7 +1704,7 @@ function renderProducts(){
     var bHTML=p.badge?'<span class="product-badge '+p.badgeClass+'">'+p.badge+'</span>':'';
     html+='<div class="product-card" data-cat="'+p.cat+'" onclick="openModal(\''+p.id+'\')">';
     html+='<div class="p-img p-color-'+p.color+'">'+bHTML;
-    html+='<div class="p-mini-box"><i class="fas '+p.icon+'"></i><div class="p-mini-brand">BOXMINT</div></div>';
+    html+='<div class="p-mini-box" style="width:90%;height:90%;padding:0;overflow:hidden;background:#fff"><img src="'+p.code+'.jpeg" alt="'+p.name+'" style="width:100%;height:100%;object-fit:cover;border-radius:12px" onerror="this.outerHTML=\'<i class=&quot;fas '+p.icon+'&quot; style=&quot;font-size:45px;color:#3EC08A;margin-bottom:5px&quot;></i><div class=&quot;p-mini-brand&quot;>BOXMINT</div>\'"></div>';
     html+='<div class="product-code">'+p.code+'</div></div>';
     html+='<div class="p-body"><h3>'+p.name+'</h3><p>'+p.desc+'</p>';
     html+='<div class="p-price"><span class="custom-price">Custom Pricing Available</span></div>';
@@ -1774,7 +1774,7 @@ function openModal(id){
   html+='<button type="submit" class="md-submit"><i class="fas fa-paper-plane"></i> Submit Quote Request</button></form></div>';
   html+='<div class="md-right"><div class="md-visual p-color-'+p.color+'" id="mdMain">';
   html+='<div class="md-brand-mark"><i class="fas fa-leaf"></i>BOXMINT</div>';
-  html+='<div class="md-main-icon"><i class="fas '+p.icon+'"></i><div class="md-big-brand">BOXMINT</div></div>';
+  html+='<div class="md-main-icon" style="padding:0;overflow:hidden;background:#fff"><img id="mdMainImg" src="'+p.code+'.jpeg" alt="'+p.name+'" style="width:100%;height:100%;object-fit:cover;border-radius:20px" onerror="this.outerHTML=\'<i class=&quot;fas '+p.icon+'&quot; style=&quot;font-size:80px;color:#3EC08A;margin-bottom:10px&quot;></i><div class=&quot;md-big-brand&quot;>BOXMINT</div>\'"></div>';
   html+='<div class="md-code-tag">'+p.code+'</div></div>';
   html+='<div class="md-thumbs">'+thumbsHtml+'</div></div></div>';
   html+='<div class="md-related"><h2>Our Exclusive Range</h2><p>Explore variations crafted for style and durability</p>';
