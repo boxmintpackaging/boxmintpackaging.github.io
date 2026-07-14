@@ -1,0 +1,15 @@
+[
+  {
+    "id": 1,
+    "name": "Retail Boxes",
+    "image": "RTB-01.jpeg",
+    "gallery": [
+      "RTB-02.jpeg",
+      "RTB-03.jpeg",
+      "RTB-04.jpeg",
+      "RTB-05.jpeg"
+    ],
+    "description": "Premium retail packaging boxes built for your brand.",
+    "category": "Retail"
+  }
+]
