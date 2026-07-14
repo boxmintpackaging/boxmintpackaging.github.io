@@ -1923,5 +1923,50 @@ setInterval(showLiveOrder,20000);
     });
   }
 </script>
+<script>
+// FINAL FIX - Complete Modal Close Solution
+(function(){
+  // Global close function
+  window.closeModal = function(){
+    var modal = document.getElementById('modal');
+    if(modal){
+      modal.classList.remove('show');
+      modal.style.display = 'none';
+    }
+    document.body.style.overflow = 'auto';
+    document.body.style.overflowY = 'auto';
+    document.documentElement.style.overflow = 'auto';
+    setTimeout(function(){
+      if(modal) modal.style.display = '';
+    }, 300);
+  };
+  
+  // Ensure close works on all buttons
+  document.addEventListener('click', function(e){
+    // Close button
+    if(e.target.closest('.modal-close')){
+      e.preventDefault();
+      window.closeModal();
+    }
+    // Home link in modal
+    if(e.target.closest('.modal-crumb a')){
+      e.preventDefault();
+      window.closeModal();
+      window.scrollTo({top:0, behavior:'smooth'});
+    }
+    // Background click
+    if(e.target.id === 'modal'){
+      window.closeModal();
+    }
+  });
+  
+  // Escape key
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' || e.keyCode === 27){
+      window.closeModal();
+    }
+  });
+})();
+</script>
 </body>
 </html>
