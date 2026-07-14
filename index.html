@@ -1707,9 +1707,9 @@ function renderProducts(){
     html+='<div class="p-mini-box"><i class="fas '+p.icon+'"></i><div class="p-mini-brand">BOXMINT</div></div>';
     html+='<div class="product-code">'+p.code+'</div></div>';
     html+='<div class="p-body"><h3>'+p.name+'</h3><p>'+p.desc+'</p>';
-    html+='<div class="p-price"><span class="old-price">$'+p.oldPrice.toFixed(2)+'</span>';
-    html+='<span class="new-price">$'+p.price.toFixed(2)+'</span><small>per box</small></div>';
-    html+='<button class="p-link" onclick="event.stopPropagation();openModal(\''+p.id+'\')">Customize Now <i class="fas fa-arrow-right"></i></button>';
+    html+='<div class="p-price"><span class="custom-price">Custom Pricing Available</span></div>';
+    
+    html+='<button class="p-link" onclick="event.stopPropagation();openModal(\''+p.id+'\')">Get Free Quote <i class="fas fa-arrow-right"></i></button>';
     html+='</div></div>';
   }
   document.getElementById('productsGrid').innerHTML=html;
