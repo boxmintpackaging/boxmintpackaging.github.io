@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Services | BoxMint Packaging - All Products & Solutions</title>
-<meta name="description" content="Explore BoxMint's complete range of custom packaging services - retail, cosmetic, food, luxury boxes and more. Serving 50+ countries worldwide.">
+<title>About Us | BoxMint Packaging - Custom Eco-Friendly Boxes</title>
+<meta name="description" content="Learn about BoxMint Packaging - our story, mission, and commitment to sustainable custom packaging solutions for brands worldwide.">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="icon" type="image/png" href="/favicon.png">
@@ -24,6 +24,11 @@ body{font-family:'Nunito',sans-serif;color:var(--navy);background:#fff;line-heig
 a{text-decoration:none;color:inherit;cursor:pointer}
 ul{list-style:none}
 .container{max-width:1250px;margin:0 auto;padding:0 20px;box-sizing:border-box}
+
+@keyframes fadeInUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+@keyframes floatUp{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
+@keyframes rotate360{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
 
 .top-bar{background:var(--navy);color:var(--cream);padding:10px 0;font-size:13px;font-weight:600}
 .top-bar .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
@@ -81,63 +86,74 @@ ul{list-style:none}
 .section-header p{color:var(--text);font-size:16px}
 .section-dark .section-header p{color:var(--text-light)}
 
-.category-filter{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:50px}
-.filter-btn{background:#fff;color:var(--navy);border:2px solid var(--cream-dark);padding:10px 25px;border-radius:30px;font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;cursor:pointer;transition:.4s}
-.filter-btn:hover{border-color:var(--mint);transform:translateY(-3px)}
-.filter-btn.active{background:linear-gradient(135deg,var(--mint),var(--mint-dark));color:var(--navy);border-color:var(--mint)}
+.about-wrapper{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-visual{position:relative;height:500px;background:linear-gradient(135deg,var(--mint),var(--mint-dark));border-radius:20px;box-shadow:var(--shadow-lg);display:flex;align-items:center;justify-content:center}
+.about-visual i{font-size:150px;color:#fff}
+.about-badge{position:absolute;bottom:30px;left:-30px;background:#fff;padding:20px 25px;border-radius:15px;box-shadow:var(--shadow-lg);display:flex;align-items:center;gap:15px;z-index:2}
+.about-badge-num{font-family:'Playfair Display',serif;font-size:42px;font-weight:900;color:var(--mint-dark)}
+.about-badge-text{font-size:13px;font-weight:700;color:var(--navy)}
+.about-content h2{font-family:'Playfair Display',serif;font-size:38px;color:var(--navy);font-weight:900;margin:15px 0 20px}
+.about-content h2 span{color:var(--mint-dark);font-style:italic}
+.about-content>p{color:var(--text);font-size:16px;line-height:1.8;margin-bottom:25px}
+.about-features{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-bottom:30px}
+.about-feature{display:flex;align-items:center;gap:12px;font-weight:700;font-size:14px;color:var(--navy)}
+.about-feature i{width:32px;height:32px;background:var(--mint);color:var(--navy);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px}
 
-.products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px}
-.product-card{background:#fff;border:2px solid var(--cream-dark);border-radius:18px;overflow:hidden;transition:.5s;cursor:pointer;position:relative;text-decoration:none;color:inherit}
-.product-card.hide{display:none}
-.product-card:hover{transform:translateY(-15px);border-color:var(--mint);box-shadow:0 25px 60px rgba(92,217,166,.25)}
-.p-img{height:220px;display:flex;align-items:center;justify-content:center;position:relative;padding:0;overflow:hidden;background:#fff}
-.p-img img{width:100%;height:100%;object-fit:cover}
-.product-badge{position:absolute;top:12px;right:12px;padding:5px 12px;border-radius:20px;font-size:10px;font-weight:800;text-transform:uppercase;z-index:2;color:#fff}
-.badge-popular{background:var(--red)}
-.badge-trending{background:var(--orange)}
-.badge-premium{background:var(--gold)}
-.badge-eco{background:var(--mint);color:var(--navy)}
-.badge-new{background:var(--purple)}
-.badge-hot{background:#ff4757}
-.badge-bestseller{background:linear-gradient(135deg,#f43,#f60)}
-.product-code{position:absolute;bottom:12px;right:12px;background:rgba(0,0,0,.7);color:#fff;padding:4px 10px;border-radius:5px;font-size:10px;font-weight:900;z-index:2}
-.p-body{padding:22px;text-align:center}
-.p-body h3{font-size:17px;color:var(--navy);margin-bottom:8px;font-weight:800}
-.p-body p{color:var(--text);font-size:12px;margin-bottom:12px}
-.p-price{margin-bottom:15px}
-.custom-price{color:var(--mint-dark);font-weight:900;font-size:14px}
+.stats{background:linear-gradient(135deg,var(--navy),var(--navy-dark));padding:50px 0;color:#fff}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;text-align:center}
+.stat-icon{width:60px;height:60px;background:rgba(92,217,166,.15);color:var(--mint);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:24px}
+.stat-num{font-family:'Playfair Display',serif;font-size:38px;font-weight:900;color:var(--mint);margin-bottom:5px}
+.stat-label{color:var(--text-light);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px}
 
-.industries-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
-.industry-card{background:#fff;padding:35px 20px;border-radius:15px;text-align:center;border:2px solid var(--cream-dark);transition:.5s;cursor:pointer}
-.industry-card:hover{transform:translateY(-8px);border-color:var(--mint);background:var(--mint-light)}
-.industry-icon{width:60px;height:60px;background:var(--navy);color:var(--mint);border-radius:15px;display:flex;align-items:center;justify-content:center;margin:0 auto 15px;font-size:24px;transition:.5s}
-.industry-card:hover .industry-icon{background:var(--mint);color:var(--navy);transform:rotate(360deg)}
-.industry-card h4{font-size:15px;color:var(--navy);font-weight:800}
+.video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+.video-card{background:#fff;border-radius:15px;overflow:hidden;box-shadow:var(--shadow-sm);cursor:pointer;transition:.4s}
+.video-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md)}
+.video-thumb{height:200px;background:linear-gradient(135deg,var(--navy),var(--navy-dark));display:flex;align-items:center;justify-content:center;position:relative;color:#fff}
+.video-thumb .play-icon{width:70px;height:70px;background:var(--mint);color:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px}
+.video-body{padding:20px}
+.video-body h4{font-size:16px;color:var(--navy);font-weight:800;margin-bottom:5px}
+.video-body p{font-size:13px;color:var(--text)}
+.video-duration{position:absolute;bottom:10px;right:10px;background:rgba(0,0,0,.7);color:#fff;padding:3px 8px;border-radius:4px;font-size:11px;font-weight:700}
 
-.portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.portfolio-item{border-radius:15px;overflow:hidden;position:relative;cursor:pointer;height:280px;transition:.4s}
-.portfolio-item:hover{transform:scale(1.03)}
-.portfolio-item .pf-icon{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;padding:20px;text-align:center}
-.portfolio-item .pf-icon i{font-size:80px;margin-bottom:15px;opacity:.9}
-.portfolio-item .pf-icon h4{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;margin-bottom:5px}
-.portfolio-item .pf-icon p{font-size:13px;opacity:.9}
-.portfolio-item:nth-child(1) .pf-icon{background:linear-gradient(135deg,#667eea,#764ba2)}
-.portfolio-item:nth-child(2) .pf-icon{background:linear-gradient(135deg,#f093fb,#f5576c)}
-.portfolio-item:nth-child(3) .pf-icon{background:linear-gradient(135deg,#4facfe,#00f2fe)}
-.portfolio-item:nth-child(4) .pf-icon{background:linear-gradient(135deg,#43e97b,#38f9d7)}
-.portfolio-item:nth-child(5) .pf-icon{background:linear-gradient(135deg,#fa709a,#fee140)}
-.portfolio-item:nth-child(6) .pf-icon{background:linear-gradient(135deg,#a8edea,#fed6e3);color:var(--navy)}
-.pf-overlay{position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,.7);padding:15px 20px;transform:translateY(100%);transition:.4s;color:#fff}
-.portfolio-item:hover .pf-overlay{transform:translateY(0)}
-.pf-overlay h5{font-size:14px;font-weight:800}
-.pf-overlay p{font-size:12px;opacity:.9}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px}
+.why-card{padding:35px 25px;border-radius:18px;text-align:center;background:#fff;border:2px solid var(--cream-dark);transition:.5s;cursor:pointer}
+.why-card:hover{transform:translateY(-10px);border-color:var(--mint);box-shadow:var(--shadow-md)}
+.why-icon{width:75px;height:75px;background:var(--mint-light);border-radius:18px;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:30px;color:var(--mint-dark);transition:.5s}
+.why-card:hover .why-icon{background:var(--mint);color:var(--navy);transform:rotate(360deg)}
+.why-card h3{font-size:17px;color:var(--navy);margin-bottom:10px;font-weight:800}
+.why-card p{color:var(--text);font-size:13px}
 
-.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:25px}
-.step-card{text-align:center;padding:35px 20px;background:rgba(255,255,255,.03);border-radius:18px;border:1px solid rgba(255,255,255,.08);transition:.4s;cursor:pointer}
-.step-card:hover{border-color:var(--mint);transform:translateY(-10px)}
-.step-num{width:70px;height:70px;background:var(--mint);color:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:900;margin:0 auto 20px;font-family:'Playfair Display',serif}
-.step-card h3{font-size:18px;margin-bottom:10px;color:#fff}
-.step-card p{color:var(--text-light);font-size:13px}
+.eco-wrapper{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.eco-visual{position:relative;text-align:center}
+.eco-circle{width:400px;height:400px;background:linear-gradient(135deg,var(--mint),var(--mint-dark));border-radius:50%;margin:0 auto;display:flex;align-items:center;justify-content:center;position:relative;box-shadow:var(--shadow-lg)}
+.eco-circle>i{font-size:140px;color:#fff}
+.eco-badge-float{position:absolute;background:#fff;color:var(--navy);padding:12px 20px;border-radius:30px;font-weight:800;font-size:13px;display:flex;align-items:center;gap:8px;box-shadow:var(--shadow-md);animation:floatUp 3s ease-in-out infinite}
+.eco-badge-float i{color:var(--mint-dark)}
+.eco-badge-float:nth-of-type(1){top:30px;right:10px}
+.eco-badge-float:nth-of-type(2){bottom:50px;left:10px;animation-delay:1s}
+.eco-badge-float:nth-of-type(3){top:50%;right:-30px;animation-delay:2s}
+.branding-list li{display:flex;align-items:flex-start;gap:15px;margin-bottom:18px;padding-bottom:18px;border-bottom:1px dashed var(--cream-dark)}
+.branding-list li:last-child{border:none}
+.branding-list i{width:40px;height:40px;min-width:40px;background:var(--mint);color:var(--navy);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px}
+.branding-list strong{color:var(--navy);font-weight:800;display:block;font-size:15px;margin-bottom:3px}
+.branding-list span{color:var(--text);font-size:13px}
+
+.testimonial-slider{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:25px}
+.testimonial-card{background:#fff;padding:35px 30px;border-radius:18px;box-shadow:var(--shadow-sm);transition:.5s;border:2px solid transparent}
+.testimonial-card:hover{border-color:var(--mint);transform:translateY(-10px)}
+.review-stars{color:#FFB800;font-size:15px;margin-bottom:15px}
+.review-text{color:var(--text);font-size:14px;line-height:1.7;margin-bottom:25px;font-style:italic}
+.reviewer{display:flex;align-items:center;gap:15px;padding-top:20px;border-top:2px dashed var(--cream-dark)}
+.reviewer-avatar{width:50px;height:50px;border-radius:50%;background:var(--mint);display:flex;align-items:center;justify-content:center;color:var(--navy);font-weight:900;font-size:20px}
+.reviewer-info h4{font-size:15px;color:var(--navy);font-weight:800}
+.reviewer-info span{font-size:12px;color:var(--text)}
+
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;margin-top:40px}
+.cert-item{background:#fff;padding:25px 20px;border-radius:15px;text-align:center;border:2px solid var(--cream-dark);transition:.4s;cursor:pointer}
+.cert-item:hover{transform:translateY(-5px);border-color:var(--mint)}
+.cert-item i{font-size:40px;color:var(--mint-dark);margin-bottom:12px}
+.cert-item h5{font-size:13px;color:var(--navy);font-weight:800;margin-bottom:3px}
+.cert-item p{font-size:11px;color:var(--text)}
 
 .cta-section{padding:80px 0;background:linear-gradient(135deg,var(--mint),var(--mint-dark));text-align:center;color:var(--navy)}
 .cta-section h2{font-family:'Playfair Display',serif;font-size:38px;font-weight:900;margin-bottom:15px}
@@ -167,9 +183,10 @@ ul{list-style:none}
 .footer-bottom a{color:var(--mint)}
 
 @media(max-width:1024px){
+  .about-wrapper,.eco-wrapper{grid-template-columns:1fr}
+  .about-visual{height:350px}
   .stats-grid{grid-template-columns:repeat(2,1fr)}
-  .portfolio-grid{grid-template-columns:repeat(2,1fr)}
-  .process-steps{grid-template-columns:repeat(2,1fr)}
+  .video-grid{grid-template-columns:repeat(2,1fr)}
   .footer-grid{grid-template-columns:1fr 1fr}
   .page-header h1{font-size:36px}
   .section-header h2{font-size:32px}
@@ -187,17 +204,15 @@ ul{list-style:none}
   .page-header{padding:60px 0}
   .page-header h1{font-size:28px}
   .section{padding:50px 0}
-  .products-grid{grid-template-columns:1fr 1fr;gap:15px}
-  .portfolio-grid{grid-template-columns:1fr}
-  .process-steps{grid-template-columns:1fr}
+  .video-grid{grid-template-columns:1fr}
   .cta-section h2{font-size:26px}
+  .eco-circle{width:280px;height:280px}
+  .eco-circle>i{font-size:100px}
 }
 @media(max-width:480px){
-  .products-grid{grid-template-columns:1fr 1fr;gap:10px}
-  .p-img{height:150px}
-  .p-body{padding:12px 10px}
-  .p-body h3{font-size:13px}
-  .industries-grid{grid-template-columns:1fr 1fr}
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .stat-num{font-size:28px}
+  .cert-grid{grid-template-columns:1fr 1fr}
   .section-header h2{font-size:24px}
 }
 </style>
@@ -233,8 +248,8 @@ ul{list-style:none}
 <nav>
 <ul class="nav-links" id="navLinks">
 <li class="nav-item"><a href="index.html">Home</a></li>
-<li class="nav-item"><a href="about.html">About</a></li>
-<li class="nav-item"><a href="services.html" class="active">Services</a></li>
+<li class="nav-item"><a href="about.html" class="active">About</a></li>
+<li class="nav-item"><a href="services.html">Services</a></li>
 <li class="nav-item">
 <a>Resources <i class="fas fa-chevron-down arrow"></i></a>
 <div class="dropdown">
@@ -252,90 +267,133 @@ ul{list-style:none}
 
 <section class="page-header">
 <div class="container">
-<h1>Our <span>Services</span></h1>
-<p>Complete custom packaging solutions for every industry — from luxury boxes to eco-friendly options, we've got you covered.</p>
-<div class="breadcrumb"><a href="index.html">Home</a> <i class="fas fa-chevron-right" style="font-size:10px;margin-top:5px"></i> Services</div>
+<h1>About <span>BoxMint</span></h1>
+<p>Where luxury meets sustainability. Crafting premium packaging experiences that elevate your brand and protect the planet.</p>
+<div class="breadcrumb"><a href="index.html">Home</a> <i class="fas fa-chevron-right" style="font-size:10px;margin-top:5px"></i> About Us</div>
 </div>
 </section>
 
-<section class="section section-alt" id="products">
+<section class="section">
+<div class="container">
+<div class="about-wrapper">
+<div class="about-visual">
+<i class="fas fa-box-open"></i>
+<div class="about-badge">
+<div class="about-badge-num">100%</div>
+<div class="about-badge-text">Custom Made<br>Just For You</div>
+</div>
+</div>
+<div class="about-content">
+<div class="section-tag"><i class="fas fa-star"></i> The BoxMint Story</div>
+<h2>Crafting Experiences, <span>One Box</span> at a Time</h2>
+<p>At BoxMint Packaging, we don't just make boxes — we design unforgettable brand experiences. Founded with a vision to blend luxury design with sustainable innovation, we've served over 2,600 brands worldwide.</p>
+<p>Our commitment goes beyond packaging. We're your creative partners, transforming your product vision into stunning, eco-friendly packaging that captivates customers and elevates your brand.</p>
+<div class="about-features">
+<div class="about-feature"><i class="fas fa-check"></i> Complimentary Design</div>
+<div class="about-feature"><i class="fas fa-check"></i> Zero Minimum Orders</div>
+<div class="about-feature"><i class="fas fa-check"></i> Global Delivery</div>
+<div class="about-feature"><i class="fas fa-check"></i> 8-10 Day Production</div>
+<div class="about-feature"><i class="fas fa-check"></i> Sustainable Materials</div>
+<div class="about-feature"><i class="fas fa-check"></i> Wholesale Rates</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<div class="stats">
+<div class="container">
+<div class="stats-grid">
+<div><div class="stat-icon"><i class="fas fa-users"></i></div><div class="stat-num">2600+</div><div class="stat-label">Happy Clients</div></div>
+<div><div class="stat-icon"><i class="fas fa-box"></i></div><div class="stat-num">10K+</div><div class="stat-label">Boxes Delivered</div></div>
+<div><div class="stat-icon"><i class="fas fa-globe"></i></div><div class="stat-num">50+</div><div class="stat-label">Countries Served</div></div>
+<div><div class="stat-icon"><i class="fas fa-award"></i></div><div class="stat-num">15+</div><div class="stat-label">Years Experience</div></div>
+</div>
+</div>
+</div>
+
+<section class="section section-alt">
 <div class="container">
 <div class="section-header">
-<div class="section-tag"><i class="fas fa-boxes-stacked"></i> Complete Range</div>
-<h2>All Our <span>Packaging Solutions</span></h2>
-<p>Explore our 31+ product categories crafted with care for your brand</p>
+<div class="section-tag"><i class="fas fa-video"></i> Watch & Learn</div>
+<h2>See BoxMint <span>In Action</span></h2>
+<p>Discover our process, quality, and craftsmanship</p>
 </div>
-<div class="category-filter">
-<button class="filter-btn active" onclick="filterProducts('all',this)"><i class="fas fa-th"></i> All</button>
-<button class="filter-btn" onclick="filterProducts('retail',this)"><i class="fas fa-store"></i> Retail</button>
-<button class="filter-btn" onclick="filterProducts('cosmetic',this)"><i class="fas fa-pump-soap"></i> Beauty</button>
-<button class="filter-btn" onclick="filterProducts('food',this)"><i class="fas fa-utensils"></i> Food</button>
-<button class="filter-btn" onclick="filterProducts('luxury',this)"><i class="fas fa-crown"></i> Luxury</button>
-<button class="filter-btn" onclick="filterProducts('eco',this)"><i class="fas fa-leaf"></i> Eco</button>
-<button class="filter-btn" onclick="filterProducts('shipping',this)"><i class="fas fa-truck"></i> Shipping</button>
+<div class="video-grid">
+<div class="video-card"><div class="video-thumb"><div class="play-icon"><i class="fas fa-play"></i></div><span class="video-duration">2:45</span></div><div class="video-body"><h4>Behind The Scenes</h4><p>See how we craft your perfect boxes</p></div></div>
+<div class="video-card"><div class="video-thumb" style="background:linear-gradient(135deg,#5CD9A6,#3EC08A)"><div class="play-icon"><i class="fas fa-play"></i></div><span class="video-duration">3:20</span></div><div class="video-body"><h4>Unboxing Experience</h4><p>Premium unboxing that wows customers</p></div></div>
+<div class="video-card"><div class="video-thumb" style="background:linear-gradient(135deg,#8e44ad,#6c3483)"><div class="play-icon"><i class="fas fa-play"></i></div><span class="video-duration">1:55</span></div><div class="video-body"><h4>Design Process</h4><p>From idea to finished product</p></div></div>
 </div>
-<div class="products-grid" id="productsGrid"></div>
 </div>
 </section>
 
 <section class="section">
 <div class="container">
 <div class="section-header">
-<div class="section-tag"><i class="fas fa-images"></i> Portfolio</div>
-<h2>Our Recent <span>Client Projects</span></h2>
-<p>Explore beautiful packaging we have crafted for brands worldwide</p>
+<div class="section-tag"><i class="fas fa-star"></i> The BoxMint Advantage</div>
+<h2>Why Brands Choose <span>BoxMint</span></h2>
+<p>We are more than a packaging supplier — we are your creative partner</p>
 </div>
-<div class="portfolio-grid">
-<div class="portfolio-item"><div class="pf-icon"><i class="fas fa-pump-soap"></i><h4>Aurelia Beauty</h4><p>Luxury Cosmetics Line</p></div><div class="pf-overlay"><h5>Custom Rigid Boxes</h5><p>Premium finish with gold foil</p></div></div>
-<div class="portfolio-item"><div class="pf-icon"><i class="fas fa-utensils"></i><h4>Golden Hour Co.</h4><p>Artisan Food Brand</p></div><div class="pf-overlay"><h5>Eco Food Packaging</h5><p>Kraft with vibrant printing</p></div></div>
-<div class="portfolio-item"><div class="pf-icon"><i class="fas fa-gift"></i><h4>Ember Studio</h4><p>Gift Set Collection</p></div><div class="pf-overlay"><h5>Custom Gift Boxes</h5><p>Magnetic closure with insert</p></div></div>
-<div class="portfolio-item"><div class="pf-icon"><i class="fas fa-fire"></i><h4>Bloom & Wild</h4><p>Candle Company</p></div><div class="pf-overlay"><h5>Elegant Candle Boxes</h5><p>Soft-touch matte finish</p></div></div>
-<div class="portfolio-item"><div class="pf-icon"><i class="fas fa-gem"></i><h4>Crafted Co.</h4><p>Fine Jewelry</p></div><div class="pf-overlay"><h5>Jewelry Presentation</h5><p>Velvet interior lining</p></div></div>
-<div class="portfolio-item"><div class="pf-icon"><i class="fas fa-leaf"></i><h4>Fern Botanicals</h4><p>Natural Skincare</p></div><div class="pf-overlay"><h5>Kraft Eco Boxes</h5><p>100% biodegradable</p></div></div>
-</div>
-</div>
-</section>
-
-<section class="section section-alt" id="industries">
-<div class="container">
-<div class="section-header">
-<div class="section-tag"><i class="fas fa-industry"></i> Who We Serve</div>
-<h2>Trusted Across <span>Every Industry</span></h2>
-<p>From startups to global brands, our solutions power businesses everywhere</p>
-</div>
-<div class="industries-grid">
-<div class="industry-card"><div class="industry-icon"><i class="fas fa-shopping-cart"></i></div><h4>E-Commerce</h4></div>
-<div class="industry-card"><div class="industry-icon"><i class="fas fa-store"></i></div><h4>Retail</h4></div>
-<div class="industry-card"><div class="industry-icon"><i class="fas fa-pump-soap"></i></div><h4>Beauty</h4></div>
-<div class="industry-card"><div class="industry-icon"><i class="fas fa-utensils"></i></div><h4>Food & Bev</h4></div>
-<div class="industry-card"><div class="industry-icon"><i class="fas fa-crown"></i></div><h4>Luxury</h4></div>
-<div class="industry-card"><div class="industry-icon"><i class="fas fa-shirt"></i></div><h4>Apparel</h4></div>
-<div class="industry-card"><div class="industry-icon"><i class="fas fa-microchip"></i></div><h4>Electronics</h4></div>
+<div class="why-grid">
+<div class="why-card"><div class="why-icon"><i class="fas fa-palette"></i></div><h3>Complimentary Design</h3><p>Our in-house creative team brings your vision to life</p></div>
+<div class="why-card"><div class="why-icon"><i class="fas fa-infinity"></i></div><h3>Endless Possibilities</h3><p>From custom shapes to premium finishes</p></div>
+<div class="why-card"><div class="why-icon"><i class="fas fa-rocket"></i></div><h3>Rapid Turnaround</h3><p>Get boxes in 8-10 days with free shipping</p></div>
+<div class="why-card"><div class="why-icon"><i class="fas fa-tags"></i></div><h3>Wholesale Pricing</h3><p>Factory-direct rates with no minimums</p></div>
+<div class="why-card"><div class="why-icon"><i class="fas fa-headset"></i></div><h3>Dedicated Support</h3><p>Real people guiding you every step</p></div>
 </div>
 </div>
 </section>
 
-<section class="section section-dark">
+<section class="section section-alt">
+<div class="container">
+<div class="eco-wrapper">
+<div class="eco-visual">
+<div class="eco-circle"><i class="fas fa-leaf"></i>
+<div class="eco-badge-float"><i class="fas fa-recycle"></i> 100% Recyclable</div>
+<div class="eco-badge-float"><i class="fas fa-seedling"></i> Biodegradable</div>
+<div class="eco-badge-float"><i class="fas fa-award"></i> Eco-Certified</div>
+</div>
+</div>
+<div>
+<div class="section-tag"><i class="fas fa-leaf"></i> Our Green Promise</div>
+<h2 style="font-family:'Playfair Display',serif;font-size:36px;color:var(--navy);font-weight:900;margin:15px 0 20px">Beautiful Packaging, <span style="color:var(--mint-dark);font-style:italic">Better Planet</span></h2>
+<p style="color:var(--text);line-height:1.8;margin-bottom:25px">Sustainability is not a feature — it is our foundation. Every BoxMint package is crafted from responsibly-sourced materials.</p>
+<ul class="branding-list">
+<li><i class="fas fa-leaf"></i><div><strong>Responsibly Sourced</strong><span>FSC-certified papers from sustainable forests</span></div></li>
+<li><i class="fas fa-recycle"></i><div><strong>Fully Recyclable</strong><span>Every component designed for circular reuse</span></div></li>
+<li><i class="fas fa-seedling"></i><div><strong>Naturally Biodegradable</strong><span>Returns to earth without harmful residue</span></div></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section">
 <div class="container">
 <div class="section-header">
-<div class="section-tag"><i class="fas fa-cogs"></i> Simple Process</div>
-<h2>From Idea to <span>Doorstep</span> in 4 Steps</h2>
-<p>Our streamlined process makes ordering custom packaging effortless</p>
+<div class="section-tag"><i class="fas fa-comments"></i> Client Love</div>
+<h2>Stories From <span>Happy Brands</span></h2>
+<p>Real feedback from businesses that trust BoxMint</p>
 </div>
-<div class="process-steps">
-<div class="step-card"><div class="step-num">1</div><h3>Share Your Vision</h3><p>Tell us about your product and design ideas</p></div>
-<div class="step-card"><div class="step-num">2</div><h3>Design Together</h3><p>Our team crafts custom mockups matching your vision</p></div>
-<div class="step-card"><div class="step-num">3</div><h3>Precision Production</h3><p>Premium materials meet expert craftsmanship</p></div>
-<div class="step-card"><div class="step-num">4</div><h3>Global Delivery</h3><p>Free worldwide shipping to your door</p></div>
+<div class="testimonial-slider">
+<div class="testimonial-card"><div class="review-stars">★★★★★</div><p class="review-text">"Working with BoxMint transformed our unboxing experience completely. Attention to detail is unmatched!"</p><div class="reviewer"><div class="reviewer-avatar">E</div><div class="reviewer-info"><h4>Emma Richardson</h4><span>Founder, Aurelia Beauty</span></div></div></div>
+<div class="testimonial-card"><div class="review-stars">★★★★★</div><p class="review-text">"After struggling with three suppliers, BoxMint delivered exactly what we envisioned. Consistently premium!"</p><div class="reviewer"><div class="reviewer-avatar">M</div><div class="reviewer-info"><h4>Marcus Chen</h4><span>Creative Director, Ember Studio</span></div></div></div>
+<div class="testimonial-card"><div class="review-stars">★★★★★</div><p class="review-text">"The eco-friendly options aligned perfectly with our brand values. Our boxes look stunning!"</p><div class="reviewer"><div class="reviewer-avatar">S</div><div class="reviewer-info"><h4>Sofia Martinez</h4><span>CEO, Fern Botanicals</span></div></div></div>
+</div>
+<div class="cert-grid">
+<div class="cert-item"><i class="fas fa-certificate"></i><h5>ISO 9001</h5><p>Certified</p></div>
+<div class="cert-item"><i class="fas fa-leaf"></i><h5>FSC</h5><p>Eco Certified</p></div>
+<div class="cert-item"><i class="fas fa-recycle"></i><h5>Recyclable</h5><p>100% Materials</p></div>
+<div class="cert-item"><i class="fas fa-award"></i><h5>Top Rated</h5><p>2024 Winner</p></div>
 </div>
 </div>
 </section>
 
 <section class="cta-section">
 <div class="container">
-<h2>Ready to Get Started?</h2>
-<p>Get a custom quote for your packaging needs — free consultation!</p>
-<a href="index.html#design-request" class="btn-dark"><i class="fas fa-paper-plane"></i> Request Custom Quote</a>
+<h2>Ready to Transform Your Packaging?</h2>
+<p>Join thousands of brands that trust BoxMint to deliver packaging that wows.</p>
+<a href="index.html#design-request" class="btn-dark"><i class="fas fa-paper-plane"></i> Get My Free Quote</a>
 </div>
 </section>
 
@@ -387,71 +445,6 @@ ul{list-style:none}
 </div>
 </div>
 </footer>
-
-<script>
-var products=[
-{id:'retail',name:'Retail Boxes',desc:'Retail-ready packaging',cat:'retail',code:'RTB-01',badge:'Popular',badgeClass:'badge-popular'},
-{id:'cosmetic',name:'Cosmetic Boxes',desc:'Luxury beauty packaging',cat:'cosmetic',code:'CSB-01',badge:'Trending',badgeClass:'badge-trending'},
-{id:'food',name:'Food Boxes',desc:'Food-grade safe packaging',cat:'food',code:'FDB-01'},
-{id:'bakery',name:'Bakery Boxes',desc:'Fresh bakery packaging',cat:'food',code:'BKB-01',badge:'Hot',badgeClass:'badge-hot'},
-{id:'cbd',name:'CBD Boxes',desc:'CBD product packaging',cat:'retail',code:'CBD-01'},
-{id:'gift',name:'Gift Boxes',desc:'Premium gifting boxes',cat:'luxury',code:'GFB-01',badge:'Premium',badgeClass:'badge-premium'},
-{id:'candle',name:'Candle Boxes',desc:'Elegant candle packaging',cat:'retail',code:'CDB-01'},
-{id:'rigid',name:'Rigid Boxes',desc:'Premium luxury boxes',cat:'luxury',code:'RGD-01',badge:'Premium',badgeClass:'badge-premium'},
-{id:'mylar',name:'Mylar Bags',desc:'Custom mylar packaging',cat:'shipping',code:'MYB-01'},
-{id:'paper',name:'Paper Bags',desc:'Eco paper bags',cat:'eco',code:'PPB-01',badge:'Eco',badgeClass:'badge-eco'},
-{id:'toy',name:'Toy Boxes',desc:'Colorful toy packaging',cat:'retail',code:'TYB-01'},
-{id:'medicine',name:'Medicine Boxes',desc:'Pharma-safe packaging',cat:'retail',code:'MDB-01'},
-{id:'display',name:'Display Boxes',desc:'Retail display packaging',cat:'retail',code:'DPB-01'},
-{id:'apparel',name:'Apparel Boxes',desc:'Fashion packaging',cat:'retail',code:'APB-01'},
-{id:'jewelry',name:'Jewelry Boxes',desc:'Elegant jewelry cases',cat:'luxury',code:'JLB-01',badge:'Premium',badgeClass:'badge-premium'},
-{id:'insert',name:'Box Inserts',desc:'Custom protective inserts',cat:'retail',code:'INS-01'},
-{id:'soap',name:'Soap Boxes',desc:'Handmade soap packaging',cat:'cosmetic',code:'SPB-01'},
-{id:'auto',name:'Automotive Boxes',desc:'Auto parts packaging',cat:'retail',code:'ATB-01'},
-{id:'electronic',name:'Electronic Boxes',desc:'Tech product packaging',cat:'retail',code:'ELB-01'},
-{id:'mailer',name:'Mailer Boxes',desc:'E-commerce shipping',cat:'shipping',code:'MLB-01',badge:'Best Seller',badgeClass:'badge-bestseller'},
-{id:'folding',name:'Folding Cartons',desc:'Retail cartons',cat:'retail',code:'FCB-01'},
-{id:'bathbomb',name:'Bath Bomb Boxes',desc:'Bath product packaging',cat:'cosmetic',code:'BBB-01',badge:'New',badgeClass:'badge-new'},
-{id:'diecut',name:'Die Cut Boxes',desc:'Custom shape boxes',cat:'luxury',code:'DCB-01'},
-{id:'embossed',name:'Embossed Boxes',desc:'Luxury embossed finish',cat:'luxury',code:'EMB-01',badge:'Premium',badgeClass:'badge-premium'},
-{id:'hexagon',name:'Hexagon Boxes',desc:'Unique hexagon shapes',cat:'luxury',code:'HXB-01'},
-{id:'incense',name:'Incense Boxes',desc:'Incense packaging',cat:'retail',code:'ICB-01'},
-{id:'invitation',name:'Invitation Boxes',desc:'Elegant invitations',cat:'luxury',code:'IVB-01'},
-{id:'kraft',name:'Kraft Boxes',desc:'Eco kraft packaging',cat:'eco',code:'KFB-01',badge:'Eco',badgeClass:'badge-eco'},
-{id:'sleeve',name:'Packaging Sleeves',desc:'Premium sleeve packaging',cat:'luxury',code:'SLV-01'},
-{id:'presentation',name:'Presentation Boxes',desc:'Professional presentation',cat:'luxury',code:'PRB-01'},
-{id:'sticker',name:'Custom Stickers',desc:'Labels and stickers',cat:'retail',code:'STK-01'}
-];
-
-function renderProducts(){
-  var html='';
-  for(var i=0;i<products.length;i++){
-    var p=products[i];
-    var bHTML=p.badge?'<span class="product-badge '+p.badgeClass+'">'+p.badge+'</span>':'';
-    html+='<a href="index.html#products" class="product-card" data-cat="'+p.cat+'">';
-    html+='<div class="p-img">'+bHTML;
-    html+='<img src="'+p.code+'.jpeg" alt="'+p.name+'" onerror="this.style.display=\'none\'">';
-    html+='<div class="product-code">'+p.code+'</div></div>';
-    html+='<div class="p-body"><h3>'+p.name+'</h3><p>'+p.desc+'</p>';
-    html+='<div class="p-price"><span class="custom-price">Custom Pricing</span></div>';
-    html+='</div></a>';
-  }
-  document.getElementById('productsGrid').innerHTML=html;
-}
-
-function filterProducts(cat,btn){
-  var btns=document.querySelectorAll('.filter-btn');
-  for(var i=0;i<btns.length;i++)btns[i].classList.remove('active');
-  btn.classList.add('active');
-  var cards=document.querySelectorAll('.product-card');
-  for(var i=0;i<cards.length;i++){
-    if(cat==='all'||cards[i].getAttribute('data-cat')===cat){cards[i].classList.remove('hide')}
-    else{cards[i].classList.add('hide')}
-  }
-}
-
-renderProducts();
-</script>
 
 </body>
 </html>
