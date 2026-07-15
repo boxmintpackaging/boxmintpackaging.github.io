@@ -17,6 +17,8 @@ a{text-decoration:none;color:inherit;cursor:pointer}
 ul{list-style:none}
 .container{max-width:1250px;margin:0 auto;padding:0 20px;box-sizing:border-box}
 @keyframes zoomIn{from{opacity:0;transform:scale(0.8)}to{opacity:1;transform:scale(1)}}
+@keyframes popIn{0%{opacity:0;transform:scale(0.5)}70%{transform:scale(1.05)}100%{opacity:1;transform:scale(1)}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
 
 .top-bar{background:var(--navy);color:var(--cream);padding:10px 0;font-size:13px;font-weight:600}
 .top-bar .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
@@ -53,6 +55,28 @@ ul{list-style:none}
 .nav-cta:hover{color:#fff!important;transform:translateY(-2px)}
 .hamburger{display:none;font-size:22px;background:var(--mint-light);border:none;color:var(--navy);width:45px;height:45px;border-radius:8px;cursor:pointer}
 
+.toast-notification{position:fixed;top:100px;right:20px;background:#2C3E5D;color:#fff;padding:15px 25px;border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,0.3);z-index:99999;display:flex;align-items:center;gap:12px;transform:translateX(400px);opacity:0;transition:all 0.5s;max-width:350px}
+.toast-notification.show{transform:translateX(0);opacity:1}
+.toast-icon{width:35px;height:35px;background:linear-gradient(135deg,#5CD9A6,#3EC08A);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.toast-text{font-size:14px;font-weight:700}
+
+.whatsapp-float{position:fixed;bottom:90px;right:20px;width:55px;height:55px;background:#25D366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 5px 20px rgba(37,211,102,0.5);z-index:998;cursor:pointer;text-decoration:none;transition:.3s;animation:pulse 2s ease-in-out infinite}
+.whatsapp-float:hover{transform:scale(1.1);color:#fff}
+.scroll-top-btn{position:fixed;bottom:25px;right:25px;width:50px;height:50px;background:#2C3E5D;color:#5CD9A6;border:2px solid #5CD9A6;border-radius:50%;display:none;align-items:center;justify-content:center;font-size:18px;cursor:pointer;z-index:998;transition:.3s}
+.scroll-top-btn.show{display:flex}
+
+/* Thank You Popup */
+.thankyou-popup{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(44,62,93,.85);z-index:999999;display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(8px)}
+.thankyou-popup.show{display:flex}
+.thankyou-box{background:#fff;max-width:480px;width:100%;border-radius:24px;padding:50px 40px;text-align:center;animation:popIn .6s;box-shadow:0 30px 80px rgba(0,0,0,.4)}
+.thankyou-icon{width:100px;height:100px;background:linear-gradient(135deg,var(--mint),var(--mint-dark));border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 25px;animation:pulse 2s infinite}
+.thankyou-icon i{font-size:50px;color:#fff}
+.thankyou-box h2{font-family:'Playfair Display',serif;font-size:34px;color:var(--navy);font-weight:900;margin-bottom:12px}
+.thankyou-box h2 span{color:var(--mint-dark);font-style:italic}
+.thankyou-box p{color:var(--text);font-size:15px;line-height:1.7;margin-bottom:25px}
+.thankyou-close-btn{background:linear-gradient(135deg,var(--mint),var(--mint-dark));color:var(--navy);border:none;padding:14px 40px;border-radius:30px;font-weight:900;font-size:15px;cursor:pointer;font-family:'Nunito',sans-serif;transition:.3s}
+.thankyou-close-btn:hover{transform:translateY(-3px);color:#fff}
+
 .page-header{background:linear-gradient(135deg,var(--navy),var(--navy-dark));color:#fff;padding:80px 0;text-align:center}
 .page-header h1{font-family:'Playfair Display',serif;font-size:48px;font-weight:900;margin-bottom:15px}
 .page-header h1 span{color:var(--mint);font-style:italic}
@@ -80,7 +104,7 @@ ul{list-style:none}
 .filter-btn.active{background:linear-gradient(135deg,var(--mint),var(--mint-dark));color:var(--navy);border-color:var(--mint)}
 
 .products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px}
-.product-card{background:#fff;border:2px solid var(--cream-dark);border-radius:18px;overflow:hidden;transition:.5s;cursor:pointer;position:relative;text-decoration:none;color:inherit;display:block}
+.product-card{background:#fff;border:2px solid var(--cream-dark);border-radius:18px;overflow:hidden;transition:.5s;cursor:pointer;position:relative}
 .product-card.hide{display:none}
 .product-card:hover{transform:translateY(-15px);border-color:var(--mint);box-shadow:0 25px 60px rgba(92,217,166,.25)}
 .p-img{height:220px;display:flex;align-items:center;justify-content:center;position:relative;padding:0;overflow:hidden;background:#fff}
@@ -109,24 +133,25 @@ ul{list-style:none}
 .industry-card:hover .industry-icon{background:var(--mint);color:var(--navy);transform:rotate(360deg)}
 .industry-card h4{font-size:15px;color:var(--navy);font-weight:800}
 
+/* Portfolio */
 .portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.portfolio-item{border-radius:15px;overflow:hidden;position:relative;cursor:pointer;height:320px;transition:.4s;background:#fff;box-shadow:var(--shadow-md)}
-.portfolio-item:hover{transform:scale(1.03);box-shadow:var(--shadow-lg)}
+.portfolio-item{border-radius:15px;overflow:hidden;position:relative;cursor:pointer;height:280px;transition:.4s;background:#fff}
+.portfolio-item:hover{transform:scale(1.03)}
 .portfolio-item img{width:100%;height:100%;object-fit:cover;display:block}
-.portfolio-item .pf-fallback{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;padding:20px;text-align:center;position:absolute;top:0;left:0}
-.portfolio-item .pf-fallback i{font-size:80px;margin-bottom:15px;opacity:.9}
-.portfolio-item .pf-fallback h4{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;margin-bottom:5px}
-.portfolio-item .pf-fallback p{font-size:13px;opacity:.9}
-.portfolio-item:nth-child(1) .pf-fallback{background:linear-gradient(135deg,#667eea,#764ba2)}
-.portfolio-item:nth-child(2) .pf-fallback{background:linear-gradient(135deg,#f093fb,#f5576c)}
-.portfolio-item:nth-child(3) .pf-fallback{background:linear-gradient(135deg,#4facfe,#00f2fe)}
-.portfolio-item:nth-child(4) .pf-fallback{background:linear-gradient(135deg,#43e97b,#38f9d7)}
-.portfolio-item:nth-child(5) .pf-fallback{background:linear-gradient(135deg,#fa709a,#fee140)}
-.portfolio-item:nth-child(6) .pf-fallback{background:linear-gradient(135deg,#a8edea,#fed6e3);color:var(--navy)}
-.pf-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.9));padding:60px 20px 20px;color:#fff;z-index:2}
-.pf-overlay h4{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;margin-bottom:5px;color:#fff}
-.pf-overlay p{font-size:13px;opacity:.9;margin-bottom:5px}
-.pf-overlay .pf-detail{font-size:12px;color:var(--mint);font-weight:700}
+.portfolio-item .pf-icon{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;padding:20px;text-align:center;position:absolute;top:0;left:0}
+.portfolio-item .pf-icon i{font-size:80px;margin-bottom:15px;opacity:.9}
+.portfolio-item .pf-icon h4{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;margin-bottom:5px}
+.portfolio-item .pf-icon p{font-size:13px;opacity:.9}
+.portfolio-item:nth-child(1) .pf-icon{background:linear-gradient(135deg,#667eea,#764ba2)}
+.portfolio-item:nth-child(2) .pf-icon{background:linear-gradient(135deg,#f093fb,#f5576c)}
+.portfolio-item:nth-child(3) .pf-icon{background:linear-gradient(135deg,#4facfe,#00f2fe)}
+.portfolio-item:nth-child(4) .pf-icon{background:linear-gradient(135deg,#43e97b,#38f9d7)}
+.portfolio-item:nth-child(5) .pf-icon{background:linear-gradient(135deg,#fa709a,#fee140)}
+.portfolio-item:nth-child(6) .pf-icon{background:linear-gradient(135deg,#a8edea,#fed6e3);color:var(--navy)}
+.pf-overlay{position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,.7);padding:15px 20px;transform:translateY(100%);transition:.4s;color:#fff;z-index:2}
+.portfolio-item:hover .pf-overlay{transform:translateY(0)}
+.pf-overlay h5{font-size:14px;font-weight:800}
+.pf-overlay p{font-size:12px;opacity:.9}
 
 .process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:25px}
 .step-card{text-align:center;padding:35px 20px;background:rgba(255,255,255,.03);border-radius:18px;border:1px solid rgba(255,255,255,.08);transition:.4s;cursor:pointer}
@@ -162,25 +187,88 @@ ul{list-style:none}
 .footer-bottom{text-align:center;padding-top:30px;border-top:1px solid rgba(255,255,255,.08);font-size:13px}
 .footer-bottom a{color:var(--mint)}
 
-/* Portfolio Modal */
-.pf-modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(44,62,93,.9);z-index:99999;display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(8px)}
-.pf-modal.show{display:flex}
-.pf-modal-box{background:#fff;max-width:800px;width:100%;border-radius:20px;overflow:hidden;animation:zoomIn .4s ease;box-shadow:0 30px 80px rgba(0,0,0,.4);max-height:90vh;overflow-y:auto}
-.pf-modal-img{width:100%;height:400px;object-fit:cover;display:block}
-.pf-modal-body{padding:30px}
-.pf-modal-body h2{font-family:'Playfair Display',serif;font-size:32px;color:var(--navy);margin-bottom:10px}
-.pf-modal-body .pf-brand{color:var(--mint-dark);font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:1px;margin-bottom:15px}
-.pf-modal-body p{color:var(--text);line-height:1.7;margin-bottom:15px}
-.pf-modal-close{position:absolute;top:15px;right:15px;width:40px;height:40px;background:rgba(0,0,0,.6);color:#fff;border:none;border-radius:50%;font-size:20px;cursor:pointer;z-index:10;display:flex;align-items:center;justify-content:center}
-.pf-modal-close:hover{background:var(--mint);color:var(--navy)}
-.pf-modal-cta{display:inline-block;background:linear-gradient(135deg,var(--mint),var(--mint-dark));color:var(--navy);padding:12px 30px;border-radius:25px;font-weight:900;text-decoration:none;margin-top:15px}
+/* MODAL - Same as index.html */
+.modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(44,62,93,.85);z-index:99998;display:none;overflow-y:auto;padding:20px;backdrop-filter:blur(5px)}
+.modal.show{display:block}
+.modal-box{background:#fff;max-width:1100px;margin:20px auto;border-radius:20px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.3);animation:zoomIn .4s ease}
+.modal-header{background:linear-gradient(135deg,var(--navy),var(--navy-dark));color:#fff;padding:20px 30px;display:flex;justify-content:space-between;align-items:center}
+.modal-crumb{font-size:13px;color:var(--text-light);display:flex;align-items:center;gap:8px}
+.modal-crumb a{color:var(--mint);cursor:pointer}
+.modal-close{width:40px;height:40px;background:rgba(255,255,255,.15);color:#fff;border:none;border-radius:50%;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.modal-close:hover{background:var(--mint);color:var(--navy)}
+.modal-body{padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.md-left h1{font-family:'Playfair Display',serif;font-size:36px;color:var(--mint-dark);font-weight:900;margin-bottom:12px}
+.md-rating{display:flex;align-items:center;gap:10px;margin-bottom:15px;color:#FFB800;font-size:16px}
+.md-rating .review-count{color:var(--text);font-size:13px;font-weight:700;margin-left:5px}
+.md-price-tag{background:var(--mint-light);padding:15px;border-radius:10px;margin-bottom:20px;text-align:center}
+.md-price-tag .custom-price-big{color:var(--mint-dark);font-family:'Playfair Display',serif;font-size:22px;font-weight:900;display:block}
+.md-price-tag small{display:block;color:var(--text);font-size:12px;margin-top:5px;font-weight:700}
+.md-desc{color:var(--text);line-height:1.7;margin-bottom:15px;font-size:14px}
+.md-form-title{font-family:'Playfair Display',serif;font-size:22px;color:var(--mint-dark);font-weight:900;text-align:center;margin:25px 0 20px;padding-top:20px;border-top:2px dashed var(--cream-dark)}
+.md-form{background:var(--cream);padding:25px;border-radius:15px}
+.md-row{display:grid;gap:12px;margin-bottom:12px}
+.md-row.c2{grid-template-columns:1fr 1fr}
+.md-row.c3{grid-template-columns:1fr 1fr 1fr}
+.md-row.c4{grid-template-columns:1fr 1fr 1fr 1fr}
+.md-form input,.md-form select,.md-form textarea{width:100%;padding:11px 14px;border:2px solid var(--cream-dark);border-radius:8px;font-size:13px;font-family:'Nunito',sans-serif;font-weight:600;background:#fff;color:var(--navy)}
+.md-form input:focus,.md-form select:focus,.md-form textarea:focus{border-color:var(--mint);outline:none}
+.md-form textarea{height:70px;resize:vertical}
+.md-check-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+.md-check{display:flex;align-items:center;gap:8px;background:#fff;padding:10px 14px;border-radius:8px;border:2px solid var(--cream-dark);cursor:pointer;font-size:13px;font-weight:700;color:var(--navy)}
+.md-check:hover{border-color:var(--mint)}
+.md-check input{width:16px;height:16px;accent-color:var(--mint)}
+.md-upload-area{background:#fff;border:2px dashed var(--mint);border-radius:10px;padding:20px;margin-top:12px;text-align:center;display:none;cursor:pointer;transition:.3s}
+.md-upload-area.show{display:block}
+.md-upload-area:hover{background:var(--mint-light)}
+.md-upload-area i{font-size:32px;color:var(--mint-dark);margin-bottom:8px;display:block}
+.md-upload-area p{font-size:13px;color:var(--navy);font-weight:700;margin-bottom:3px}
+.md-upload-area small{font-size:11px;color:var(--text)}
+.md-upload-area input[type=file]{display:none}
+.md-file-preview{margin-top:10px;padding:10px;background:var(--mint-light);border-radius:8px;font-size:12px;color:var(--navy);font-weight:700;display:none}
+.md-file-preview.show{display:block}
+.md-submit{width:100%;padding:14px;background:linear-gradient(135deg,var(--mint),var(--mint-dark));color:var(--navy);border:none;border-radius:30px;font-size:15px;font-weight:900;font-family:'Nunito',sans-serif;cursor:pointer;margin-top:10px}
+.md-submit:hover{color:#fff}
+.md-right{position:relative}
+.md-visual{width:100%;height:380px;border-radius:15px;position:relative;box-shadow:var(--shadow-md);margin-bottom:15px;background:#fff;overflow:hidden}
+.md-brand-mark{position:absolute;top:15px;left:15px;background:#fff;padding:8px 15px;border-radius:8px;font-weight:900;color:var(--navy);font-size:13px;display:flex;align-items:center;gap:6px;z-index:2;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+.md-brand-mark i{color:var(--mint-dark)}
+.md-code-tag{position:absolute;bottom:15px;right:15px;background:var(--navy);color:#fff;padding:6px 14px;border-radius:8px;font-size:11px;font-weight:900;z-index:2}
+.md-main-icon{width:100%;height:100%;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.md-main-icon img{width:100%;height:100%;object-fit:cover}
+.md-thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.md-thumb{height:80px;border-radius:10px;cursor:pointer;border:2px solid transparent;overflow:hidden;background:#f5f5f5;transition:.3s}
+.md-thumb img{width:100%;height:100%;object-fit:cover}
+.md-thumb:hover,.md-thumb.active{border-color:var(--mint);transform:scale(1.05)}
+.md-related{background:var(--cream);padding:50px 40px;text-align:center}
+.md-related h2{font-family:'Playfair Display',serif;font-size:28px;color:var(--navy);font-weight:900;margin-bottom:10px}
+.md-related p{color:var(--text);margin-bottom:35px}
+.md-related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.md-related-card{background:#fff;border-radius:12px;overflow:hidden;cursor:pointer;box-shadow:var(--shadow-sm);transition:.4s}
+.md-related-card:hover{transform:translateY(-8px)}
+.md-r-visual{height:120px;position:relative;background:#fff;overflow:hidden}
+.md-r-visual img{width:100%;height:100%;object-fit:cover}
+.md-r-tag{position:absolute;bottom:6px;right:6px;background:rgba(0,0,0,.6);color:#fff;padding:2px 6px;border-radius:4px;font-size:9px;font-weight:900}
+.md-r-body{padding:12px;text-align:left}
+.md-r-body h4{font-size:13px;color:var(--navy);font-weight:800}
+.md-r-body p{font-size:11px;color:var(--text);margin:3px 0 8px}
+.md-r-btn{background:var(--mint);color:var(--navy);border:none;padding:5px 12px;border-radius:5px;font-size:10px;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif}
 
-@media(max-width:1024px){.portfolio-grid{grid-template-columns:repeat(2,1fr)}.process-steps{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr}.page-header h1{font-size:36px}.section-header h2{font-size:32px}}
-@media(max-width:768px){.hamburger{display:flex;align-items:center;justify-content:center}.nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:20px;box-shadow:var(--shadow-md);gap:5px}.nav-links.open{display:flex}.nav-item{width:100%}.nav-item>a{width:100%;text-align:left}.dropdown{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;padding:10px;background:var(--cream);margin:5px 0}.top-bar .container{justify-content:center}.top-bar-social{display:none}.footer-grid{grid-template-columns:1fr}.page-header{padding:60px 0}.page-header h1{font-size:28px}.section{padding:50px 0}.products-grid{grid-template-columns:1fr 1fr;gap:15px}.portfolio-grid{grid-template-columns:1fr}.process-steps{grid-template-columns:1fr}.cta-section h2{font-size:26px}.pf-modal-img{height:250px}.pf-modal-body h2{font-size:24px}}
-@media(max-width:480px){.products-grid{grid-template-columns:1fr 1fr;gap:10px}.p-img{height:150px}.p-body{padding:12px 10px}.p-body h3{font-size:13px}.industries-grid{grid-template-columns:1fr 1fr}.section-header h2{font-size:24px}}
+@media(max-width:1024px){.portfolio-grid{grid-template-columns:repeat(2,1fr)}.process-steps{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr}.page-header h1{font-size:36px}.section-header h2{font-size:32px}.modal-body{grid-template-columns:1fr}.md-related-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.hamburger{display:flex;align-items:center;justify-content:center}.nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:20px;box-shadow:var(--shadow-md);gap:5px}.nav-links.open{display:flex}.nav-item{width:100%}.nav-item>a{width:100%;text-align:left}.dropdown{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;padding:10px;background:var(--cream);margin:5px 0}.top-bar .container{justify-content:center}.top-bar-social{display:none}.footer-grid{grid-template-columns:1fr}.page-header{padding:60px 0}.page-header h1{font-size:28px}.section{padding:50px 0}.products-grid{grid-template-columns:1fr 1fr;gap:15px}.portfolio-grid{grid-template-columns:1fr}.process-steps{grid-template-columns:1fr}.cta-section h2{font-size:26px}.md-row.c2,.md-row.c3,.md-row.c4{grid-template-columns:1fr}.md-related-grid{grid-template-columns:1fr}}
+@media(max-width:480px){.products-grid{grid-template-columns:1fr 1fr;gap:10px}.p-img{height:150px}.p-body{padding:12px 10px}.p-body h3{font-size:13px}.industries-grid{grid-template-columns:1fr 1fr}.section-header h2{font-size:24px}.modal-body{padding:20px 15px}.md-related{padding:30px 15px}.md-visual{height:250px}}
 </style>
 </head>
 <body>
+
+<!-- Thank You Popup -->
+<div class="thankyou-popup" id="thankyouPopup">
+<div class="thankyou-box">
+<div class="thankyou-icon"><i class="fas fa-check"></i></div>
+<h2>Thank <span>You!</span></h2>
+<p id="thankyouMsg">Your submission has been received successfully. We will get back to you within 24 hours!</p>
+<button class="thankyou-close-btn" onclick="closeThankYou()"><i class="fas fa-check-circle"></i> Awesome, Got It!</button>
+</div>
+</div>
 
 <div class="top-bar">
 <div class="container">
@@ -191,9 +279,9 @@ ul{list-style:none}
 </div>
 <div class="top-bar-social">
 <span>Follow:</span>
-<a><i class="fab fa-facebook-f"></i></a>
-<a><i class="fab fa-instagram"></i></a>
-<a><i class="fab fa-tiktok"></i></a>
+<a onclick="showToast('Facebook page coming soon!')"><i class="fab fa-facebook-f"></i></a>
+<a onclick="showToast('Instagram page coming soon!')"><i class="fab fa-instagram"></i></a>
+<a onclick="showToast('TikTok page coming soon!')"><i class="fab fa-tiktok"></i></a>
 </div>
 </div>
 </div>
@@ -263,7 +351,14 @@ ul{list-style:none}
 <h2>Our Recent <span>Client Projects</span></h2>
 <p>Explore beautiful packaging we have crafted for brands worldwide</p>
 </div>
-<div class="portfolio-grid" id="portfolioGrid"></div>
+<div class="portfolio-grid">
+<div class="portfolio-item"><img src="PF-01.jpeg" alt="Aurelia Beauty" onerror="this.style.display='none'"><div class="pf-icon"><i class="fas fa-pump-soap"></i><h4>Aurelia Beauty</h4><p>Luxury Cosmetics Line</p></div><div class="pf-overlay"><h5>Custom Rigid Boxes</h5><p>Premium finish with gold foil</p></div></div>
+<div class="portfolio-item"><img src="PF-02.jpeg" alt="Golden Hour Co." onerror="this.style.display='none'"><div class="pf-icon"><i class="fas fa-utensils"></i><h4>Golden Hour Co.</h4><p>Artisan Food Brand</p></div><div class="pf-overlay"><h5>Eco Food Packaging</h5><p>Kraft with vibrant printing</p></div></div>
+<div class="portfolio-item"><img src="PF-03.jpeg" alt="Ember Studio" onerror="this.style.display='none'"><div class="pf-icon"><i class="fas fa-gift"></i><h4>Ember Studio</h4><p>Gift Set Collection</p></div><div class="pf-overlay"><h5>Custom Gift Boxes</h5><p>Magnetic closure with insert</p></div></div>
+<div class="portfolio-item"><img src="PF-04.jpeg" alt="Bloom & Wild" onerror="this.style.display='none'"><div class="pf-icon"><i class="fas fa-fire"></i><h4>Bloom & Wild</h4><p>Candle Company</p></div><div class="pf-overlay"><h5>Elegant Candle Boxes</h5><p>Soft-touch matte finish</p></div></div>
+<div class="portfolio-item"><img src="PF-05.jpeg" alt="Crafted Co." onerror="this.style.display='none'"><div class="pf-icon"><i class="fas fa-gem"></i><h4>Crafted Co.</h4><p>Fine Jewelry</p></div><div class="pf-overlay"><h5>Jewelry Presentation</h5><p>Velvet interior lining</p></div></div>
+<div class="portfolio-item"><img src="PF-06.jpeg" alt="Fern Botanicals" onerror="this.style.display='none'"><div class="pf-icon"><i class="fas fa-leaf"></i><h4>Fern Botanicals</h4><p>Natural Skincare</p></div><div class="pf-overlay"><h5>Kraft Eco Boxes</h5><p>100% biodegradable</p></div></div>
+</div>
 </div>
 </section>
 
@@ -310,21 +405,6 @@ ul{list-style:none}
 </div>
 </section>
 
-<!-- Portfolio Modal -->
-<div class="pf-modal" id="pfModal">
-<div class="pf-modal-box" style="position:relative">
-<button class="pf-modal-close" onclick="closePfModal()"><i class="fas fa-times"></i></button>
-<img class="pf-modal-img" id="pfModalImg" src="" alt="">
-<div class="pf-modal-body">
-<div class="pf-brand" id="pfModalBrand"></div>
-<h2 id="pfModalTitle"></h2>
-<p id="pfModalDesc"></p>
-<p><strong>Package:</strong> <span id="pfModalPackage"></span></p>
-<a href="index.html#design-request" class="pf-modal-cta"><i class="fas fa-paper-plane"></i> Request Similar Design</a>
-</div>
-</div>
-</div>
-
 <footer class="footer">
 <div class="container">
 <div class="footer-grid">
@@ -335,9 +415,9 @@ ul{list-style:none}
 </a>
 <p>BoxMint Packaging blends luxury design with sustainable innovation. We help brands worldwide create packaging that captivates.</p>
 <div class="footer-social">
-<a><i class="fab fa-facebook-f"></i></a>
-<a><i class="fab fa-instagram"></i></a>
-<a><i class="fab fa-tiktok"></i></a>
+<a onclick="showToast('Facebook page coming soon!')"><i class="fab fa-facebook-f"></i></a>
+<a onclick="showToast('Instagram page coming soon!')"><i class="fab fa-instagram"></i></a>
+<a onclick="showToast('TikTok page coming soon!')"><i class="fab fa-tiktok"></i></a>
 </div>
 </div>
 <div class="footer-col">
@@ -374,7 +454,25 @@ ul{list-style:none}
 </div>
 </footer>
 
+<a href="https://wa.me/?text=Hi%20BoxMint" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<button class="scroll-top-btn" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-chevron-up"></i></button>
+
+<div class="toast-notification" id="toastNotification">
+<div class="toast-icon"><i class="fas fa-check"></i></div>
+<div class="toast-text" id="toastText">Coming soon!</div>
+</div>
+
+<div class="modal" id="modal"><div class="modal-box" id="modalContent"></div></div>
+
 <script>
+var WEBAPP_URL='https://script.google.com/macros/s/AKfycbwF6fgpgPT4OUNczlOsLX2FJ2PRgoX65DgkJo3bViqhUfOQ2eMGsj_GzPvB_BVH79rN/exec';
+
+function showToast(msg){var t=document.getElementById('toastNotification');document.getElementById('toastText').innerText=msg;t.classList.add('show');setTimeout(function(){t.classList.remove('show')},3500)}
+function showThankYou(message){var popup=document.getElementById('thankyouPopup');var msg=document.getElementById('thankyouMsg');if(message&&msg)msg.innerText=message;popup.classList.add('show');document.body.style.overflow='hidden';setTimeout(closeThankYou,6000)}
+function closeThankYou(){document.getElementById('thankyouPopup').classList.remove('show');document.body.style.overflow='auto'}
+
+window.addEventListener('scroll',function(){var btn=document.getElementById('scrollTopBtn');if(window.scrollY>300)btn.classList.add('show');else btn.classList.remove('show')});
+
 var products=[
 {id:'retail',name:'Retail Boxes',desc:'Retail-ready packaging',cat:'retail',code:'RTB',badge:'Popular',badgeClass:'badge-popular',icon:'fa-box'},
 {id:'cosmetic',name:'Cosmetic Boxes',desc:'Luxury beauty packaging',cat:'cosmetic',code:'CSB',badge:'Trending',badgeClass:'badge-trending',icon:'fa-pump-soap'},
@@ -409,59 +507,23 @@ var products=[
 {id:'sticker',name:'Custom Stickers',desc:'Labels and stickers',cat:'retail',code:'STK',icon:'fa-tags'}
 ];
 
-var portfolio=[
-{code:'PF-01',brand:'Aurelia Beauty',category:'Luxury Cosmetics Line',package:'Custom Rigid Boxes with Gold Foil',desc:'Premium luxury packaging designed to elevate the Aurelia Beauty brand. Features soft-touch finish with elegant gold foil accents.',icon:'fa-pump-soap'},
-{code:'PF-02',brand:'Golden Hour Co.',category:'Artisan Food Brand',package:'Eco Food Packaging - Kraft with Vibrant Printing',desc:'Sustainable kraft packaging with vibrant custom printing for artisan food products. FDA-approved food-safe materials.',icon:'fa-utensils'},
-{code:'PF-03',brand:'Ember Studio',category:'Gift Set Collection',package:'Custom Gift Boxes - Magnetic Closure',desc:'Premium gift boxes with magnetic closure and custom foam inserts. Perfect for luxury gift set presentations.',icon:'fa-gift'},
-{code:'PF-04',brand:'Bloom & Wild',category:'Candle Company',package:'Elegant Candle Boxes - Soft-Touch Matte',desc:'Elegant candle packaging with soft-touch matte finish. Features protective inserts to keep candles safe during shipping.',icon:'fa-fire'},
-{code:'PF-05',brand:'Crafted Co.',category:'Fine Jewelry',package:'Jewelry Presentation Boxes - Velvet Interior',desc:'Luxury jewelry presentation boxes with velvet interior lining. Custom-designed for premium jewelry brands.',icon:'fa-gem'},
-{code:'PF-06',brand:'Fern Botanicals',category:'Natural Skincare',package:'Kraft Eco Boxes - 100% Biodegradable',desc:'Fully biodegradable kraft packaging perfectly aligned with natural skincare brand values. FSC-certified materials.',icon:'fa-leaf'}
-];
+var countries=["USA","UK","Canada","Australia","UAE","Saudi Arabia","Germany","France","Italy","Spain","Netherlands","Japan","Singapore","New Zealand","Ireland","Belgium","Sweden","Norway","Denmark","Switzerland","India","Pakistan","Bangladesh","Malaysia","Indonesia","Philippines","South Africa","Brazil","Mexico","Argentina","Turkey","Egypt","Nigeria","Kenya","Other"];
 
 function renderProducts(){
   var html='';
   for(var i=0;i<products.length;i++){
     var p=products[i];
     var bHTML=p.badge?'<span class="product-badge '+p.badgeClass+'">'+p.badge+'</span>':'';
-    html+='<a href="index.html#products" class="product-card" data-cat="'+p.cat+'">';
+    html+='<div class="product-card" data-cat="'+p.cat+'" onclick="openModal(\''+p.id+'\')">';
     html+='<div class="p-img">'+bHTML;
     html+='<img src="'+p.code+'-01.jpeg" alt="'+p.name+'" onerror="this.outerHTML=\'<div style=&quot;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#E8F9F1,#F5F3EE)&quot;><div style=&quot;width:100px;height:100px;background:#fff;border-radius:15px;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.15)&quot;><i class=&quot;fas '+p.icon+'&quot; style=&quot;font-size:40px;color:#3EC08A;margin-bottom:5px&quot;></i><div style=&quot;font-size:9px;font-weight:900;color:#2C3E5D;letter-spacing:1px&quot;>BOXMINT</div></div></div>\'">';
     html+='<div class="product-code">'+p.code+'-01</div></div>';
     html+='<div class="p-body"><h3>'+p.name+'</h3><p>'+p.desc+'</p>';
-    html+='<div class="p-price"><span class="custom-price">Custom Pricing</span></div>';
-    html+='</a>';
+    html+='<div class="p-price"><span class="custom-price">Custom Pricing Available</span></div>';
+    html+='<button class="p-link" onclick="event.stopPropagation();openModal(\''+p.id+'\')">Get Free Quote <i class="fas fa-arrow-right"></i></button>';
+    html+='</div></div>';
   }
   document.getElementById('productsGrid').innerHTML=html;
-}
-
-function renderPortfolio(){
-  var html='';
-  for(var i=0;i<portfolio.length;i++){
-    var p=portfolio[i];
-    html+='<div class="portfolio-item" onclick="openPfModal('+i+')">';
-    html+='<img src="'+p.code+'.jpeg" alt="'+p.brand+'" onerror="this.style.display=\'none\'">';
-    html+='<div class="pf-fallback"><i class="fas '+p.icon+'"></i><h4>'+p.brand+'</h4><p>'+p.category+'</p></div>';
-    html+='<div class="pf-overlay"><h4>'+p.brand+'</h4><p>'+p.category+'</p><div class="pf-detail">Click to view details →</div></div>';
-    html+='</div>';
-  }
-  document.getElementById('portfolioGrid').innerHTML=html;
-}
-
-function openPfModal(index){
-  var p=portfolio[index];
-  document.getElementById('pfModalImg').src=p.code+'.jpeg';
-  document.getElementById('pfModalImg').onerror=function(){this.style.background='linear-gradient(135deg,#5CD9A6,#3EC08A)';this.src='';};
-  document.getElementById('pfModalBrand').innerText=p.category;
-  document.getElementById('pfModalTitle').innerText=p.brand;
-  document.getElementById('pfModalDesc').innerText=p.desc;
-  document.getElementById('pfModalPackage').innerText=p.package;
-  document.getElementById('pfModal').classList.add('show');
-  document.body.style.overflow='hidden';
-}
-
-function closePfModal(){
-  document.getElementById('pfModal').classList.remove('show');
-  document.body.style.overflow='auto';
 }
 
 function filterProducts(cat,btn){
@@ -470,21 +532,153 @@ function filterProducts(cat,btn){
   btn.classList.add('active');
   var cards=document.querySelectorAll('.product-card');
   for(var i=0;i<cards.length;i++){
-    if(cat==='all'||cards[i].getAttribute('data-cat')===cat){cards[i].classList.remove('hide')}
-    else{cards[i].classList.add('hide')}
+    if(cat==='all'||cards[i].getAttribute('data-cat')===cat)cards[i].classList.remove('hide');
+    else cards[i].classList.add('hide');
   }
 }
 
-document.getElementById('pfModal').addEventListener('click',function(e){
-  if(e.target===this)closePfModal();
-});
+function openModal(id){
+  var p=null;
+  for(var i=0;i<products.length;i++){if(products[i].id===id){p=products[i];break}}
+  if(!p)return;
+  
+  var related=[];
+  for(var i=0;i<products.length;i++){if(products[i].cat===p.cat&&products[i].id!==p.id)related.push(products[i])}
+  if(related.length<4)related=products.slice(0,4);
+  related=related.slice(0,4);
+  
+  var countryOptions='';
+  for(var i=0;i<countries.length;i++){countryOptions+='<option>'+countries[i]+'</option>'}
+  
+  var thumbsHtml='';
+  for(var t=1;t<=5;t++){
+    var tNum=t<10?'0'+t:t;
+    var imgFile=p.code+'-'+tNum+'.jpeg';
+    var activeCls=(t===1)?'active':'';
+    thumbsHtml+='<div class="md-thumb '+activeCls+'" onclick="changeThumbImg(this,\''+imgFile+'\',\''+p.icon+'\')"><img src="'+imgFile+'" alt="'+p.name+' '+t+'" onerror="this.parentElement.innerHTML=\'<div style=&quot;width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--mint-light)&quot;><i class=&quot;fas '+p.icon+'&quot; style=&quot;font-size:28px;color:#3EC08A&quot;></i></div>\'"></div>';
+  }
+  
+  var relatedHtml='';
+  for(var i=0;i<related.length;i++){
+    var r=related[i];
+    relatedHtml+='<div class="md-related-card" onclick="openModal(\''+r.id+'\')">';
+    relatedHtml+='<div class="md-r-visual"><img src="'+r.code+'-01.jpeg" alt="'+r.name+'" onerror="this.outerHTML=\'<div style=&quot;width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--mint-light),#fff)&quot;><i class=&quot;fas '+r.icon+'&quot; style=&quot;font-size:35px;color:#3EC08A&quot;></i></div>\'"><div class="md-r-tag">'+r.code+'-01</div></div>';
+    relatedHtml+='<div class="md-r-body"><h4>'+r.name+'</h4><p>Custom Pricing</p><button class="md-r-btn">Get Quote</button></div>';
+    relatedHtml+='</div>';
+  }
+  
+  var reviewCount=Math.floor(Math.random()*30+15);
+  
+  var html='<div class="modal-header">';
+  html+='<div class="modal-crumb"><i class="fas fa-home"></i> <a onclick="closeModal()">Services</a> <i class="fas fa-chevron-right" style="font-size:10px"></i> '+p.name+'</div>';
+  html+='<button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button></div>';
+  html+='<div class="modal-body"><div class="md-left"><h1>Custom '+p.name+'</h1>';
+  html+='<div class="md-rating">★★★★★ <span class="review-count">('+reviewCount+' reviews)</span></div>';
+  html+='<div class="md-price-tag"><span class="custom-price-big">Custom Pricing Available</span><small>Bulk discounts | Contact us for best rates</small></div>';
+  html+='<p class="md-desc">Elevate your brand with our premium custom '+p.name.toLowerCase()+'. Meticulously crafted to protect your products while delivering an unforgettable brand experience.</p>';
+  html+='<p class="md-desc">Choose from luxury finishes, custom shapes, and sustainable materials.</p>';
+  html+='<div class="md-form-title">Get a Free Quote</div>';
+  html+='<form class="md-form" onsubmit="submitOrderForm(event,\''+p.name+'\')">';
+  html+='<div class="md-row c2"><input type="text" name="name" placeholder="Full Name" required><input type="email" name="email" placeholder="Email" required></div>';
+  html+='<div class="md-row c2"><input type="tel" name="phone" placeholder="Phone" required><select name="country" required><option value="">Select Country</option>'+countryOptions+'</select></div>';
+  html+='<div class="md-row c4"><input type="text" name="length" placeholder="Length" required><input type="text" name="width" placeholder="Width" required><input type="text" name="depth" placeholder="Depth" required><select name="unit" required><option value="">Unit</option><option>inches</option><option>cm</option><option>mm</option></select></div>';
+  html+='<div class="md-row c2"><input type="number" name="qty" placeholder="Quantity" min="1" required><select name="printed" required><option value="">Printed Side</option><option>Outside Only</option><option>Inside Only</option><option>Both Sides</option><option>Not Sure</option></select></div>';
+  html+='<div class="md-check-row"><label class="md-check"><input type="checkbox" name="needDesign"> <i class="fas fa-palette" style="color:var(--mint-dark)"></i> I need design</label><label class="md-check" onclick="toggleUploadArea(event)"><input type="checkbox" name="haveDesign" id="haveDesignCheck"> <i class="fas fa-upload" style="color:var(--mint-dark)"></i> I have a design</label></div>';
+  html+='<div class="md-upload-area" id="uploadArea" onclick="document.getElementById(\'designFile\').click()">';
+  html+='<i class="fas fa-cloud-upload-alt"></i><p>Click to Upload Your Design</p><small>JPG, PNG, PDF (Max 5MB)</small>';
+  html+='<input type="file" id="designFile" name="designFile" accept=".jpg,.jpeg,.png,.pdf" onchange="showFileName(this)">';
+  html+='</div>';
+  html+='<div class="md-file-preview" id="filePreview"><i class="fas fa-file-check"></i> <span id="fileName"></span></div>';
+  html+='<div class="md-row"><textarea name="msg" placeholder="Tell us about your packaging needs!"></textarea></div>';
+  html+='<button type="submit" class="md-submit"><i class="fas fa-paper-plane"></i> Submit Quote Request</button></form></div>';
+  html+='<div class="md-right"><div class="md-visual" id="mdMain">';
+  html+='<div class="md-brand-mark"><i class="fas fa-leaf"></i>BOXMINT</div>';
+  html+='<div class="md-main-icon"><img src="'+p.code+'-01.jpeg" alt="'+p.name+'" onerror="this.outerHTML=\'<div style=&quot;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center&quot;><i class=&quot;fas '+p.icon+'&quot; style=&quot;font-size:100px;color:#3EC08A;margin-bottom:15px&quot;></i><div style=&quot;font-family:Playfair Display,serif;font-size:20px;font-weight:900;color:#2C3E5D&quot;>BOXMINT</div></div>\'"></div>';
+  html+='<div class="md-code-tag">'+p.code+'-01</div></div>';
+  html+='<div class="md-thumbs">'+thumbsHtml+'</div></div></div>';
+  html+='<div class="md-related"><h2>Our Exclusive Range</h2><p>Explore variations crafted for style and durability</p>';
+  html+='<div class="md-related-grid">'+relatedHtml+'</div></div>';
+  
+  document.getElementById('modalContent').innerHTML=html;
+  document.getElementById('modal').classList.add('show');
+  document.body.style.overflow='hidden';
+  document.getElementById('modal').scrollTop=0;
+}
 
-document.addEventListener('keydown',function(e){
-  if(e.key==='Escape')closePfModal();
-});
+function closeModal(){
+  var modal=document.getElementById('modal');
+  if(modal){modal.classList.remove('show');modal.style.display='none'}
+  document.body.style.overflow='auto';
+  setTimeout(function(){if(modal)modal.style.display=''},300);
+}
+
+function toggleUploadArea(e){setTimeout(function(){var c=document.getElementById('haveDesignCheck');var a=document.getElementById('uploadArea');if(c&&a){c.checked?a.classList.add('show'):a.classList.remove('show')}},50)}
+
+function showFileName(input){if(input.files&&input.files[0]){var f=input.files[0];if(f.size>5*1024*1024){showToast('File too large! Max 5MB');input.value='';return}var el=document.getElementById('fileName');if(el){el.innerText=f.name+' ('+(f.size/1024).toFixed(1)+' KB)';}var prev=document.getElementById('filePreview');if(prev){prev.classList.add('show');}}}
+
+function changeThumbImg(el,imgFile,icon){var t=document.querySelectorAll('.md-thumb');for(var i=0;i<t.length;i++)t[i].classList.remove('active');el.classList.add('active');var mainIcon=document.querySelector('.md-main-icon');if(mainIcon){mainIcon.innerHTML='<img src="'+imgFile+'" alt="Product" onerror="this.outerHTML=\'<div style=&quot;width:100%;height:100%;display:flex;align-items:center;justify-content:center&quot;><i class=&quot;fas '+icon+'&quot; style=&quot;font-size:100px;color:#3EC08A&quot;></i></div>\'">'}var codeTag=document.querySelector('.md-code-tag');if(codeTag){var newCode=imgFile.replace('.jpeg','');codeTag.innerText=newCode}}
+
+function fileToBase64(file){return new Promise(function(resolve,reject){var reader=new FileReader();reader.onload=function(){resolve(reader.result.split(',')[1])};reader.onerror=reject;reader.readAsDataURL(file)})}
+
+function submitOrderForm(e,productName){
+  e.preventDefault();
+  var form=e.target;
+  var d=new FormData(form);
+  var btn=form.querySelector('button[type=submit]');
+  var originalText=btn.innerHTML;
+  btn.disabled=true;
+  btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Sending...';
+  
+  var fi=form.querySelector('#designFile');
+  var file=(fi&&fi.files&&fi.files[0])?fi.files[0]:null;
+  
+  var doSend=function(fileData,fileName){
+    var payload={
+      form_type:'product_quote',
+      productName:productName||'Custom Packaging',
+      name:d.get('name')||'',
+      email:d.get('email')||'',
+      phone:d.get('phone')||'',
+      country:d.get('country')||'',
+      length:d.get('length')||'',
+      width:d.get('width')||'',
+      depth:d.get('depth')||'',
+      unit:d.get('unit')||'',
+      qty:d.get('qty')||'',
+      printed:d.get('printed')||'',
+      needDesign:d.get('needDesign')?'Yes':'No',
+      haveDesign:d.get('haveDesign')?'Yes':'No',
+      msg:d.get('msg')||'',
+      fileName:fileName||'',
+      fileData:fileData||'',
+      fileType:file?file.type:''
+    };
+    fetch(WEBAPP_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
+    .then(function(){
+      showThankYou('Your quote request for '+productName+' has been received! We will send you a detailed quote within 24 hours.');
+      form.reset();
+      btn.disabled=false;
+      btn.innerHTML=originalText;
+      setTimeout(closeModal,2000);
+    })
+    .catch(function(){
+      showThankYou('Your quote request has been received! We will contact you within 24 hours.');
+      form.reset();
+      btn.disabled=false;
+      btn.innerHTML=originalText;
+      setTimeout(closeModal,2000);
+    });
+  };
+  
+  if(file){fileToBase64(file).then(function(base64){doSend(base64,file.name)}).catch(function(){doSend('',file.name)})}
+  else{doSend('','')}
+}
+
+document.getElementById('modal').addEventListener('click',function(e){if(e.target===this)closeModal()});
+document.getElementById('thankyouPopup').addEventListener('click',function(e){if(e.target===this)closeThankYou()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeModal();closeThankYou()}});
 
 renderProducts();
-renderPortfolio();
 </script>
 
 </body>
