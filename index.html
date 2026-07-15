@@ -4,65 +4,37 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BoxMint Packaging | Premium Custom Boxes & Luxury Packaging Solutions</title>
-<meta name="description" content="Premium custom packaging solutions. Get professional custom design service, free worldwide shipping. 2600+ happy clients across 50+ countries.">
-<meta name="keywords" content="custom packaging, kraft boxes, eco-friendly packaging, boxmint, custom boxes, luxury packaging">
-<meta property="og:title" content="BoxMint Packaging - Custom Eco-Friendly Boxes">
-<meta property="og:description" content="Premium custom packaging solutions for your business.">
-<meta property="og:image" content="/favicon.png">
-<meta property="og:url" content="https://boxmintpackaging.github.io">
-<meta property="og:type" content="website">
+<meta name="description" content="Premium custom packaging solutions. Get professional custom design service, free worldwide shipping.">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <link rel="icon" type="image/png" href="/favicon.png">
-<link rel="shortcut icon" type="image/png" href="/favicon.png">
-<link rel="apple-touch-icon" href="/favicon.png">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DX48FZSELG"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-DX48FZSELG');
-</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DX48FZSELG');</script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --navy:#2C3E5D;--navy-dark:#1E2D45;--mint:#5CD9A6;--mint-dark:#3EC08A;
-  --mint-light:#E8F9F1;--cream:#F5F3EE;--cream-dark:#EBE8E0;--gold:#D4AF37;
-  --white:#fff;--text:#556B7D;--text-light:#8A9AAD;--red:#ff4757;
-  --orange:#ff9500;--purple:#a855f7;
-  --shadow-sm:0 2px 10px rgba(44,62,93,.08);
-  --shadow-md:0 10px 30px rgba(44,62,93,.1);
-  --shadow-lg:0 20px 50px rgba(44,62,93,.15)
-}
+:root{--navy:#2C3E5D;--navy-dark:#1E2D45;--mint:#5CD9A6;--mint-dark:#3EC08A;--mint-light:#E8F9F1;--cream:#F5F3EE;--cream-dark:#EBE8E0;--gold:#D4AF37;--white:#fff;--text:#556B7D;--text-light:#8A9AAD;--red:#ff4757;--orange:#ff9500;--purple:#a855f7;--shadow-sm:0 2px 10px rgba(44,62,93,.08);--shadow-md:0 10px 30px rgba(44,62,93,.1);--shadow-lg:0 20px 50px rgba(44,62,93,.15)}
 html,body{overflow-x:hidden;max-width:100vw}
 body{font-family:'Nunito',sans-serif;color:var(--navy);background:#fff;line-height:1.6}
 a{text-decoration:none;color:inherit;cursor:pointer}
 ul{list-style:none}
 .container{max-width:1250px;margin:0 auto;padding:0 20px;box-sizing:border-box}
-
-@keyframes fadeInUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
 @keyframes floatUp{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
 @keyframes rotate360{from{transform:rotate(0)}to{transform:rotate(360deg)}}
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
 @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-@keyframes toastSlide{from{transform:translateX(400px);opacity:0}to{transform:translateX(0);opacity:1}}
-
 .top-bar{background:var(--navy);color:var(--cream);padding:10px 0;font-size:13px;font-weight:600}
 .top-bar .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
 .top-bar-info{display:flex;gap:25px;flex-wrap:wrap}
-.top-bar-info a,.top-bar-info span{color:var(--cream);display:inline-flex;align-items:center;gap:6px;transition:.3s}
-.top-bar-info a:hover{color:var(--mint)}
+.top-bar-info a,.top-bar-info span{color:var(--cream);display:inline-flex;align-items:center;gap:6px}
 .top-bar-info i{color:var(--mint)}
 .top-bar-social{display:flex;gap:8px;align-items:center}
 .top-bar-social span{font-size:12px;color:var(--text-light)}
-.top-bar-social a{width:28px;height:28px;border-radius:50%;border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--cream);transition:.3s;cursor:pointer}
+.top-bar-social a{width:28px;height:28px;border-radius:50%;border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--cream);cursor:pointer;transition:.3s}
 .top-bar-social a:hover{background:var(--mint);color:var(--navy)}
-
 .header{background:#fff;box-shadow:var(--shadow-sm);position:sticky;top:0;z-index:1000}
 .header .container{display:flex;justify-content:space-between;align-items:center;padding:15px 20px}
-.logo{display:flex;align-items:center;gap:12px;transition:.3s;cursor:pointer}
-.logo:hover{transform:scale(1.05)}
+.logo{display:flex;align-items:center;gap:12px;cursor:pointer}
 .logo-icon{width:55px;height:55px;background:#fff;border:2.5px solid var(--navy);border-radius:10px;display:flex;align-items:center;justify-content:center;transition:.4s}
 .logo:hover .logo-icon{transform:rotate(360deg);border-color:var(--mint)}
 .logo-icon i{color:var(--mint);font-size:26px}
@@ -84,22 +56,14 @@ ul{list-style:none}
 .nav-cta{background:linear-gradient(135deg,var(--mint),var(--mint-dark))!important;color:var(--navy)!important;padding:10px 22px!important;border-radius:30px!important;font-weight:800!important;margin-left:8px}
 .nav-cta:hover{color:#fff!important;transform:translateY(-2px)}
 .hamburger{display:none;font-size:22px;background:var(--mint-light);border:none;color:var(--navy);width:45px;height:45px;border-radius:8px;cursor:pointer}
-
-/* TOAST NOTIFICATION */
-.toast-notification{position:fixed;top:100px;right:20px;background:#2C3E5D;color:#fff;padding:15px 25px;border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,0.3);z-index:99999;display:flex;align-items:center;gap:12px;transform:translateX(400px);opacity:0;transition:all 0.5s cubic-bezier(0.68,-0.55,0.265,1.55);font-family:'Nunito',sans-serif;max-width:350px}
+.toast-notification{position:fixed;top:100px;right:20px;background:#2C3E5D;color:#fff;padding:15px 25px;border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,0.3);z-index:99999;display:flex;align-items:center;gap:12px;transform:translateX(400px);opacity:0;transition:all 0.5s cubic-bezier(0.68,-0.55,0.265,1.55);max-width:350px}
 .toast-notification.show{transform:translateX(0);opacity:1}
 .toast-icon{width:35px;height:35px;background:linear-gradient(135deg,#5CD9A6,#3EC08A);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
 .toast-text{font-size:14px;font-weight:700}
-
-/* WHATSAPP FLOATING */
 .whatsapp-float{position:fixed;bottom:90px;right:20px;width:55px;height:55px;background:#25D366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 5px 20px rgba(37,211,102,0.5);z-index:998;cursor:pointer;text-decoration:none;transition:.3s;animation:pulse 2s ease-in-out infinite}
 .whatsapp-float:hover{transform:scale(1.1);color:#fff}
-
-/* SCROLL TOP */
 .scroll-top-btn{position:fixed;bottom:25px;right:25px;width:50px;height:50px;background:#2C3E5D;color:#5CD9A6;border:2px solid #5CD9A6;border-radius:50%;display:none;align-items:center;justify-content:center;font-size:18px;cursor:pointer;z-index:998;transition:.3s}
 .scroll-top-btn.show{display:flex}
-.scroll-top-btn:hover{background:#5CD9A6;color:#2C3E5D}
-
 .hero{background:linear-gradient(135deg,var(--cream) 0%,#FAF8F3 100%);padding:70px 0 90px;position:relative;overflow:hidden}
 .hero .container{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--mint-dark);padding:10px 22px;border-radius:30px;font-size:13px;font-weight:800;margin-bottom:25px;box-shadow:var(--shadow-sm)}
@@ -127,7 +91,6 @@ ul{list-style:none}
 .float-card:nth-of-type(1){top:20px;right:-20px}
 .float-card:nth-of-type(2){bottom:40px;left:-30px;animation-delay:1s}
 .float-card:nth-of-type(3){top:50%;right:-40px;animation-delay:2s}
-
 .trusted-bar{background:#fff;padding:40px 0;border-top:1px solid var(--cream-dark);border-bottom:1px solid var(--cream-dark);overflow:hidden}
 .trusted-bar .container{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center;overflow:hidden}
 .trusted-title{font-size:15px;font-weight:800;color:var(--navy);border-right:2px solid var(--cream-dark);padding-right:30px}
@@ -135,39 +98,31 @@ ul{list-style:none}
 .brands-scroll{overflow:hidden}
 .brands-track{display:flex;gap:60px;animation:scroll 25s linear infinite;align-items:center}
 .brand-name{font-size:24px;font-weight:900;color:var(--text-light);white-space:nowrap;font-family:'Playfair Display',serif}
-
 .section{padding:80px 0;overflow:hidden}
 .section-alt{background:var(--cream)}
-.section-dark{background:var(--navy);color:#fff}
 .section-header{text-align:center;max-width:700px;margin:0 auto 50px}
 .section-tag{display:inline-flex;align-items:center;gap:8px;background:var(--mint-light);color:var(--mint-dark);padding:8px 20px;border-radius:25px;font-size:13px;font-weight:800;margin-bottom:18px;text-transform:uppercase;letter-spacing:1px}
-.section-dark .section-tag{background:rgba(92,217,166,.15);color:var(--mint)}
 .section-header h2{font-family:'Playfair Display',serif;font-size:40px;color:var(--navy);font-weight:900;margin-bottom:15px}
-.section-dark .section-header h2{color:#fff}
 .section-header h2 span{color:var(--mint-dark);font-style:italic}
-.section-dark .section-header h2 span{color:var(--mint)}
 .section-header p{color:var(--text);font-size:16px}
-.section-dark .section-header p{color:var(--text-light)}
-
 .category-filter{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:50px}
 .filter-btn{background:#fff;color:var(--navy);border:2px solid var(--cream-dark);padding:10px 25px;border-radius:30px;font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;cursor:pointer;transition:.4s}
 .filter-btn:hover{border-color:var(--mint);transform:translateY(-3px)}
 .filter-btn.active{background:linear-gradient(135deg,var(--mint),var(--mint-dark));color:var(--navy);border-color:var(--mint)}
-
 .products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px}
 .product-card{background:#fff;border:2px solid var(--cream-dark);border-radius:18px;overflow:hidden;transition:.5s;cursor:pointer;position:relative}
 .product-card.hide{display:none}
 .product-card:hover{transform:translateY(-15px);border-color:var(--mint);box-shadow:0 25px 60px rgba(92,217,166,.25)}
 .p-img{height:220px;display:flex;align-items:center;justify-content:center;position:relative;padding:0;overflow:hidden;background:#fff}
 .p-img img{width:100%;height:100%;object-fit:cover}
-.product-badge{position:absolute;top:12px;right:12px;padding:5px 12px;border-radius:20px;font-size:10px;font-weight:800;text-transform:uppercase;z-index:2}
-.badge-popular{background:var(--red);color:#fff}
-.badge-trending{background:var(--orange);color:#fff}
-.badge-premium{background:var(--gold);color:#fff}
+.product-badge{position:absolute;top:12px;right:12px;padding:5px 12px;border-radius:20px;font-size:10px;font-weight:800;text-transform:uppercase;z-index:2;color:#fff}
+.badge-popular{background:var(--red)}
+.badge-trending{background:var(--orange)}
+.badge-premium{background:var(--gold)}
 .badge-eco{background:var(--mint);color:var(--navy)}
-.badge-new{background:var(--purple);color:#fff}
-.badge-hot{background:#ff4757;color:#fff}
-.badge-bestseller{background:linear-gradient(135deg,#f43,#f60);color:#fff}
+.badge-new{background:var(--purple)}
+.badge-hot{background:#ff4757}
+.badge-bestseller{background:linear-gradient(135deg,#f43,#f60)}
 .product-code{position:absolute;bottom:12px;right:12px;background:rgba(0,0,0,.7);color:#fff;padding:4px 10px;border-radius:5px;font-size:10px;font-weight:900;z-index:2}
 .p-body{padding:22px;text-align:center}
 .p-body h3{font-size:17px;color:var(--navy);margin-bottom:8px;font-weight:800}
@@ -177,46 +132,7 @@ ul{list-style:none}
 .p-link{color:var(--mint-dark);font-weight:800;font-size:12px;display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border:2px solid var(--mint);border-radius:20px;background:none;font-family:'Nunito',sans-serif;cursor:pointer;transition:.4s;text-decoration:none}
 .p-link:hover{background:var(--mint);color:var(--navy)}
 .view-all-btn{text-align:center;margin-top:50px}
-
-@media(max-width:1024px){
-  .hero h1{font-size:42px}
-  .hero .container{grid-template-columns:1fr}
-  .hero-visual{display:none}
-  .hero-buttons{justify-content:center}
-  .hero-trust{margin:0 auto}
-  .section-header h2{font-size:32px}
-  .trusted-bar .container{grid-template-columns:1fr;text-align:center}
-  .trusted-title{border:none;padding:0 0 15px;border-bottom:2px solid var(--cream-dark)}
-}
-@media(max-width:768px){
-  .hamburger{display:flex;align-items:center;justify-content:center}
-  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:20px;box-shadow:var(--shadow-md);gap:5px}
-  .nav-links.open{display:flex}
-  .nav-item{width:100%}
-  .nav-item>a{width:100%;text-align:left}
-  .dropdown{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;padding:10px;background:var(--cream);margin:5px 0}
-  .top-bar .container{justify-content:center}
-  .top-bar-social{display:none}
-  .hero{padding:40px 0 60px}
-  .hero h1{font-size:32px}
-  .hero-desc{font-size:15px}
-  .hero-buttons{flex-direction:column;width:100%}
-  .btn-primary,.btn-outline{width:100%;justify-content:center;padding:14px 25px;font-size:13px}
-  .hero-trust{flex-direction:column;gap:15px}
-  .trust-item{border:none;padding:0 0 15px;border-bottom:2px solid var(--cream-dark);width:100%;text-align:center}
-  .trust-item:last-child{border:none;padding:0}
-  .section{padding:50px 0}
-  .section-header h2{font-size:26px}
-  .products-grid{grid-template-columns:1fr 1fr;gap:15px}
-}
-@media(max-width:480px){
-  .hero h1{font-size:26px}
-  .products-grid{grid-template-columns:1fr 1fr;gap:10px}
-  .p-img{height:150px}
-  .p-body{padding:12px 10px}
-  .p-body h3{font-size:13px}
-  .section-header h2{font-size:22px}
-}
+.designer{background:linear-gradient(135deg,var(--navy),var(--navy-dark));color:#fff;padding:80px 0}
 .designer-wrapper{display:grid;grid-template-columns:1fr 1.2fr;gap:40px;align-items:center}
 .designer-controls{background:rgba(255,255,255,.05);padding:30px;border-radius:20px;border:1px solid rgba(255,255,255,.1)}
 .designer-controls h3{font-size:14px;text-transform:uppercase;letter-spacing:2px;color:var(--mint);margin-bottom:8px;font-weight:800}
@@ -245,6 +161,9 @@ ul{list-style:none}
 .preview-info h4{font-size:14px;color:var(--mint);margin-bottom:10px;text-transform:uppercase;letter-spacing:1px}
 .preview-info p{font-size:13px;color:var(--text-light)}
 .rotate-hint{position:absolute;bottom:15px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.6);color:#fff;padding:6px 15px;border-radius:20px;font-size:11px;font-weight:700;display:flex;align-items:center;gap:6px;pointer-events:none}
+@media(max-width:1024px){.hero h1{font-size:42px}.hero .container{grid-template-columns:1fr}.hero-visual{display:none}.section-header h2{font-size:32px}.designer-wrapper{grid-template-columns:1fr}.trusted-bar .container{grid-template-columns:1fr;text-align:center}.trusted-title{border:none;padding:0 0 15px;border-bottom:2px solid var(--cream-dark)}}
+@media(max-width:768px){.hamburger{display:flex;align-items:center;justify-content:center}.nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:20px;box-shadow:var(--shadow-md);gap:5px}.nav-links.open{display:flex}.nav-item{width:100%}.nav-item>a{width:100%;text-align:left}.dropdown{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;padding:10px;background:var(--cream);margin:5px 0}.top-bar .container{justify-content:center}.top-bar-social{display:none}.hero{padding:40px 0 60px}.hero h1{font-size:32px}.hero-buttons{flex-direction:column;width:100%}.btn-primary,.btn-outline{width:100%;justify-content:center}.hero-trust{flex-direction:column;gap:15px}.trust-item{border:none;padding:0 0 15px;border-bottom:2px solid var(--cream-dark);width:100%;text-align:center}.trust-item:last-child{border:none;padding:0}.section{padding:50px 0}.section-header h2{font-size:26px}.products-grid{grid-template-columns:1fr 1fr;gap:15px}}
+@media(max-width:480px){.hero h1{font-size:26px}.products-grid{grid-template-columns:1fr 1fr;gap:10px}.p-img{height:150px}.p-body{padding:12px 10px}.p-body h3{font-size:13px}.section-header h2{font-size:22px}}
 </style>
 </head>
 <body>
@@ -312,9 +231,7 @@ ul{list-style:none}
 </div>
 </div>
 <div class="hero-visual">
-<div class="hero-3d-container">
-<canvas id="heroCanvas"></canvas>
-</div>
+<div class="hero-3d-container"><canvas id="heroCanvas"></canvas></div>
 <div class="float-card"><div class="fc-icon"><i class="fas fa-leaf"></i></div><div>Eco Materials<small>100% Recyclable</small></div></div>
 <div class="float-card"><div class="fc-icon"><i class="fas fa-truck"></i></div><div>Global Shipping<small>Fast & Free</small></div></div>
 <div class="float-card"><div class="fc-icon"><i class="fas fa-palette"></i></div><div>Free Design<small>Expert Support</small></div></div>
@@ -373,69 +290,69 @@ ul{list-style:none}
 <p style="color:var(--text-light)">Customize color, size, material, and add your brand name — see instant 3D preview! Drag to rotate.</p>
 </div>
 <div class="designer-wrapper">
-<div style="background:rgba(255,255,255,.05);padding:30px;border-radius:20px;border:1px solid rgba(255,255,255,.1)">
-<h3 style="font-size:14px;text-transform:uppercase;letter-spacing:2px;color:var(--mint);margin-bottom:8px;font-weight:800">Customize</h3>
-<h2 style="font-family:'Playfair Display',serif;font-size:28px;margin-bottom:20px;color:#fff">Design Your Box</h2>
-<div style="margin-bottom:20px">
-<label style="font-size:13px;font-weight:800;color:#fff;margin-bottom:10px;display:block">Box Type</label>
-<div class="box-type-options" style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
-<button class="type-btn active" onclick="setBoxType('Mailer',this)" style="padding:10px;background:var(--mint);border:2px solid var(--mint);border-radius:8px;color:var(--navy);font-weight:700;font-size:12px;cursor:pointer;font-family:'Nunito',sans-serif">Mailer</button>
-<button class="type-btn" onclick="setBoxType('Rigid',this)" style="padding:10px;background:rgba(255,255,255,.08);border:2px solid transparent;border-radius:8px;color:#fff;font-weight:700;font-size:12px;cursor:pointer;font-family:'Nunito',sans-serif">Rigid</button>
-<button class="type-btn" onclick="setBoxType('Folding',this)" style="padding:10px;background:rgba(255,255,255,.08);border:2px solid transparent;border-radius:8px;color:#fff;font-weight:700;font-size:12px;cursor:pointer;font-family:'Nunito',sans-serif">Folding</button>
+<div class="designer-controls">
+<h3>Customize</h3>
+<h2>Design Your Box</h2>
+<div class="control-group">
+<label class="control-label">Box Type</label>
+<div class="box-type-options">
+<button class="type-btn active" onclick="setBoxType('Mailer',this)">Mailer</button>
+<button class="type-btn" onclick="setBoxType('Rigid',this)">Rigid</button>
+<button class="type-btn" onclick="setBoxType('Folding',this)">Folding</button>
 </div>
 </div>
-<div style="margin-bottom:20px">
-<label style="font-size:13px;font-weight:800;color:#fff;margin-bottom:10px;display:block">Choose Color</label>
-<div style="display:flex;gap:8px;flex-wrap:wrap">
-<div class="color-swatch active" style="background:#5CD9A6;width:35px;height:35px;border-radius:50%;cursor:pointer;border:3px solid #fff" onclick="setBoxColor('#5CD9A6',this)"></div>
-<div class="color-swatch" style="background:#2C3E5D;width:35px;height:35px;border-radius:50%;cursor:pointer;border:3px solid transparent" onclick="setBoxColor('#2C3E5D',this)"></div>
-<div class="color-swatch" style="background:#e63946;width:35px;height:35px;border-radius:50%;cursor:pointer;border:3px solid transparent" onclick="setBoxColor('#e63946',this)"></div>
-<div class="color-swatch" style="background:#f77f00;width:35px;height:35px;border-radius:50%;cursor:pointer;border:3px solid transparent" onclick="setBoxColor('#f77f00',this)"></div>
-<div class="color-swatch" style="background:#fcbf49;width:35px;height:35px;border-radius:50%;cursor:pointer;border:3px solid transparent" onclick="setBoxColor('#fcbf49',this)"></div>
-<div class="color-swatch" style="background:#a663cc;width:35px;height:35px;border-radius:50%;cursor:pointer;border:3px solid transparent" onclick="setBoxColor('#a663cc',this)"></div>
-<div class="color-swatch" style="background:#ff8fab;width:35px;height:35px;border-radius:50%;cursor:pointer;border:3px solid transparent" onclick="setBoxColor('#ff8fab',this)"></div>
-<div class="color-swatch" style="background:#1a1a1a;width:35px;height:35px;border-radius:50%;cursor:pointer;border:3px solid transparent" onclick="setBoxColor('#1a1a1a',this)"></div>
-<div class="color-swatch" style="background:#f5f5f5;width:35px;height:35px;border-radius:50%;cursor:pointer;border:3px solid transparent" onclick="setBoxColor('#f5f5f5',this)"></div>
-<div class="color-swatch" style="background:#D4AF37;width:35px;height:35px;border-radius:50%;cursor:pointer;border:3px solid transparent" onclick="setBoxColor('#D4AF37',this)"></div>
+<div class="control-group">
+<label class="control-label">Choose Color</label>
+<div class="color-options">
+<div class="color-swatch active" style="background:#5CD9A6" onclick="setBoxColor('#5CD9A6',this)"></div>
+<div class="color-swatch" style="background:#2C3E5D" onclick="setBoxColor('#2C3E5D',this)"></div>
+<div class="color-swatch" style="background:#e63946" onclick="setBoxColor('#e63946',this)"></div>
+<div class="color-swatch" style="background:#f77f00" onclick="setBoxColor('#f77f00',this)"></div>
+<div class="color-swatch" style="background:#fcbf49" onclick="setBoxColor('#fcbf49',this)"></div>
+<div class="color-swatch" style="background:#a663cc" onclick="setBoxColor('#a663cc',this)"></div>
+<div class="color-swatch" style="background:#ff8fab" onclick="setBoxColor('#ff8fab',this)"></div>
+<div class="color-swatch" style="background:#1a1a1a" onclick="setBoxColor('#1a1a1a',this)"></div>
+<div class="color-swatch" style="background:#f5f5f5" onclick="setBoxColor('#f5f5f5',this)"></div>
+<div class="color-swatch" style="background:#D4AF37" onclick="setBoxColor('#D4AF37',this)"></div>
 </div>
 </div>
-<div style="margin-bottom:20px">
-<label style="font-size:13px;font-weight:800;color:#fff;margin-bottom:10px;display:block">Length: <span id="lengthVal">10</span> in</label>
-<input type="range" min="4" max="20" value="10" oninput="updateSize('length',this.value)" style="width:100%;height:6px;background:rgba(255,255,255,.1);border-radius:3px;outline:none;-webkit-appearance:none">
+<div class="control-group">
+<label class="control-label">Length: <span id="lengthVal">10</span> in</label>
+<input type="range" class="size-slider" min="4" max="20" value="10" oninput="updateSize('length',this.value)">
 </div>
-<div style="margin-bottom:20px">
-<label style="font-size:13px;font-weight:800;color:#fff;margin-bottom:10px;display:block">Width: <span id="widthVal">8</span> in</label>
-<input type="range" min="4" max="20" value="8" oninput="updateSize('width',this.value)" style="width:100%;height:6px;background:rgba(255,255,255,.1);border-radius:3px;outline:none;-webkit-appearance:none">
+<div class="control-group">
+<label class="control-label">Width: <span id="widthVal">8</span> in</label>
+<input type="range" class="size-slider" min="4" max="20" value="8" oninput="updateSize('width',this.value)">
 </div>
-<div style="margin-bottom:20px">
-<label style="font-size:13px;font-weight:800;color:#fff;margin-bottom:10px;display:block">Height: <span id="heightVal">6</span> in</label>
-<input type="range" min="4" max="20" value="6" oninput="updateSize('height',this.value)" style="width:100%;height:6px;background:rgba(255,255,255,.1);border-radius:3px;outline:none;-webkit-appearance:none">
+<div class="control-group">
+<label class="control-label">Height: <span id="heightVal">6</span> in</label>
+<input type="range" class="size-slider" min="4" max="20" value="6" oninput="updateSize('height',this.value)">
 </div>
-<div style="margin-bottom:20px">
-<label style="font-size:13px;font-weight:800;color:#fff;margin-bottom:10px;display:block">Your Brand Name</label>
-<input type="text" placeholder="Enter brand..." value="YOUR BRAND" oninput="updateBrand(this.value)" maxlength="15" style="width:100%;padding:12px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:8px;color:#fff;font-size:13px;font-family:'Nunito',sans-serif;font-weight:700">
+<div class="control-group">
+<label class="control-label">Your Brand Name</label>
+<input type="text" class="brand-input" placeholder="Enter brand..." value="YOUR BRAND" oninput="updateBrand(this.value)" maxlength="15">
 </div>
-<div style="margin-bottom:20px">
-<label style="font-size:13px;font-weight:800;color:#fff;margin-bottom:10px;display:block">Finish Type</label>
-<div class="finish-options" style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
-<button class="type-btn active" onclick="setFinish('matte',this)" style="padding:10px;background:var(--mint);border:2px solid var(--mint);border-radius:8px;color:var(--navy);font-weight:700;font-size:12px;cursor:pointer;font-family:'Nunito',sans-serif">Matte</button>
-<button class="type-btn" onclick="setFinish('glossy',this)" style="padding:10px;background:rgba(255,255,255,.08);border:2px solid transparent;border-radius:8px;color:#fff;font-weight:700;font-size:12px;cursor:pointer;font-family:'Nunito',sans-serif">Glossy</button>
-<button class="type-btn" onclick="setFinish('metallic',this)" style="padding:10px;background:rgba(255,255,255,.08);border:2px solid transparent;border-radius:8px;color:#fff;font-weight:700;font-size:12px;cursor:pointer;font-family:'Nunito',sans-serif">Metallic</button>
-</div>
-</div>
-<div style="display:flex;gap:10px;margin-top:20px">
-<button onclick="orderDesign()" style="flex:1;padding:12px;background:var(--mint);color:var(--navy);border:none;border-radius:8px;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif;font-size:13px"><i class="fas fa-shopping-cart"></i> Order Design</button>
-<button onclick="resetDesign()" style="flex:1;padding:12px;background:var(--mint);color:var(--navy);border:none;border-radius:8px;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif;font-size:13px"><i class="fas fa-refresh"></i> Reset</button>
+<div class="control-group">
+<label class="control-label">Finish Type</label>
+<div class="finish-options">
+<button class="type-btn active" onclick="setFinish('matte',this)">Matte</button>
+<button class="type-btn" onclick="setFinish('glossy',this)">Glossy</button>
+<button class="type-btn" onclick="setFinish('metallic',this)">Metallic</button>
 </div>
 </div>
-<div style="display:flex;flex-direction:column;align-items:center;justify-content:center">
-<div style="width:100%;max-width:500px;height:500px;background:linear-gradient(135deg,#f5f5f5,#e0e0e0);border-radius:20px;position:relative;overflow:hidden;box-shadow:var(--shadow-lg);margin-bottom:20px">
-<canvas id="designerCanvas" style="width:100%;height:100%;cursor:grab"></canvas>
-<div style="position:absolute;bottom:15px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.6);color:#fff;padding:6px 15px;border-radius:20px;font-size:11px;font-weight:700;display:flex;align-items:center;gap:6px;pointer-events:none"><i class="fas fa-hand-pointer"></i> Drag to rotate</div>
+<div class="designer-actions">
+<button onclick="orderDesign()"><i class="fas fa-shopping-cart"></i> Order This Design</button>
+<button onclick="resetDesign()"><i class="fas fa-refresh"></i> Reset</button>
 </div>
-<div style="text-align:center;color:#fff">
-<h4 style="font-size:14px;color:var(--mint);margin-bottom:10px;text-transform:uppercase;letter-spacing:1px">Live 3D Preview</h4>
-<p style="font-size:13px;color:var(--text-light)">Size: <span id="sizeDisplay">10 x 8 x 6</span> inches | Type: <span id="typeDisplay">Mailer</span> | Finish: <span id="finishDisplay">Matte</span></p>
+</div>
+<div class="designer-preview">
+<div class="preview-3d-box">
+<canvas id="designerCanvas"></canvas>
+<div class="rotate-hint"><i class="fas fa-hand-pointer"></i> Drag to rotate</div>
+</div>
+<div class="preview-info">
+<h4>Live 3D Preview</h4>
+<p>Size: <span id="sizeDisplay">10 x 8 x 6</span> inches | Type: <span id="typeDisplay">Mailer</span> | Finish: <span id="finishDisplay">Matte</span></p>
 </div>
 </div>
 </div>
@@ -451,7 +368,7 @@ ul{list-style:none}
 </div>
 <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:40px;align-items:start" class="dr-wrapper">
 
-<div style="background:rgba(255,255,255,0.05);backdrop-filter:blur(10px);padding:40px;border-radius:20px;border:1px solid rgba(255,255,255,0.1);position:sticky;top:100px">
+<div style="background:rgba(255,255,255,0.05);padding:40px;border-radius:20px;border:1px solid rgba(255,255,255,0.1)">
 <h3 style="font-family:'Playfair Display',serif;font-size:28px;color:#fff;margin-bottom:15px">Why Choose Our <span style="color:var(--mint);font-style:italic">Design Service?</span></h3>
 <p style="color:rgba(255,255,255,0.7);margin-bottom:30px;line-height:1.7;font-size:14px">Get professional custom packaging design created by our expert designers with 15+ years of experience serving global brands.</p>
 
@@ -464,70 +381,49 @@ ul{list-style:none}
 <div style="display:flex;gap:15px;margin-bottom:20px;align-items:flex-start"><div style="width:45px;height:45px;min-width:45px;background:linear-gradient(135deg,var(--mint),var(--mint-dark));color:var(--navy);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px"><i class="fas fa-refresh"></i></div><div><h4 style="color:#fff;font-size:15px;font-weight:800;margin-bottom:5px">Unlimited Revisions</h4><p style="color:rgba(255,255,255,0.6);font-size:13px">We work with you until the design is absolutely perfect</p></div></div>
 
 <div style="display:flex;gap:15px;margin-bottom:20px;align-items:flex-start"><div style="width:45px;height:45px;min-width:45px;background:linear-gradient(135deg,var(--mint),var(--mint-dark));color:var(--navy);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px"><i class="fas fa-shield-halved"></i></div><div><h4 style="color:#fff;font-size:15px;font-weight:800;margin-bottom:5px">100% Confidential</h4><p style="color:rgba(255,255,255,0.6);font-size:13px">Your brand and design ideas are completely secure with us</p></div></div>
-
-<div style="background:rgba(92,217,166,0.1);border:1px solid rgba(92,217,166,0.3);padding:20px;border-radius:12px;margin-top:25px">
-<h4 style="color:var(--mint);font-size:14px;font-weight:800;margin-bottom:12px;text-transform:uppercase;letter-spacing:1px;display:flex;align-items:center;gap:8px"><i class="fas fa-list-check"></i> Our Simple Process</h4>
-<ol style="padding-left:20px;color:rgba(255,255,255,0.8)">
-<li style="font-size:13px;margin-bottom:6px;line-height:1.5">Fill out this detailed form</li>
-<li style="font-size:13px;margin-bottom:6px;line-height:1.5">Our team reviews within 24 hours</li>
-<li style="font-size:13px;margin-bottom:6px;line-height:1.5">Receive 2-3 custom design concepts</li>
-<li style="font-size:13px;margin-bottom:6px;line-height:1.5">Approve or request revisions</li>
-<li style="font-size:13px;margin-bottom:6px;line-height:1.5">Production starts immediately!</li>
-</ol>
-</div>
 </div>
 
-<div style="background:rgba(255,255,255,0.05);backdrop-filter:blur(10px);padding:40px;border-radius:20px;border:1px solid rgba(255,255,255,0.1)">
-<h3 style="font-family:'Playfair Display',serif;font-size:26px;color:#fff;margin-bottom:8px;display:flex;align-items:center;gap:12px"><i class="fas fa-file-pen" style="color:var(--mint);font-size:24px"></i>Design Request Form</h3>
+<div style="background:rgba(255,255,255,0.05);padding:40px;border-radius:20px;border:1px solid rgba(255,255,255,0.1)">
+<h3 style="font-family:'Playfair Display',serif;font-size:26px;color:#fff;margin-bottom:8px"><i class="fas fa-file-pen" style="color:var(--mint);margin-right:12px"></i>Design Request Form</h3>
 <p style="color:rgba(255,255,255,0.6);font-size:13px;margin-bottom:25px">Fill in the details below — the more info you provide, the better we can serve you!</p>
 <form onsubmit="submitDesignRequest(event)">
 
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px">
-<div><label style="display:block;font-size:12px;font-weight:800;color:var(--mint);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Your Name <span style="color:#ff6b6b">*</span></label><input type="text" name="fullName" placeholder="John Smith" required style="width:100%;padding:13px 15px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:10px;color:#fff;font-size:13px;font-family:'Nunito',sans-serif;font-weight:600"></div>
-<div><label style="display:block;font-size:12px;font-weight:800;color:var(--mint);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Email Address <span style="color:#ff6b6b">*</span></label><input type="email" name="email" placeholder="john@example.com" required style="width:100%;padding:13px 15px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:10px;color:#fff;font-size:13px;font-family:'Nunito',sans-serif;font-weight:600"></div>
+<div><label style="display:block;font-size:12px;font-weight:800;color:var(--mint);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Your Name *</label><input type="text" name="fullName" placeholder="John Smith" required style="width:100%;padding:13px 15px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:10px;color:#fff;font-size:13px;font-family:'Nunito',sans-serif;font-weight:600"></div>
+<div><label style="display:block;font-size:12px;font-weight:800;color:var(--mint);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Email Address *</label><input type="email" name="email" placeholder="john@example.com" required style="width:100%;padding:13px 15px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:10px;color:#fff;font-size:13px;font-family:'Nunito',sans-serif;font-weight:600"></div>
 </div>
 
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px">
-<div><label style="display:block;font-size:12px;font-weight:800;color:var(--mint);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Phone Number <span style="color:#ff6b6b">*</span></label><input type="tel" name="phone" placeholder="+1 234 567 8900" required style="width:100%;padding:13px 15px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:10px;color:#fff;font-size:13px;font-family:'Nunito',sans-serif;font-weight:600"></div>
-<div><label style="display:block;font-size:12px;font-weight:800;color:var(--mint);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Country <span style="color:#ff6b6b">*</span></label><select name="country" required style="width:100%;padding:13px 15px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:10px;color:#fff;font-size:13px;font-family:'Nunito',sans-serif;font-weight:600"><option value="" style="background:var(--navy-dark)">Select Country</option><option style="background:var(--navy-dark)">USA</option><option style="background:var(--navy-dark)">UK</option><option style="background:var(--navy-dark)">Canada</option><option style="background:var(--navy-dark)">Australia</option><option style="background:var(--navy-dark)">UAE</option><option style="background:var(--navy-dark)">Saudi Arabia</option><option style="background:var(--navy-dark)">Germany</option><option style="background:var(--navy-dark)">France</option><option style="background:var(--navy-dark)">India</option><option style="background:var(--navy-dark)">Pakistan</option><option style="background:var(--navy-dark)">Other</option></select></div>
+<div><label style="display:block;font-size:12px;font-weight:800;color:var(--mint);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Phone *</label><input type="tel" name="phone" placeholder="+1 234 567 8900" required style="width:100%;padding:13px 15px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:10px;color:#fff;font-size:13px;font-family:'Nunito',sans-serif;font-weight:600"></div>
+<div><label style="display:block;font-size:12px;font-weight:800;color:var(--mint);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Country *</label><select name="country" required style="width:100%;padding:13px 15px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:10px;color:#fff;font-size:13px;font-family:'Nunito',sans-serif;font-weight:600"><option value="" style="background:var(--navy-dark)">Select Country</option><option style="background:var(--navy-dark)">USA</option><option style="background:var(--navy-dark)">UK</option><option style="background:var(--navy-dark)">Canada</option><option style="background:var(--navy-dark)">Australia</option><option style="background:var(--navy-dark)">UAE</option><option style="background:var(--navy-dark)">Saudi Arabia</option><option style="background:var(--navy-dark)">Germany</option><option style="background:var(--navy-dark)">France</option><option style="background:var(--navy-dark)">India</option><option style="background:var(--navy-dark)">Pakistan</option><option style="background:var(--navy-dark)">Other</option></select></div>
 </div>
 
-<div style="margin-bottom:18px"><label style="display:block;font-size:12px;font-weight:800;color:var(--mint);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Brand Name <span style="color:#ff6b6b">*</span></label><input type="text" name="brandName" placeholder="Enter your brand name" required style="width:100%;padding:13px 15px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:10px;color:#fff;font-size:13px;font-family:'Nunito',sans-serif;font-weight:600"></div>
+<div style="margin-bottom:18px"><label style="display:block;font-size:12px;font-weight:800;color:var(--mint);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Brand Name *</label><input type="text" name="brandName" placeholder="Enter your brand name" required style="width:100%;padding:13px 15px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:10px;color:#fff;font-size:13px;font-family:'Nunito',sans-serif;font-weight:600"></div>
 
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px">
-<div><label style="display:block;font-size:12px;font-weight:800;color:var(--mint);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Product Type <span style="color:#ff6b6b">*</span></label><select name="productType" required style="width:100%;padding:13px 15px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:10px;color:#fff;font-size:13px;font-family:'Nunito',sans-serif;font-weight:600"><option value="" style="background:var(--navy-dark)">Select Product</option><option style="background:var(--navy-dark)">Cosmetic / Skincare</option><option style="background:var(--navy-dark)">Perfume / Fragrance</option><option style="background:var(--navy-dark)">Food / Gourmet</option><option style="background:var(--navy-dark)">Chocolate / Candy</option><option style="background:var(--navy-dark)">Candle</option><option style="background:var(--navy-dark)">Jewelry</option><option style="background:var(--navy-dark)">Gift Set</option><option style="background:var(--navy-dark)">CBD Products</option><option style="background:var(--navy-dark)">Other</option></select></div>
-<div><label style="display:block;font-size:12px;font-weight:800;color:var(--mint);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Box Type <span style="color:#ff6b6b">*</span></label><select name="boxType" required style="width:100%;padding:13px 15px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:10px;color:#fff;font-size:13px;font-family:'Nunito',sans-serif;font-weight:600"><option value="" style="background:var(--navy-dark)">Select Box Type</option><option style="background:var(--navy-dark)">Rigid Luxury Box</option><option style="background:var(--navy-dark)">Mailer Box</option><option style="background:var(--navy-dark)">Folding Carton</option><option style="background:var(--navy-dark)">Magnetic Closure Box</option><option style="background:var(--navy-dark)">Drawer Box</option><option style="background:var(--navy-dark)">Pillow Box</option><option style="background:var(--navy-dark)">Custom Shape</option><option style="background:var(--navy-dark)">Not Sure - Need Suggestion</option></select></div>
-</div>
-
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px">
-<div><label style="display:block;font-size:12px;font-weight:800;color:var(--mint);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Style Preference <span style="color:#ff6b6b">*</span></label><select name="stylePreference" required style="width:100%;padding:13px 15px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:10px;color:#fff;font-size:13px;font-family:'Nunito',sans-serif;font-weight:600"><option value="" style="background:var(--navy-dark)">Select Style</option><option style="background:var(--navy-dark)">Luxury / Premium</option><option style="background:var(--navy-dark)">Minimalist / Modern</option><option style="background:var(--navy-dark)">Eco-Friendly / Natural</option><option style="background:var(--navy-dark)">Vintage / Classic</option><option style="background:var(--navy-dark)">Bold / Vibrant</option><option style="background:var(--navy-dark)">Feminine / Floral</option><option style="background:var(--navy-dark)">Corporate / Professional</option><option style="background:var(--navy-dark)">Not Sure - Need Suggestion</option></select></div>
-<div><label style="display:block;font-size:12px;font-weight:800;color:var(--mint);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Color Scheme <span style="color:#ff6b6b">*</span></label><select name="colorScheme" required style="width:100%;padding:13px 15px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:10px;color:#fff;font-size:13px;font-family:'Nunito',sans-serif;font-weight:600"><option value="" style="background:var(--navy-dark)">Select Colors</option><option style="background:var(--navy-dark)">Black & Gold</option><option style="background:var(--navy-dark)">White & Rose Gold</option><option style="background:var(--navy-dark)">Navy Blue & Silver</option><option style="background:var(--navy-dark)">Pastel Pink</option><option style="background:var(--navy-dark)">Emerald Green & Gold</option><option style="background:var(--navy-dark)">Kraft Brown / Natural</option><option style="background:var(--navy-dark)">Pure White Minimalist</option><option style="background:var(--navy-dark)">Custom Colors (specify below)</option></select></div>
+<div><label style="display:block;font-size:12px;font-weight:800;color:var(--mint);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Product Type *</label><select name="productType" required style="width:100%;padding:13px 15px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:10px;color:#fff;font-size:13px;font-family:'Nunito',sans-serif;font-weight:600"><option value="" style="background:var(--navy-dark)">Select Product</option><option style="background:var(--navy-dark)">Cosmetic / Skincare</option><option style="background:var(--navy-dark)">Food / Gourmet</option><option style="background:var(--navy-dark)">Candle</option><option style="background:var(--navy-dark)">Jewelry</option><option style="background:var(--navy-dark)">Gift Set</option><option style="background:var(--navy-dark)">Retail Product</option><option style="background:var(--navy-dark)">Other</option></select></div>
+<div><label style="display:block;font-size:12px;font-weight:800;color:var(--mint);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Box Type *</label><select name="boxType" required style="width:100%;padding:13px 15px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:10px;color:#fff;font-size:13px;font-family:'Nunito',sans-serif;font-weight:600"><option value="" style="background:var(--navy-dark)">Select Box Type</option><option style="background:var(--navy-dark)">Rigid Luxury Box</option><option style="background:var(--navy-dark)">Mailer Box</option><option style="background:var(--navy-dark)">Folding Carton</option><option style="background:var(--navy-dark)">Magnetic Closure Box</option><option style="background:var(--navy-dark)">Custom Shape</option><option style="background:var(--navy-dark)">Not Sure - Need Suggestion</option></select></div>
 </div>
 
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px">
-<div><label style="display:block;font-size:12px;font-weight:800;color:var(--mint);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Quantity Needed <span style="color:#ff6b6b">*</span></label><select name="quantity" required style="width:100%;padding:13px 15px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:10px;color:#fff;font-size:13px;font-family:'Nunito',sans-serif;font-weight:600"><option value="" style="background:var(--navy-dark)">Select Quantity</option><option style="background:var(--navy-dark)">50-100 boxes</option><option style="background:var(--navy-dark)">100-500 boxes</option><option style="background:var(--navy-dark)">500-1,000 boxes</option><option style="background:var(--navy-dark)">1,000-5,000 boxes</option><option style="background:var(--navy-dark)">5,000-10,000 boxes</option><option style="background:var(--navy-dark)">10,000+ boxes</option></select></div>
-<div><label style="display:block;font-size:12px;font-weight:800;color:var(--mint);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Timeline <span style="color:#ff6b6b">*</span></label><select name="timeline" required style="width:100%;padding:13px 15px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:10px;color:#fff;font-size:13px;font-family:'Nunito',sans-serif;font-weight:600"><option value="" style="background:var(--navy-dark)">Select Timeline</option><option style="background:var(--navy-dark)">ASAP (Rush Order)</option><option style="background:var(--navy-dark)">Within 1 week</option><option style="background:var(--navy-dark)">Within 2 weeks</option><option style="background:var(--navy-dark)">Within 1 month</option><option style="background:var(--navy-dark)">1-3 months</option><option style="background:var(--navy-dark)">Flexible</option></select></div>
+<div><label style="display:block;font-size:12px;font-weight:800;color:var(--mint);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Style Preference *</label><select name="stylePreference" required style="width:100%;padding:13px 15px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:10px;color:#fff;font-size:13px;font-family:'Nunito',sans-serif;font-weight:600"><option value="" style="background:var(--navy-dark)">Select Style</option><option style="background:var(--navy-dark)">Luxury / Premium</option><option style="background:var(--navy-dark)">Minimalist / Modern</option><option style="background:var(--navy-dark)">Eco-Friendly / Natural</option><option style="background:var(--navy-dark)">Vintage / Classic</option><option style="background:var(--navy-dark)">Bold / Vibrant</option><option style="background:var(--navy-dark)">Not Sure</option></select></div>
+<div><label style="display:block;font-size:12px;font-weight:800;color:var(--mint);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Color Scheme *</label><select name="colorScheme" required style="width:100%;padding:13px 15px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:10px;color:#fff;font-size:13px;font-family:'Nunito',sans-serif;font-weight:600"><option value="" style="background:var(--navy-dark)">Select Colors</option><option style="background:var(--navy-dark)">Black & Gold</option><option style="background:var(--navy-dark)">White & Rose Gold</option><option style="background:var(--navy-dark)">Navy Blue & Silver</option><option style="background:var(--navy-dark)">Pastel Pink</option><option style="background:var(--navy-dark)">Emerald Green & Gold</option><option style="background:var(--navy-dark)">Kraft Brown / Natural</option><option style="background:var(--navy-dark)">Custom Colors</option></select></div>
 </div>
 
-<div style="margin-bottom:18px"><label style="display:block;font-size:12px;font-weight:800;color:var(--mint);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Budget Range (USD) <span style="color:#ff6b6b">*</span></label><select name="budget" required style="width:100%;padding:13px 15px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:10px;color:#fff;font-size:13px;font-family:'Nunito',sans-serif;font-weight:600"><option value="" style="background:var(--navy-dark)">Select Budget</option><option style="background:var(--navy-dark)">Under $500</option><option style="background:var(--navy-dark)">$500 - $1,000</option><option style="background:var(--navy-dark)">$1,000 - $2,500</option><option style="background:var(--navy-dark)">$2,500 - $5,000</option><option style="background:var(--navy-dark)">$5,000 - $10,000</option><option style="background:var(--navy-dark)">$10,000+</option><option style="background:var(--navy-dark)">Need Consultation First</option></select></div>
-
-<div style="margin-bottom:18px"><label style="display:block;font-size:12px;font-weight:800;color:var(--mint);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Box Dimensions (Optional)</label>
-<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
-<input type="text" name="length" placeholder="Length (in)" style="width:100%;padding:13px 15px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:10px;color:#fff;font-size:13px;font-family:'Nunito',sans-serif;font-weight:600">
-<input type="text" name="width" placeholder="Width (in)" style="width:100%;padding:13px 15px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:10px;color:#fff;font-size:13px;font-family:'Nunito',sans-serif;font-weight:600">
-<input type="text" name="height" placeholder="Height (in)" style="width:100%;padding:13px 15px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:10px;color:#fff;font-size:13px;font-family:'Nunito',sans-serif;font-weight:600">
-</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px">
+<div><label style="display:block;font-size:12px;font-weight:800;color:var(--mint);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Quantity *</label><select name="quantity" required style="width:100%;padding:13px 15px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:10px;color:#fff;font-size:13px;font-family:'Nunito',sans-serif;font-weight:600"><option value="" style="background:var(--navy-dark)">Select Quantity</option><option style="background:var(--navy-dark)">50-100 boxes</option><option style="background:var(--navy-dark)">100-500 boxes</option><option style="background:var(--navy-dark)">500-1,000 boxes</option><option style="background:var(--navy-dark)">1,000-5,000 boxes</option><option style="background:var(--navy-dark)">5,000+ boxes</option></select></div>
+<div><label style="display:block;font-size:12px;font-weight:800;color:var(--mint);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Timeline *</label><select name="timeline" required style="width:100%;padding:13px 15px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:10px;color:#fff;font-size:13px;font-family:'Nunito',sans-serif;font-weight:600"><option value="" style="background:var(--navy-dark)">Select Timeline</option><option style="background:var(--navy-dark)">ASAP (Rush Order)</option><option style="background:var(--navy-dark)">Within 1 week</option><option style="background:var(--navy-dark)">Within 2 weeks</option><option style="background:var(--navy-dark)">Within 1 month</option><option style="background:var(--navy-dark)">Flexible</option></select></div>
 </div>
 
-<div style="margin-bottom:18px"><label style="display:block;font-size:12px;font-weight:800;color:var(--mint);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Detailed Design Requirements <span style="color:#ff6b6b">*</span></label><textarea name="requirements" placeholder="Describe your vision in detail:&#10;- Special finishes (gold foil, embossed, matte, glossy)&#10;- Logo placement & design elements&#10;- Any specific patterns, illustrations&#10;- Ribbon, window cutouts, magnetic closure&#10;- Inspiration from any brand&#10;- Special features you want&#10;- Any other important details..." required style="width:100%;padding:13px 15px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:10px;color:#fff;font-size:13px;font-family:'Nunito',sans-serif;font-weight:600;min-height:120px;resize:vertical"></textarea></div>
+<div style="margin-bottom:18px"><label style="display:block;font-size:12px;font-weight:800;color:var(--mint);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Budget Range (USD) *</label><select name="budget" required style="width:100%;padding:13px 15px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:10px;color:#fff;font-size:13px;font-family:'Nunito',sans-serif;font-weight:600"><option value="" style="background:var(--navy-dark)">Select Budget</option><option style="background:var(--navy-dark)">Under $500</option><option style="background:var(--navy-dark)">$500 - $1,000</option><option style="background:var(--navy-dark)">$1,000 - $2,500</option><option style="background:var(--navy-dark)">$2,500 - $5,000</option><option style="background:var(--navy-dark)">$5,000+</option><option style="background:var(--navy-dark)">Need Consultation</option></select></div>
 
-<div style="margin-bottom:18px"><label style="display:block;font-size:12px;font-weight:800;color:var(--mint);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Additional Notes / Questions (Optional)</label><textarea name="notes" placeholder="Anything else you'd like us to know? Special requests, questions about our services, delivery preferences..." style="width:100%;padding:13px 15px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:10px;color:#fff;font-size:13px;font-family:'Nunito',sans-serif;font-weight:600;min-height:80px;resize:vertical"></textarea></div>
+<div style="margin-bottom:18px"><label style="display:block;font-size:12px;font-weight:800;color:var(--mint);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Detailed Design Requirements *</label><textarea name="requirements" placeholder="Describe your vision, colors, style, special features..." required style="width:100%;padding:13px 15px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:10px;color:#fff;font-size:13px;font-family:'Nunito',sans-serif;font-weight:600;min-height:100px;resize:vertical"></textarea></div>
 
 <button type="submit" style="width:100%;padding:16px;background:linear-gradient(135deg,var(--mint),var(--mint-dark));color:var(--navy);border:none;border-radius:12px;font-weight:900;font-size:15px;cursor:pointer;font-family:'Nunito',sans-serif;box-shadow:0 8px 25px rgba(92,217,166,0.4);display:flex;align-items:center;justify-content:center;gap:10px"><i class="fas fa-paper-plane"></i> Submit Design Request</button>
 
 <div style="margin-top:20px;padding:15px;background:rgba(92,217,166,0.08);border-radius:10px;display:flex;gap:12px;align-items:center;font-size:12px;color:rgba(255,255,255,0.8)">
 <i class="fas fa-shield-halved" style="color:var(--mint);font-size:20px"></i>
-<div><strong>100% Secure & Confidential</strong><br>Your information is safe. We respond within 24 hours with professional design concepts!</div>
+<div><strong>100% Secure & Confidential</strong><br>Your information is safe. We respond within 24 hours!</div>
 </div>
 
 </form>
@@ -562,7 +458,7 @@ ul{list-style:none}
 <div class="container">
 <h2 style="font-family:'Playfair Display',serif;font-size:44px;font-weight:900;margin-bottom:15px">Ready to Transform Your Packaging?</h2>
 <p style="font-size:18px;margin-bottom:30px">Join thousands of brands that trust BoxMint to deliver packaging that wows.</p>
-<a href="#design-request" style="background:var(--navy);color:#fff;padding:16px 40px;border-radius:30px;font-weight:800;font-size:16px;display:inline-flex;align-items:center;gap:10px;border:none;cursor:pointer;font-family:'Nunito',sans-serif;transition:.4s;text-decoration:none"><i class="fas fa-paper-plane"></i> Get My Free Quote</a>
+<a href="#design-request" style="background:var(--navy);color:#fff;padding:16px 40px;border-radius:30px;font-weight:800;font-size:16px;display:inline-flex;align-items:center;gap:10px;text-decoration:none"><i class="fas fa-paper-plane"></i> Get My Free Quote</a>
 </div>
 </section>
 
@@ -626,13 +522,10 @@ ul{list-style:none}
 </div>
 </footer>
 
-<!-- WHATSAPP FLOATING -->
 <a href="https://wa.me/?text=Hi%20BoxMint,%20I%20want%20to%20know%20more%20about%20your%20packaging%20services" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
-<!-- SCROLL TOP -->
 <button class="scroll-top-btn" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-chevron-up"></i></button>
 
-<!-- TOAST NOTIFICATION -->
 <div class="toast-notification" id="toastNotification">
 <div class="toast-icon"><i class="fas fa-check"></i></div>
 <div class="toast-text" id="toastText">Coming soon!</div>
@@ -641,18 +534,9 @@ ul{list-style:none}
 <script>
 var WEBAPP_URL='https://script.google.com/macros/s/AKfycbz0v8BaggWzqn3vTX7fOXBiHhXWuqseTdnoRao5X30BqVz4nnDQhtnD0ce_UUg_9Ooq/exec';
 
-function showToast(msg){
-  var toast=document.getElementById('toastNotification');
-  document.getElementById('toastText').innerText=msg;
-  toast.classList.add('show');
-  setTimeout(function(){toast.classList.remove('show')},3500);
-}
+function showToast(msg){var toast=document.getElementById('toastNotification');document.getElementById('toastText').innerText=msg;toast.classList.add('show');setTimeout(function(){toast.classList.remove('show')},3500)}
 
-window.addEventListener('scroll',function(){
-  var btn=document.getElementById('scrollTopBtn');
-  if(window.scrollY>300)btn.classList.add('show');
-  else btn.classList.remove('show');
-});
+window.addEventListener('scroll',function(){var btn=document.getElementById('scrollTopBtn');if(window.scrollY>300)btn.classList.add('show');else btn.classList.remove('show')});
 
 var products=[
 {id:'retail',name:'Retail Boxes',desc:'Retail-ready packaging',cat:'retail',code:'RTB-01',badge:'Popular',badgeClass:'badge-popular',icon:'fa-box'},
@@ -695,7 +579,7 @@ function renderProducts(){
     var bHTML=p.badge?'<span class="product-badge '+p.badgeClass+'">'+p.badge+'</span>':'';
     html+='<div class="product-card" data-cat="'+p.cat+'">';
     html+='<div class="p-img">'+bHTML;
-    html+='<img src="'+p.code+'.jpeg" alt="'+p.name+'" style="width:100%;height:100%;object-fit:cover" onerror="this.outerHTML=\'<div style=&quot;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#E8F9F1,#F5F3EE)&quot;><div style=&quot;width:100px;height:100px;background:#fff;border-radius:15px;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.15)&quot;><i class=&quot;fas '+p.icon+'&quot; style=&quot;font-size:40px;color:#3EC08A;margin-bottom:5px&quot;></i><div style=&quot;font-size:9px;font-weight:900;color:#2C3E5D;letter-spacing:1px&quot;>BOXMINT</div></div></div>\'">';
+    html+='<img src="'+p.code+'.jpeg" alt="'+p.name+'" onerror="this.outerHTML=\'<div style=&quot;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#E8F9F1,#F5F3EE)&quot;><div style=&quot;width:100px;height:100px;background:#fff;border-radius:15px;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.15)&quot;><i class=&quot;fas '+p.icon+'&quot; style=&quot;font-size:40px;color:#3EC08A;margin-bottom:5px&quot;></i><div style=&quot;font-size:9px;font-weight:900;color:#2C3E5D;letter-spacing:1px&quot;>BOXMINT</div></div></div>\'">';
     html+='<div class="product-code">'+p.code+'</div></div>';
     html+='<div class="p-body"><h3>'+p.name+'</h3><p>'+p.desc+'</p>';
     html+='<div class="p-price"><span class="custom-price">Custom Pricing Available</span></div>';
@@ -711,8 +595,8 @@ function filterProducts(cat,btn){
   btn.classList.add('active');
   var cards=document.querySelectorAll('.product-card');
   for(var i=0;i<cards.length;i++){
-    if(cat==='all'||cards[i].getAttribute('data-cat')===cat){cards[i].classList.remove('hide')}
-    else{cards[i].classList.add('hide')}
+    if(cat==='all'||cards[i].getAttribute('data-cat')===cat)cards[i].classList.remove('hide');
+    else cards[i].classList.add('hide');
   }
 }
 
@@ -724,16 +608,7 @@ function submitDesignRequest(e){
   var originalText=btn.innerHTML;
   btn.disabled=true;
   btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Sending...';
-  var payload={
-    form_type:'design_request',
-    fullName:d.get('fullName')||'',email:d.get('email')||'',phone:d.get('phone')||'',
-    country:d.get('country')||'',brandName:d.get('brandName')||'',
-    productType:d.get('productType')||'',boxType:d.get('boxType')||'',
-    stylePreference:d.get('stylePreference')||'',colorScheme:d.get('colorScheme')||'',
-    quantity:d.get('quantity')||'',timeline:d.get('timeline')||'',budget:d.get('budget')||'',
-    length:d.get('length')||'',width:d.get('width')||'',height:d.get('height')||'',
-    requirements:d.get('requirements')||'',notes:d.get('notes')||''
-  };
+  var payload={form_type:'design_request',fullName:d.get('fullName')||'',email:d.get('email')||'',phone:d.get('phone')||'',country:d.get('country')||'',brandName:d.get('brandName')||'',productType:d.get('productType')||'',boxType:d.get('boxType')||'',stylePreference:d.get('stylePreference')||'',colorScheme:d.get('colorScheme')||'',quantity:d.get('quantity')||'',timeline:d.get('timeline')||'',budget:d.get('budget')||'',requirements:d.get('requirements')||''};
   fetch(WEBAPP_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
   .then(function(){showToast('Design request sent! We will contact you in 24 hours.');form.reset();btn.disabled=false;btn.innerHTML=originalText})
   .catch(function(){showToast('Design request sent! We will contact you in 24 hours.');form.reset();btn.disabled=false;btn.innerHTML=originalText});
@@ -785,7 +660,7 @@ function initDesigner3D(){
 }
 
 function buildDesignerBox(){
-  if(dBox){dScene.remove(dBox)}
+  if(dBox)dScene.remove(dBox);
   var w=dLength/5,h=dHeight/5,d=dWidth/5;
   var roughness=0.6,metalness=0;
   if(dFinish==='glossy'){roughness=0.15;metalness=0.1}
@@ -813,11 +688,11 @@ function createBrandTexture(brand,color){
   var t=new THREE.CanvasTexture(c);t.needsUpdate=true;return t;
 }
 
-function setBoxType(type,btn){var b=document.querySelectorAll('.box-type-options .type-btn');for(var i=0;i<b.length;i++){b[i].classList.remove('active');b[i].style.background='rgba(255,255,255,.08)';b[i].style.color='#fff';b[i].style.borderColor='transparent'}btn.classList.add('active');btn.style.background='#5CD9A6';btn.style.color='#2C3E5D';btn.style.borderColor='#5CD9A6';document.getElementById('typeDisplay').innerText=type;if(type==='Rigid'){dLength=8;dWidth=8;dHeight=4}else if(type==='Folding'){dLength=6;dWidth=4;dHeight=10}else{dLength=10;dWidth=8;dHeight=6}document.getElementById('lengthVal').innerText=dLength;document.getElementById('widthVal').innerText=dWidth;document.getElementById('heightVal').innerText=dHeight;document.getElementById('sizeDisplay').innerText=dLength+' x '+dWidth+' x '+dHeight;buildDesignerBox()}
-function setBoxColor(color,el){var s=document.querySelectorAll('.color-swatch');for(var i=0;i<s.length;i++){s[i].classList.remove('active');s[i].style.borderColor='transparent'}el.classList.add('active');el.style.borderColor='#fff';dBoxColor=parseInt(color.replace('#',''),16);buildDesignerBox()}
+function setBoxType(type,btn){var b=document.querySelectorAll('.box-type-options .type-btn');for(var i=0;i<b.length;i++)b[i].classList.remove('active');btn.classList.add('active');document.getElementById('typeDisplay').innerText=type;if(type==='Rigid'){dLength=8;dWidth=8;dHeight=4}else if(type==='Folding'){dLength=6;dWidth=4;dHeight=10}else{dLength=10;dWidth=8;dHeight=6}var s=document.querySelectorAll('.size-slider');s[0].value=dLength;s[1].value=dWidth;s[2].value=dHeight;document.getElementById('lengthVal').innerText=dLength;document.getElementById('widthVal').innerText=dWidth;document.getElementById('heightVal').innerText=dHeight;document.getElementById('sizeDisplay').innerText=dLength+' x '+dWidth+' x '+dHeight;buildDesignerBox()}
+function setBoxColor(color,el){var s=document.querySelectorAll('.color-swatch');for(var i=0;i<s.length;i++)s[i].classList.remove('active');el.classList.add('active');dBoxColor=parseInt(color.replace('#',''),16);buildDesignerBox()}
 function updateSize(dim,val){document.getElementById(dim+'Val').innerText=val;if(dim==='length')dLength=parseInt(val);if(dim==='width')dWidth=parseInt(val);if(dim==='height')dHeight=parseInt(val);document.getElementById('sizeDisplay').innerText=dLength+' x '+dWidth+' x '+dHeight;buildDesignerBox()}
 function updateBrand(val){dBrandName=val||'YOUR BRAND';buildDesignerBox()}
-function setFinish(finish,btn){var b=document.querySelectorAll('.finish-options .type-btn');for(var i=0;i<b.length;i++){b[i].classList.remove('active');b[i].style.background='rgba(255,255,255,.08)';b[i].style.color='#fff';b[i].style.borderColor='transparent'}btn.classList.add('active');btn.style.background='#5CD9A6';btn.style.color='#2C3E5D';btn.style.borderColor='#5CD9A6';dFinish=finish;document.getElementById('finishDisplay').innerText=finish.charAt(0).toUpperCase()+finish.slice(1);buildDesignerBox()}
+function setFinish(finish,btn){var b=document.querySelectorAll('.finish-options .type-btn');for(var i=0;i<b.length;i++)b[i].classList.remove('active');btn.classList.add('active');dFinish=finish;document.getElementById('finishDisplay').innerText=finish.charAt(0).toUpperCase()+finish.slice(1);buildDesignerBox()}
 function orderDesign(){showToast('Design saved! Scroll down to submit order.');document.getElementById('design-request').scrollIntoView({behavior:'smooth'})}
 function resetDesign(){dLength=10;dWidth=8;dHeight=6;dBoxColor=0x5CD9A6;dBrandName='YOUR BRAND';dFinish='matte';buildDesignerBox();showToast('Design reset!')}
 
