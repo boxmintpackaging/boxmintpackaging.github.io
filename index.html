@@ -58,7 +58,7 @@ ul{list-style:none}
 .top-bar-info i{color:var(--mint)}
 .top-bar-social{display:flex;gap:8px;align-items:center}
 .top-bar-social span{font-size:12px;color:var(--text-light)}
-.top-bar-social a{width:28px;height:28px;border-radius:50%;border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--cream);transition:.3s}
+.top-bar-social a{width:28px;height:28px;border-radius:50%;border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--cream);transition:.3s;cursor:pointer}
 .top-bar-social a:hover{background:var(--mint);color:var(--navy)}
 
 .header{background:#fff;box-shadow:var(--shadow-sm);position:sticky;top:0;z-index:1000}
@@ -162,7 +162,7 @@ ul{list-style:none}
 .p-body p{color:var(--text);font-size:12px;margin-bottom:12px}
 .p-price{margin-bottom:15px}
 .custom-price{color:var(--mint-dark);font-weight:900;font-size:14px}
-.p-link{color:var(--mint-dark);font-weight:800;font-size:12px;display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border:2px solid var(--mint);border-radius:20px;background:none;font-family:'Nunito',sans-serif;cursor:pointer;transition:.4s}
+.p-link{color:var(--mint-dark);font-weight:800;font-size:12px;display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border:2px solid var(--mint);border-radius:20px;background:none;font-family:'Nunito',sans-serif;cursor:pointer;transition:.4s;text-decoration:none}
 .p-link:hover{background:var(--mint);color:var(--navy)}
 .view-all-btn{text-align:center;margin-top:50px}
 
@@ -195,6 +195,47 @@ ul{list-style:none}
 .preview-info h4{font-size:14px;color:var(--mint);margin-bottom:10px;text-transform:uppercase;letter-spacing:1px}
 .preview-info p{font-size:13px;color:var(--text-light)}
 .rotate-hint{position:absolute;bottom:15px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.6);color:#fff;padding:6px 15px;border-radius:20px;font-size:11px;font-weight:700;display:flex;align-items:center;gap:6px;pointer-events:none}
+
+@media(max-width:1024px){
+  .hero h1{font-size:42px}
+  .hero .container{grid-template-columns:1fr}
+  .hero-visual{display:none}
+  .hero-buttons{justify-content:center}
+  .hero-trust{margin:0 auto}
+  .section-header h2{font-size:32px}
+  .designer-wrapper{grid-template-columns:1fr}
+  .trusted-bar .container{grid-template-columns:1fr;text-align:center}
+  .trusted-title{border:none;padding:0 0 15px;border-bottom:2px solid var(--cream-dark)}
+}
+@media(max-width:768px){
+  .hamburger{display:flex;align-items:center;justify-content:center}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:20px;box-shadow:var(--shadow-md);gap:5px}
+  .nav-links.open{display:flex}
+  .nav-item{width:100%}
+  .nav-item>a{width:100%;text-align:left}
+  .dropdown{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;padding:10px;background:var(--cream);margin:5px 0}
+  .top-bar .container{justify-content:center}
+  .top-bar-social{display:none}
+  .hero{padding:40px 0 60px}
+  .hero h1{font-size:32px}
+  .hero-desc{font-size:15px}
+  .hero-buttons{flex-direction:column;width:100%}
+  .btn-primary,.btn-outline{width:100%;justify-content:center;padding:14px 25px;font-size:13px}
+  .hero-trust{flex-direction:column;gap:15px}
+  .trust-item{border:none;padding:0 0 15px;border-bottom:2px solid var(--cream-dark);width:100%;text-align:center}
+  .trust-item:last-child{border:none;padding:0}
+  .section{padding:50px 0}
+  .section-header h2{font-size:26px}
+  .products-grid{grid-template-columns:1fr 1fr;gap:15px}
+}
+@media(max-width:480px){
+  .hero h1{font-size:26px}
+  .products-grid{grid-template-columns:1fr 1fr;gap:10px}
+  .p-img{height:150px}
+  .p-body{padding:12px 10px}
+  .p-body h3{font-size:13px}
+  .section-header h2{font-size:22px}
+}
 </style>
 </head>
 <body>
@@ -208,9 +249,9 @@ ul{list-style:none}
 </div>
 <div class="top-bar-social">
 <span>Follow:</span>
-<a><i class="fab fa-facebook-f"></i></a>
-<a><i class="fab fa-instagram"></i></a>
-<a><i class="fab fa-tiktok"></i></a>
+<a onclick="alert('Facebook Page Coming Soon! Stay tuned for updates.')"><i class="fab fa-facebook-f"></i></a>
+<a onclick="alert('Instagram Page Coming Soon! Stay tuned for updates.')"><i class="fab fa-instagram"></i></a>
+<a onclick="alert('TikTok Page Coming Soon! Stay tuned for updates.')"><i class="fab fa-tiktok"></i></a>
 </div>
 </div>
 </div>
@@ -454,7 +495,7 @@ ul{list-style:none}
 <div class="container">
 <h2 style="font-family:'Playfair Display',serif;font-size:44px;font-weight:900;margin-bottom:15px">Ready to Transform Your Packaging?</h2>
 <p style="font-size:18px;margin-bottom:30px">Join thousands of brands that trust BoxMint to deliver packaging that wows.</p>
-<a href="#design-request" style="background:var(--navy);color:#fff;padding:16px 40px;border-radius:30px;font-weight:800;font-size:16px;display:inline-flex;align-items:center;gap:10px;border:none;cursor:pointer;font-family:'Nunito',sans-serif;transition:.4s;text-decoration:none" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'"><i class="fas fa-paper-plane"></i> Get My Free Quote</a>
+<a href="#design-request" style="background:var(--navy);color:#fff;padding:16px 40px;border-radius:30px;font-weight:800;font-size:16px;display:inline-flex;align-items:center;gap:10px;border:none;cursor:pointer;font-family:'Nunito',sans-serif;transition:.4s;text-decoration:none"><i class="fas fa-paper-plane"></i> Get My Free Quote</a>
 </div>
 </section>
 
@@ -479,9 +520,9 @@ ul{list-style:none}
 </a>
 <p style="font-size:14px;line-height:1.8;margin-bottom:20px">BoxMint Packaging blends luxury design with sustainable innovation. We help brands worldwide create packaging that captivates.</p>
 <div style="display:flex;gap:10px">
-<a style="width:40px;height:40px;background:rgba(255,255,255,.08);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer"><i class="fab fa-facebook-f"></i></a>
-<a style="width:40px;height:40px;background:rgba(255,255,255,.08);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer"><i class="fab fa-instagram"></i></a>
-<a style="width:40px;height:40px;background:rgba(255,255,255,.08);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer"><i class="fab fa-tiktok"></i></a>
+<a onclick="alert('Facebook Page Coming Soon! Stay tuned for updates.')" style="width:40px;height:40px;background:rgba(255,255,255,.08);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer"><i class="fab fa-facebook-f"></i></a>
+<a onclick="alert('Instagram Page Coming Soon! Stay tuned for updates.')" style="width:40px;height:40px;background:rgba(255,255,255,.08);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer"><i class="fab fa-instagram"></i></a>
+<a onclick="alert('TikTok Page Coming Soon! Stay tuned for updates.')" style="width:40px;height:40px;background:rgba(255,255,255,.08);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer"><i class="fab fa-tiktok"></i></a>
 </div>
 </div>
 <div>
@@ -522,37 +563,37 @@ ul{list-style:none}
 var WEBAPP_URL='https://script.google.com/macros/s/AKfycbz0v8BaggWzqn3vTX7fOXBiHhXWuqseTdnoRao5X30BqVz4nnDQhtnD0ce_UUg_9Ooq/exec';
 
 var products=[
-{id:'retail',name:'Retail Boxes',desc:'Retail-ready packaging',cat:'retail',code:'RTB-01',badge:'Popular',badgeClass:'badge-popular',icon:'fa-box'},
-{id:'cosmetic',name:'Cosmetic Boxes',desc:'Luxury beauty packaging',cat:'cosmetic',code:'CSB-01',badge:'Trending',badgeClass:'badge-trending',icon:'fa-pump-soap'},
-{id:'food',name:'Food Boxes',desc:'Food-grade safe packaging',cat:'food',code:'FDB-01',icon:'fa-utensils'},
-{id:'bakery',name:'Bakery Boxes',desc:'Fresh bakery packaging',cat:'food',code:'BKB-01',badge:'Hot',badgeClass:'badge-hot',icon:'fa-birthday-cake'},
-{id:'cbd',name:'CBD Boxes',desc:'CBD product packaging',cat:'retail',code:'CBD-01',icon:'fa-cannabis'},
-{id:'gift',name:'Gift Boxes',desc:'Premium gifting boxes',cat:'luxury',code:'GFB-01',badge:'Premium',badgeClass:'badge-premium',icon:'fa-gift'},
-{id:'candle',name:'Candle Boxes',desc:'Elegant candle packaging',cat:'retail',code:'CDB-01',icon:'fa-fire'},
-{id:'rigid',name:'Rigid Boxes',desc:'Premium luxury boxes',cat:'luxury',code:'RGD-01',badge:'Premium',badgeClass:'badge-premium',icon:'fa-crown'},
-{id:'mylar',name:'Mylar Bags',desc:'Custom mylar packaging',cat:'shipping',code:'MYB-01',icon:'fa-shopping-bag'},
-{id:'paper',name:'Paper Bags',desc:'Eco paper bags',cat:'eco',code:'PPB-01',badge:'Eco',badgeClass:'badge-eco',icon:'fa-bag-shopping'},
-{id:'toy',name:'Toy Boxes',desc:'Colorful toy packaging',cat:'retail',code:'TYB-01',icon:'fa-puzzle-piece'},
-{id:'medicine',name:'Medicine Boxes',desc:'Pharma-safe packaging',cat:'retail',code:'MDB-01',icon:'fa-pills'},
-{id:'display',name:'Display Boxes',desc:'Retail display packaging',cat:'retail',code:'DPB-01',icon:'fa-store'},
-{id:'apparel',name:'Apparel Boxes',desc:'Fashion packaging',cat:'retail',code:'APB-01',icon:'fa-shirt'},
-{id:'jewelry',name:'Jewelry Boxes',desc:'Elegant jewelry cases',cat:'luxury',code:'JLB-01',badge:'Premium',badgeClass:'badge-premium',icon:'fa-gem'},
-{id:'insert',name:'Box Inserts',desc:'Custom protective inserts',cat:'retail',code:'INS-01',icon:'fa-cubes'},
-{id:'soap',name:'Soap Boxes',desc:'Handmade soap packaging',cat:'cosmetic',code:'SPB-01',icon:'fa-soap'},
-{id:'auto',name:'Automotive Boxes',desc:'Auto parts packaging',cat:'retail',code:'ATB-01',icon:'fa-car'},
-{id:'electronic',name:'Electronic Boxes',desc:'Tech product packaging',cat:'retail',code:'ELB-01',icon:'fa-microchip'},
-{id:'mailer',name:'Mailer Boxes',desc:'E-commerce shipping',cat:'shipping',code:'MLB-01',badge:'Best Seller',badgeClass:'badge-bestseller',icon:'fa-envelope-open'},
-{id:'folding',name:'Folding Cartons',desc:'Retail cartons',cat:'retail',code:'FCB-01',icon:'fa-cube'},
-{id:'bathbomb',name:'Bath Bomb Boxes',desc:'Bath product packaging',cat:'cosmetic',code:'BBB-01',badge:'New',badgeClass:'badge-new',icon:'fa-bath'},
-{id:'diecut',name:'Die Cut Boxes',desc:'Custom shape boxes',cat:'luxury',code:'DCB-01',icon:'fa-scissors'},
-{id:'embossed',name:'Embossed Boxes',desc:'Luxury embossed finish',cat:'luxury',code:'EMB-01',badge:'Premium',badgeClass:'badge-premium',icon:'fa-stamp'},
-{id:'hexagon',name:'Hexagon Boxes',desc:'Unique hexagon shapes',cat:'luxury',code:'HXB-01',icon:'fa-shapes'},
-{id:'incense',name:'Incense Boxes',desc:'Incense packaging',cat:'retail',code:'ICB-01',icon:'fa-fire-flame-curved'},
-{id:'invitation',name:'Invitation Boxes',desc:'Elegant invitations',cat:'luxury',code:'IVB-01',icon:'fa-envelope'},
-{id:'kraft',name:'Kraft Boxes',desc:'Eco kraft packaging',cat:'eco',code:'KFB-01',badge:'Eco',badgeClass:'badge-eco',icon:'fa-leaf'},
-{id:'sleeve',name:'Packaging Sleeves',desc:'Premium sleeve packaging',cat:'luxury',code:'SLV-01',icon:'fa-layer-group'},
-{id:'presentation',name:'Presentation Boxes',desc:'Professional presentation',cat:'luxury',code:'PRB-01',icon:'fa-briefcase'},
-{id:'sticker',name:'Custom Stickers',desc:'Labels and stickers',cat:'retail',code:'STK-01',icon:'fa-tags'}
+{id:'retail',name:'Retail Boxes',desc:'Retail-ready packaging',cat:'retail',code:'RTB-01',badge:'Popular',badgeClass:'badge-popular'},
+{id:'cosmetic',name:'Cosmetic Boxes',desc:'Luxury beauty packaging',cat:'cosmetic',code:'CSB-01',badge:'Trending',badgeClass:'badge-trending'},
+{id:'food',name:'Food Boxes',desc:'Food-grade safe packaging',cat:'food',code:'FDB-01'},
+{id:'bakery',name:'Bakery Boxes',desc:'Fresh bakery packaging',cat:'food',code:'BKB-01',badge:'Hot',badgeClass:'badge-hot'},
+{id:'cbd',name:'CBD Boxes',desc:'CBD product packaging',cat:'retail',code:'CBD-01'},
+{id:'gift',name:'Gift Boxes',desc:'Premium gifting boxes',cat:'luxury',code:'GFB-01',badge:'Premium',badgeClass:'badge-premium'},
+{id:'candle',name:'Candle Boxes',desc:'Elegant candle packaging',cat:'retail',code:'CDB-01'},
+{id:'rigid',name:'Rigid Boxes',desc:'Premium luxury boxes',cat:'luxury',code:'RGD-01',badge:'Premium',badgeClass:'badge-premium'},
+{id:'mylar',name:'Mylar Bags',desc:'Custom mylar packaging',cat:'shipping',code:'MYB-01'},
+{id:'paper',name:'Paper Bags',desc:'Eco paper bags',cat:'eco',code:'PPB-01',badge:'Eco',badgeClass:'badge-eco'},
+{id:'toy',name:'Toy Boxes',desc:'Colorful toy packaging',cat:'retail',code:'TYB-01'},
+{id:'medicine',name:'Medicine Boxes',desc:'Pharma-safe packaging',cat:'retail',code:'MDB-01'},
+{id:'display',name:'Display Boxes',desc:'Retail display packaging',cat:'retail',code:'DPB-01'},
+{id:'apparel',name:'Apparel Boxes',desc:'Fashion packaging',cat:'retail',code:'APB-01'},
+{id:'jewelry',name:'Jewelry Boxes',desc:'Elegant jewelry cases',cat:'luxury',code:'JLB-01',badge:'Premium',badgeClass:'badge-premium'},
+{id:'insert',name:'Box Inserts',desc:'Custom protective inserts',cat:'retail',code:'INS-01'},
+{id:'soap',name:'Soap Boxes',desc:'Handmade soap packaging',cat:'cosmetic',code:'SPB-01'},
+{id:'auto',name:'Automotive Boxes',desc:'Auto parts packaging',cat:'retail',code:'ATB-01'},
+{id:'electronic',name:'Electronic Boxes',desc:'Tech product packaging',cat:'retail',code:'ELB-01'},
+{id:'mailer',name:'Mailer Boxes',desc:'E-commerce shipping',cat:'shipping',code:'MLB-01',badge:'Best Seller',badgeClass:'badge-bestseller'},
+{id:'folding',name:'Folding Cartons',desc:'Retail cartons',cat:'retail',code:'FCB-01'},
+{id:'bathbomb',name:'Bath Bomb Boxes',desc:'Bath product packaging',cat:'cosmetic',code:'BBB-01',badge:'New',badgeClass:'badge-new'},
+{id:'diecut',name:'Die Cut Boxes',desc:'Custom shape boxes',cat:'luxury',code:'DCB-01'},
+{id:'embossed',name:'Embossed Boxes',desc:'Luxury embossed finish',cat:'luxury',code:'EMB-01',badge:'Premium',badgeClass:'badge-premium'},
+{id:'hexagon',name:'Hexagon Boxes',desc:'Unique hexagon shapes',cat:'luxury',code:'HXB-01'},
+{id:'incense',name:'Incense Boxes',desc:'Incense packaging',cat:'retail',code:'ICB-01'},
+{id:'invitation',name:'Invitation Boxes',desc:'Elegant invitations',cat:'luxury',code:'IVB-01'},
+{id:'kraft',name:'Kraft Boxes',desc:'Eco kraft packaging',cat:'eco',code:'KFB-01',badge:'Eco',badgeClass:'badge-eco'},
+{id:'sleeve',name:'Packaging Sleeves',desc:'Premium sleeve packaging',cat:'luxury',code:'SLV-01'},
+{id:'presentation',name:'Presentation Boxes',desc:'Professional presentation',cat:'luxury',code:'PRB-01'},
+{id:'sticker',name:'Custom Stickers',desc:'Labels and stickers',cat:'retail',code:'STK-01'}
 ];
 
 function renderProducts(){
