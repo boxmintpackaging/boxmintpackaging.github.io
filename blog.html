@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog | BoxMint Packaging - Packaging Tips, Trends & Insights</title>
+<meta name="description" content="Explore expert packaging tips, design trends, and industry insights on the BoxMint Blog. Learn how to create memorable brand experiences.">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="icon" type="image/png" href="/favicon.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#2C3E5D;--navy-dark:#1E2D45;--mint:#5CD9A6;--mint-dark:#3EC08A;
+  --mint-light:#E8F9F1;--cream:#F5F3EE;--cream-dark:#EBE8E0;--gold:#D4AF37;
+  --white:#fff;--text:#556B7D;--text-light:#8A9AAD;
+  --shadow-sm:0 2px 10px rgba(44,62,93,.08);
+  --shadow-md:0 10px 30px rgba(44,62,93,.1);
+  --shadow-lg:0 20px 50px rgba(44,62,93,.15)
+}
+html,body{overflow-x:hidden;max-width:100vw}
+body{font-family:'Nunito',sans-serif;color:var(--navy);background:#fff;line-height:1.6}
+a{text-decoration:none;color:inherit;cursor:pointer}
+ul{list-style:none}
+.container{max-width:1250px;margin:0 auto;padding:0 20px;box-sizing:border-box}
+
+.top-bar{background:var(--navy);color:var(--cream);padding:10px 0;font-size:13px;font-weight:600}
+.top-bar .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.top-bar-info{display:flex;gap:25px;flex-wrap:wrap}
+.top-bar-info a,.top-bar-info span{color:var(--cream);display:inline-flex;align-items:center;gap:6px}
+.top-bar-info i{color:var(--mint)}
+.top-bar-social{display:flex;gap:8px;align-items:center}
+.top-bar-social span{font-size:12px;color:var(--text-light)}
+.top-bar-social a{width:28px;height:28px;border-radius:50%;border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--cream);transition:.3s}
+.top-bar-social a:hover{background:var(--mint);color:var(--navy)}
+
+.header{background:#fff;box-shadow:var(--shadow-sm);position:sticky;top:0;z-index:1000}
+.header .container{display:flex;justify-content:space-between;align-items:center;padding:15px 20px}
+.logo{display:flex;align-items:center;gap:12px;cursor:pointer}
+.logo-icon{width:55px;height:55px;background:#fff;border:2.5px solid var(--navy);border-radius:10px;display:flex;align-items:center;justify-content:center;transition:.4s}
+.logo:hover .logo-icon{transform:rotate(360deg);border-color:var(--mint)}
+.logo-icon i{color:var(--mint);font-size:26px}
+.logo-text{font-size:26px;font-weight:900;color:var(--navy)}
+.logo-text span{color:var(--mint)}
+.logo-tagline{font-size:10px;color:var(--text);font-weight:700;letter-spacing:2px;text-transform:uppercase}
+.nav-links{display:flex;gap:5px;align-items:center;position:relative}
+.nav-item{position:relative}
+.nav-item>a{padding:10px 14px;color:var(--navy);font-weight:700;font-size:13px;border-radius:6px;transition:.3s;display:inline-flex;align-items:center;gap:5px;white-space:nowrap;cursor:pointer}
+.nav-item>a:hover,.nav-item>a.active{color:var(--mint-dark);background:var(--mint-light)}
+.nav-item>a i.arrow{font-size:10px;transition:.3s}
+.nav-item:hover>a i.arrow{transform:rotate(180deg)}
+.dropdown{position:absolute;top:100%;left:0;background:#fff;min-width:250px;padding:15px;border-radius:12px;box-shadow:var(--shadow-lg);opacity:0;visibility:hidden;transform:translateY(10px);transition:.3s;z-index:1000;border:1px solid var(--cream-dark)}
+.nav-item:hover .dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+.dropdown-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;cursor:pointer;background:var(--cream);margin-bottom:5px;transition:.3s;text-decoration:none}
+.dropdown-item:hover{background:var(--mint-light);transform:translateX(3px)}
+.dropdown-item-icon{width:36px;height:36px;background:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--mint-dark);font-size:16px}
+.dropdown-item span{color:var(--navy);font-weight:700;font-size:13px}
+.nav-cta{background:linear-gradient(135deg,var(--mint),var(--mint-dark))!important;color:var(--navy)!important;padding:10px 22px!important;border-radius:30px!important;font-weight:800!important;margin-left:8px}
+.nav-cta:hover{color:#fff!important;transform:translateY(-2px)}
+.hamburger{display:none;font-size:22px;background:var(--mint-light);border:none;color:var(--navy);width:45px;height:45px;border-radius:8px;cursor:pointer}
+
+.page-header{background:linear-gradient(135deg,var(--navy),var(--navy-dark));color:#fff;padding:80px 0;text-align:center}
+.page-header h1{font-family:'Playfair Display',serif;font-size:48px;font-weight:900;margin-bottom:15px}
+.page-header h1 span{color:var(--mint);font-style:italic}
+.page-header p{font-size:17px;color:var(--text-light);max-width:700px;margin:0 auto}
+.breadcrumb{display:flex;justify-content:center;gap:10px;margin-top:20px;font-size:14px;color:var(--text-light)}
+.breadcrumb a{color:var(--mint);transition:.3s}
+.breadcrumb a:hover{color:#fff}
+
+.section{padding:80px 0}
+.section-alt{background:var(--cream)}
+.section-header{text-align:center;max-width:700px;margin:0 auto 60px}
+.section-tag{display:inline-flex;align-items:center;gap:8px;background:var(--mint-light);color:var(--mint-dark);padding:8px 20px;border-radius:25px;font-size:13px;font-weight:800;margin-bottom:18px;text-transform:uppercase;letter-spacing:1px}
+.section-header h2{font-family:'Playfair Display',serif;font-size:40px;color:var(--navy);font-weight:900;margin-bottom:15px}
+.section-header h2 span{color:var(--mint-dark);font-style:italic}
+.section-header p{color:var(--text);font-size:16px}
+
+.featured-post{background:#fff;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);margin-bottom:60px;display:grid;grid-template-columns:1fr 1fr;gap:0;border:2px solid var(--cream-dark);transition:.4s}
+.featured-post:hover{transform:translateY(-10px);border-color:var(--mint)}
+.featured-img{height:100%;min-height:400px;background:linear-gradient(135deg,#667eea,#764ba2);display:flex;align-items:center;justify-content:center;position:relative;color:#fff}
+.featured-img i{font-size:120px;opacity:.9}
+.featured-tag{position:absolute;top:20px;left:20px;background:var(--mint);color:var(--navy);padding:6px 15px;border-radius:20px;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:1px}
+.featured-content{padding:50px 40px;display:flex;flex-direction:column;justify-content:center}
+.featured-content .blog-tag{background:var(--mint-light);color:var(--mint-dark);padding:5px 15px;border-radius:20px;font-size:11px;font-weight:800;margin-bottom:15px;display:inline-block;width:fit-content}
+.featured-content h2{font-family:'Playfair Display',serif;font-size:32px;color:var(--navy);font-weight:900;margin-bottom:15px;line-height:1.2}
+.featured-content h2 span{color:var(--mint-dark);font-style:italic}
+.featured-content>p{color:var(--text);font-size:15px;line-height:1.7;margin-bottom:25px}
+.blog-meta{display:flex;gap:20px;font-size:12px;color:var(--text-light);font-weight:700;margin-bottom:25px}
+.blog-meta span{display:flex;align-items:center;gap:6px}
+.blog-meta i{color:var(--mint-dark)}
+.read-more-btn{background:linear-gradient(135deg,var(--mint),var(--mint-dark));color:var(--navy);padding:12px 25px;border:none;border-radius:30px;font-weight:900;font-size:13px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;font-family:'Nunito',sans-serif;width:fit-content;transition:.3s;text-decoration:none}
+.read-more-btn:hover{color:#fff;transform:translateY(-3px)}
+
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+.blog-card{background:#fff;border-radius:15px;overflow:hidden;box-shadow:var(--shadow-sm);cursor:pointer;transition:.4s;border:2px solid transparent}
+.blog-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-md);border-color:var(--mint)}
+.blog-img{height:200px;display:flex;align-items:center;justify-content:center;color:#fff;position:relative}
+.blog-img i{font-size:70px;opacity:.9}
+.blog-tag{position:absolute;top:15px;left:15px;background:#fff;color:var(--mint-dark);padding:4px 12px;border-radius:20px;font-size:11px;font-weight:800}
+.blog-body{padding:25px}
+.blog-body h4{font-size:17px;color:var(--navy);font-weight:800;margin-bottom:10px;line-height:1.3}
+.blog-body p{font-size:13px;color:var(--text);margin-bottom:15px;line-height:1.6}
+.blog-body-meta{display:flex;justify-content:space-between;font-size:11px;color:var(--text-light);font-weight:700;padding-top:15px;border-top:1px dashed var(--cream-dark)}
+.blog-body-meta span{display:flex;align-items:center;gap:4px}
+.blog-body-meta i{color:var(--mint-dark)}
+
+.categories-section{background:var(--cream)}
+.categories-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px}
+.category-item{background:#fff;padding:30px 20px;border-radius:15px;text-align:center;cursor:pointer;transition:.4s;border:2px solid transparent}
+.category-item:hover{transform:translateY(-5px);border-color:var(--mint);background:var(--mint-light)}
+.category-item i{font-size:40px;color:var(--mint-dark);margin-bottom:12px}
+.category-item h5{font-size:15px;color:var(--navy);font-weight:800;margin-bottom:5px}
+.category-item p{font-size:11px;color:var(--text)}
+
+.newsletter-section{background:linear-gradient(135deg,var(--navy),var(--navy-dark));color:#fff;padding:60px 0;text-align:center}
+.newsletter-content h2{font-family:'Playfair Display',serif;font-size:32px;font-weight:900;margin-bottom:15px}
+.newsletter-content h2 span{color:var(--mint);font-style:italic}
+.newsletter-content p{color:var(--text-light);margin-bottom:30px;max-width:600px;margin-left:auto;margin-right:auto}
+.newsletter-form{max-width:500px;margin:0 auto;display:flex;gap:10px}
+.newsletter-form input{flex:1;padding:14px 20px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:30px;color:#fff;font-size:14px;font-family:'Nunito',sans-serif}
+.newsletter-form input::placeholder{color:rgba(255,255,255,0.5)}
+.newsletter-form button{padding:14px 30px;background:var(--mint);color:var(--navy);border:none;border-radius:30px;font-weight:900;cursor:pointer;font-family:'Nunito',sans-serif;font-size:14px;transition:.3s}
+.newsletter-form button:hover{transform:translateY(-3px)}
+
+.footer{background:var(--navy);color:var(--text-light);padding:70px 0 30px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.2fr;gap:40px;margin-bottom:40px}
+.footer-about .footer-logo{display:flex;align-items:center;gap:12px;margin-bottom:20px;cursor:pointer}
+.footer-logo-icon{width:50px;height:50px;background:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center}
+.footer-logo-icon i{color:var(--mint);font-size:24px}
+.footer-logo-text{font-size:24px;font-weight:900;color:#fff}
+.footer-logo-text span{color:var(--mint)}
+.footer-about p{font-size:14px;line-height:1.8;margin-bottom:20px}
+.footer-social{display:flex;gap:10px}
+.footer-social a{width:40px;height:40px;background:rgba(255,255,255,.08);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer;transition:.4s}
+.footer-social a:hover{background:var(--mint);color:var(--navy)}
+.footer-col h3{color:#fff;font-size:17px;margin-bottom:20px;font-weight:800;position:relative;padding-bottom:12px}
+.footer-col h3::after{content:'';position:absolute;bottom:0;left:0;width:35px;height:3px;background:var(--mint);border-radius:2px}
+.footer-col ul li{margin-bottom:10px}
+.footer-col ul li a{color:var(--text-light);font-size:13px;cursor:pointer;transition:.3s;display:inline-flex;align-items:center;gap:6px}
+.footer-col ul li a:hover{color:var(--mint);padding-left:5px}
+.footer-contact li{display:flex;align-items:flex-start;gap:12px;margin-bottom:15px;font-size:13px;color:var(--text-light)}
+.footer-contact li i{color:var(--mint);margin-top:3px;min-width:15px}
+.footer-bottom{text-align:center;padding-top:30px;border-top:1px solid rgba(255,255,255,.08);font-size:13px}
+.footer-bottom a{color:var(--mint)}
+
+@media(max-width:1024px){
+  .featured-post{grid-template-columns:1fr}
+  .featured-img{min-height:250px}
+  .blog-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .page-header h1{font-size:36px}
+  .section-header h2{font-size:32px}
+}
+@media(max-width:768px){
+  .hamburger{display:flex;align-items:center;justify-content:center}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:20px;box-shadow:var(--shadow-md);gap:5px}
+  .nav-links.open{display:flex}
+  .nav-item{width:100%}
+  .nav-item>a{width:100%;text-align:left}
+  .dropdown{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;padding:10px;background:var(--cream);margin:5px 0}
+  .top-bar .container{justify-content:center}
+  .top-bar-social{display:none}
+  .footer-grid{grid-template-columns:1fr}
+  .page-header{padding:60px 0}
+  .page-header h1{font-size:28px}
+  .section{padding:50px 0}
+  .featured-content{padding:30px 25px}
+  .featured-content h2{font-size:24px}
+  .blog-grid{grid-template-columns:1fr}
+  .newsletter-form{flex-direction:column}
+  .newsletter-content h2{font-size:24px}
+}
+@media(max-width:480px){
+  .section-header h2{font-size:24px}
+  .page-header h1{font-size:24px}
+  .featured-content h2{font-size:20px}
+}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+<div class="container">
+<div class="top-bar-info">
+<a href="mailto:boxmintpackaging@gmail.com"><i class="fas fa-envelope"></i> boxmintpackaging@gmail.com</a>
+<span><i class="fas fa-clock"></i> Mon - Sat: 9AM-6PM EST</span>
+<span><i class="fas fa-globe"></i> Worldwide Shipping</span>
+</div>
+<div class="top-bar-social">
+<span>Follow:</span>
+<a><i class="fab fa-facebook-f"></i></a>
+<a><i class="fab fa-instagram"></i></a>
+<a><i class="fab fa-tiktok"></i></a>
+</div>
+</div>
+</div>
+
+<header class="header">
+<div class="container">
+<a href="index.html" class="logo">
+<div class="logo-icon"><i class="fas fa-leaf"></i></div>
+<div>
+<div class="logo-text">box<span>mint</span></div>
+<div class="logo-tagline">PACKAGING</div>
+</div>
+</a>
+<button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')"><i class="fas fa-bars"></i></button>
+<nav>
+<ul class="nav-links" id="navLinks">
+<li class="nav-item"><a href="index.html">Home</a></li>
+<li class="nav-item"><a href="about.html">About</a></li>
+<li class="nav-item"><a href="services.html">Services</a></li>
+<li class="nav-item">
+<a>Resources <i class="fas fa-chevron-down arrow"></i></a>
+<div class="dropdown">
+<a href="blog.html" class="dropdown-item"><div class="dropdown-item-icon"><i class="fas fa-newspaper"></i></div><span>Blog</span></a>
+<a href="index.html#design-request" class="dropdown-item"><div class="dropdown-item-icon"><i class="fas fa-palette"></i></div><span>Design Request</span></a>
+<a href="contact.html#faqs" class="dropdown-item"><div class="dropdown-item-icon"><i class="fas fa-question-circle"></i></div><span>FAQs</span></a>
+</div>
+</li>
+<li class="nav-item"><a href="contact.html">Contact</a></li>
+<li class="nav-item"><a href="index.html#design-request" class="nav-cta">Get Quote <i class="fas fa-arrow-right"></i></a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<section class="page-header">
+<div class="container">
+<h1>BoxMint <span>Blog</span></h1>
+<p>Expert insights, packaging trends, and design inspiration to elevate your brand experience.</p>
+<div class="breadcrumb"><a href="index.html">Home</a> <i class="fas fa-chevron-right" style="font-size:10px;margin-top:5px"></i> Blog</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+
+<div class="featured-post">
+<div class="featured-img" style="background:linear-gradient(135deg,#667eea,#764ba2)">
+<span class="featured-tag">Featured</span>
+<i class="fas fa-leaf"></i>
+</div>
+<div class="featured-content">
+<span class="blog-tag">Sustainability</span>
+<h2>10 Eco-Friendly Packaging Trends for <span>2026</span></h2>
+<p>Discover the latest sustainable packaging innovations that are transforming the industry. Learn how brands are reducing environmental impact while creating stunning unboxing experiences.</p>
+<div class="blog-meta">
+<span><i class="fas fa-calendar"></i> January 15, 2026</span>
+<span><i class="fas fa-clock"></i> 8 min read</span>
+<span><i class="fas fa-user"></i> BoxMint Team</span>
+</div>
+<a href="#" class="read-more-btn">Read Full Article <i class="fas fa-arrow-right"></i></a>
+</div>
+</div>
+
+<div class="section-header" style="margin-bottom:40px">
+<div class="section-tag"><i class="fas fa-newspaper"></i> Latest Articles</div>
+<h2>Recent <span>Blog Posts</span></h2>
+<p>Explore our latest insights on packaging design, trends, and industry best practices</p>
+</div>
+
+<div class="blog-grid">
+
+<div class="blog-card">
+<div class="blog-img" style="background:linear-gradient(135deg,#f093fb,#f5576c)">
+<i class="fas fa-palette"></i>
+<span class="blog-tag">Design</span>
+</div>
+<div class="blog-body">
+<h4>The Psychology of Packaging Colors</h4>
+<p>How color choices influence customer buying decisions and brand perception in packaging design.</p>
+<div class="blog-body-meta">
+<span><i class="fas fa-calendar"></i> Jan 10, 2026</span>
+<span><i class="fas fa-clock"></i> 7 min</span>
+</div>
+</div>
+</div>
+
+<div class="blog-card">
+<div class="blog-img" style="background:linear-gradient(135deg,#4facfe,#00f2fe)">
+<i class="fas fa-gift"></i>
+<span class="blog-tag">Unboxing</span>
+</div>
+<div class="blog-body">
+<h4>Create Viral Unboxing Moments</h4>
+<p>7 proven packaging techniques that turn customers into brand ambassadors on social media.</p>
+<div class="blog-body-meta">
+<span><i class="fas fa-calendar"></i> Jan 5, 2026</span>
+<span><i class="fas fa-clock"></i> 5 min</span>
+</div>
+</div>
+</div>
+
+<div class="blog-card">
+<div class="blog-img" style="background:linear-gradient(135deg,#43e97b,#38f9d7)">
+<i class="fas fa-recycle"></i>
+<span class="blog-tag">Eco</span>
+</div>
+<div class="blog-body">
+<h4>Sustainable Materials Guide 2026</h4>
+<p>Complete guide to eco-friendly packaging materials that don't compromise on quality or aesthetics.</p>
+<div class="blog-body-meta">
+<span><i class="fas fa-calendar"></i> Dec 28, 2025</span>
+<span><i class="fas fa-clock"></i> 10 min</span>
+</div>
+</div>
+</div>
+
+<div class="blog-card">
+<div class="blog-img" style="background:linear-gradient(135deg,#fa709a,#fee140)">
+<i class="fas fa-crown"></i>
+<span class="blog-tag">Luxury</span>
+</div>
+<div class="blog-body">
+<h4>Luxury Packaging Design Principles</h4>
+<p>Learn what makes packaging feel premium and how to elevate your brand's perceived value.</p>
+<div class="blog-body-meta">
+<span><i class="fas fa-calendar"></i> Dec 20, 2025</span>
+<span><i class="fas fa-clock"></i> 6 min</span>
+</div>
+</div>
+</div>
+
+<div class="blog-card">
+<div class="blog-img" style="background:linear-gradient(135deg,#a8edea,#fed6e3);color:var(--navy)">
+<i class="fas fa-lightbulb"></i>
+<span class="blog-tag">Tips</span>
+</div>
+<div class="blog-body">
+<h4>Small Business Packaging Guide</h4>
+<p>Essential packaging tips for startups and small businesses on a budget without sacrificing quality.</p>
+<div class="blog-body-meta">
+<span><i class="fas fa-calendar"></i> Dec 15, 2025</span>
+<span><i class="fas fa-clock"></i> 8 min</span>
+</div>
+</div>
+</div>
+
+<div class="blog-card">
+<div class="blog-img" style="background:linear-gradient(135deg,#8e44ad,#6c3483)">
+<i class="fas fa-chart-line"></i>
+<span class="blog-tag">Business</span>
+</div>
+<div class="blog-body">
+<h4>ROI of Premium Packaging</h4>
+<p>How investing in quality packaging directly impacts your business growth and customer loyalty.</p>
+<div class="blog-body-meta">
+<span><i class="fas fa-calendar"></i> Dec 10, 2025</span>
+<span><i class="fas fa-clock"></i> 6 min</span>
+</div>
+</div>
+</div>
+
+<div class="blog-card">
+<div class="blog-img" style="background:linear-gradient(135deg,#f77f00,#fcbf49)">
+<i class="fas fa-star"></i>
+<span class="blog-tag">Branding</span>
+</div>
+<div class="blog-body">
+<h4>Brand Storytelling Through Packaging</h4>
+<p>Master the art of telling your brand story through thoughtful and strategic packaging design.</p>
+<div class="blog-body-meta">
+<span><i class="fas fa-calendar"></i> Dec 5, 2025</span>
+<span><i class="fas fa-clock"></i> 9 min</span>
+</div>
+</div>
+</div>
+
+<div class="blog-card">
+<div class="blog-img" style="background:linear-gradient(135deg,#5CD9A6,#3EC08A)">
+<i class="fas fa-truck"></i>
+<span class="blog-tag">Shipping</span>
+</div>
+<div class="blog-body">
+<h4>Protective Packaging Best Practices</h4>
+<p>Ensure your products arrive safely with these expert tips on protective packaging design.</p>
+<div class="blog-body-meta">
+<span><i class="fas fa-calendar"></i> Nov 28, 2025</span>
+<span><i class="fas fa-clock"></i> 7 min</span>
+</div>
+</div>
+</div>
+
+<div class="blog-card">
+<div class="blog-img" style="background:linear-gradient(135deg,#e63946,#f77f00)">
+<i class="fas fa-birthday-cake"></i>
+<span class="blog-tag">Food</span>
+</div>
+<div class="blog-body">
+<h4>Food Packaging Regulations 2026</h4>
+<p>Everything you need to know about food-safe packaging standards and compliance requirements.</p>
+<div class="blog-body-meta">
+<span><i class="fas fa-calendar"></i> Nov 22, 2025</span>
+<span><i class="fas fa-clock"></i> 8 min</span>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="section categories-section">
+<div class="container">
+<div class="section-header">
+<div class="section-tag"><i class="fas fa-tags"></i> Explore Topics</div>
+<h2>Browse by <span>Category</span></h2>
+<p>Find articles that interest you most</p>
+</div>
+<div class="categories-grid">
+<div class="category-item"><i class="fas fa-leaf"></i><h5>Sustainability</h5><p>15 articles</p></div>
+<div class="category-item"><i class="fas fa-palette"></i><h5>Design</h5><p>22 articles</p></div>
+<div class="category-item"><i class="fas fa-crown"></i><h5>Luxury</h5><p>10 articles</p></div>
+<div class="category-item"><i class="fas fa-gift"></i><h5>Unboxing</h5><p>8 articles</p></div>
+<div class="category-item"><i class="fas fa-chart-line"></i><h5>Business</h5><p>12 articles</p></div>
+<div class="category-item"><i class="fas fa-lightbulb"></i><h5>Tips & Tricks</h5><p>18 articles</p></div>
+</div>
+</div>
+</section>
+
+<section class="newsletter-section">
+<div class="container">
+<div class="newsletter-content">
+<h2>Subscribe to Our <span>Newsletter</span></h2>
+<p>Get the latest packaging tips, trends, and exclusive offers delivered straight to your inbox.</p>
+<form class="newsletter-form" onsubmit="event.preventDefault();alert('Thank you for subscribing!');this.reset();">
+<input type="email" placeholder="Enter your email address" required>
+<button type="submit">Subscribe</button>
+</form>
+</div>
+</div>
+</section>
+
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-col footer-about">
+<a href="index.html" class="footer-logo">
+<div class="footer-logo-icon"><i class="fas fa-leaf"></i></div>
+<div class="footer-logo-text">box<span>mint</span></div>
+</a>
+<p>BoxMint Packaging blends luxury design with sustainable innovation. We help brands worldwide create packaging that captivates.</p>
+<div class="footer-social">
+<a><i class="fab fa-facebook-f"></i></a>
+<a><i class="fab fa-instagram"></i></a>
+<a><i class="fab fa-tiktok"></i></a>
+</div>
+</div>
+<div class="footer-col">
+<h3>Quick Links</h3>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About Us</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h3>Resources</h3>
+<ul>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="index.html#design-request">Design Request</a></li>
+<li><a href="contact.html#faqs">FAQs</a></li>
+<li><a href="contact.html">Contact Us</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h3>Get In Touch</h3>
+<ul class="footer-contact">
+<li><i class="fas fa-truck"></i> Free Worldwide Shipping</li>
+<li><i class="fas fa-envelope"></i> boxmintpackaging@gmail.com</li>
+<li><i class="fas fa-clock"></i> Mon-Sat: 9AM-6PM EST</li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>2026 <a href="index.html">BoxMint Packaging</a>. Sustainable luxury for modern brands.</p>
+</div>
+</div>
+</footer>
+
+</body>
+</html>
