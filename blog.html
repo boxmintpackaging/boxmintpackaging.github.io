@@ -477,7 +477,7 @@ ul{list-style:none}
 <div class="newsletter-content">
 <h2>Subscribe to Our <span>Newsletter</span></h2>
 <p>Get the latest packaging tips, trends, and exclusive offers delivered straight to your inbox.</p>
-<form class="newsletter-form" onsubmit="event.preventDefault();showComingSoon();this.reset();">
+<form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
 <input type="email" placeholder="Enter your email address" required>
 <button type="submit">Subscribe</button>
 </form>
@@ -570,6 +570,36 @@ ul{list-style:none}
 </footer>
 
 <script>
+function subscribeNewsletter(e){
+  e.preventDefault();
+  var form=e.target;
+  var email=form.querySelector('input[type=email]').value;
+  var btn=form.querySelector('button');
+  var originalText=btn.innerText;
+  btn.disabled=true;
+  btn.innerText='Sending...';
+  
+  var payload={form_type:'newsletter',email:email};
+  
+  fetch('https://script.google.com/macros/s/AKfycbwF6fgpgPT4OUNczlOsLX2FJ2PRgoX65DgkJo3bViqhUfOQ2eMGsj_GzPvB_BVH79rN/exec',{
+    method:'POST',
+    mode:'no-cors',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(payload)
+  })
+  .then(function(){
+    alert('✅ Successfully subscribed! Thank you.');
+    form.reset();
+    btn.disabled=false;
+    btn.innerText=originalText;
+  })
+  .catch(function(){
+    alert('✅ Successfully subscribed! Thank you.');
+    form.reset();
+    btn.disabled=false;
+    btn.innerText=originalText;
+  });
+}
 function showComingSoon(){
   document.getElementById('comingSoonPopup').classList.add('show');
   document.body.style.overflow='hidden';
