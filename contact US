@@ -442,6 +442,126 @@ document.getElementById('thankyouPopup').addEventListener('click',function(e){
   if(e.target===this)closeThankYou();
 });
 </script>
+<script>
+// ============================================
+// BoxMint Packaging - Balanced Security
+// © All Rights Reserved
+// ============================================
 
+(function() {
+    'use strict';
+    
+    // Right-Click Block
+    document.addEventListener('contextmenu', function(e) {
+        if (e.target.tagName === 'IMG') {
+            e.preventDefault();
+            showWarning('Image protected!');
+            return false;
+        }
+        e.preventDefault();
+        showWarning('Right-click is disabled!');
+        return false;
+    });
+    
+    // Sirf Developer Tools ke shortcuts block karo
+    document.addEventListener('keydown', function(e) {
+        if (e.keyCode === 123) { 
+            e.preventDefault(); 
+            showWarning('Developer Tools disabled!'); 
+            return false; 
+        }
+        if (e.ctrlKey && e.shiftKey && e.keyCode === 73) { 
+            e.preventDefault(); 
+            showWarning('Inspect disabled!'); 
+            return false; 
+        }
+        if (e.ctrlKey && e.shiftKey && e.keyCode === 74) { 
+            e.preventDefault(); 
+            showWarning('Console disabled!'); 
+            return false; 
+        }
+        if (e.ctrlKey && e.shiftKey && e.keyCode === 67) { 
+            e.preventDefault(); 
+            showWarning('Inspect disabled!'); 
+            return false; 
+        }
+        if (e.ctrlKey && e.keyCode === 85) { 
+            e.preventDefault(); 
+            showWarning('View Source disabled!'); 
+            return false; 
+        }
+        if (e.ctrlKey && e.keyCode === 83) { 
+            e.preventDefault(); 
+            showWarning('Saving page disabled!'); 
+            return false; 
+        }
+    });
+    
+    // Sirf Images ka drag block karo
+    document.addEventListener('dragstart', function(e) {
+        if (e.target.tagName === 'IMG') { 
+            e.preventDefault(); 
+            return false; 
+        }
+    });
+    
+    // DevTools Detection
+    let devtoolsOpen = false;
+    setInterval(function() {
+        if (window.outerWidth - window.innerWidth > 160 || 
+            window.outerHeight - window.innerHeight > 160) {
+            if (!devtoolsOpen) {
+                devtoolsOpen = true;
+                blockWebsite();
+            }
+        } else {
+            devtoolsOpen = false;
+        }
+    }, 1000);
+    
+    function blockWebsite() {
+        document.body.innerHTML = `
+            <div style="display:flex;justify-content:center;align-items:center;min-height:100vh;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);font-family:Arial;text-align:center;padding:20px;">
+                <div style="background:white;padding:50px;border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,0.3);max-width:500px;">
+                    <div style="font-size:80px;margin-bottom:20px;">🔒</div>
+                    <h1 style="color:#333;">Access Restricted</h1>
+                    <p style="color:#666;font-size:16px;line-height:1.6;">Developer Tools detected. Please close them to continue.</p>
+                    <p style="color:#999;font-size:14px;margin-top:20px;">© BoxMint Packaging<br>All Rights Reserved</p>
+                    <button onclick="location.reload()" style="margin-top:25px;padding:12px 30px;background:#667eea;color:white;border:none;border-radius:8px;font-size:16px;cursor:pointer;">Reload Page</button>
+                </div>
+            </div>
+        `;
+    }
+    
+    function showWarning(message) {
+        const oldWarning = document.getElementById('security-warning');
+        if (oldWarning) oldWarning.remove();
+        
+        const warning = document.createElement('div');
+        warning.id = 'security-warning';
+        warning.style.cssText = 'position:fixed;top:20px;right:20px;background:linear-gradient(135deg,#ff6b6b,#ee5a6f);color:white;padding:15px 25px;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,0.2);font-family:Arial;font-size:14px;z-index:999999;';
+        warning.innerHTML = `⚠️ ${message}`;
+        document.body.appendChild(warning);
+        setTimeout(() => warning.remove(), 3000);
+    }
+    
+    console.clear();
+    console.log('%c⛔ STOP!', 'color:red;font-size:60px;font-weight:bold;');
+    console.log('%cThis is a protected website!', 'color:red;font-size:20px;font-weight:bold;');
+    console.log('%c© BoxMint Packaging - All Rights Reserved', 'color:#667eea;font-size:16px;');
+    
+})();
+
+// Sirf Images ka protection (Text select ALLOW hai)
+const secStyle = document.createElement('style');
+secStyle.innerHTML = `
+    img { 
+        -webkit-user-drag: none; 
+        user-drag: none; 
+        pointer-events: auto; 
+    }
+`;
+document.head.appendChild(secStyle);
+</script>
 </body>
 </html>
