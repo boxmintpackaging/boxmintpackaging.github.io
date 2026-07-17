@@ -620,7 +620,7 @@ document.addEventListener('keydown',function(e){
 </script>
 <script>
 // ============================================
-// BoxMint Packaging - Security Protection
+// BoxMint Packaging - Balanced Security
 // © All Rights Reserved
 // ============================================
 
@@ -629,32 +629,56 @@ document.addEventListener('keydown',function(e){
     
     // Right-Click Block
     document.addEventListener('contextmenu', function(e) {
+        if (e.target.tagName === 'IMG') {
+            e.preventDefault();
+            showWarning('Image protected!');
+            return false;
+        }
         e.preventDefault();
         showWarning('Right-click is disabled!');
         return false;
     });
     
-    // Keyboard Shortcuts Block
+    // Sirf Developer Tools ke shortcuts block karo
     document.addEventListener('keydown', function(e) {
-        if (e.keyCode === 123) { e.preventDefault(); showWarning('Developer Tools disabled!'); return false; }
-        if (e.ctrlKey && e.shiftKey && e.keyCode === 73) { e.preventDefault(); showWarning('Inspect disabled!'); return false; }
-        if (e.ctrlKey && e.shiftKey && e.keyCode === 74) { e.preventDefault(); showWarning('Console disabled!'); return false; }
-        if (e.ctrlKey && e.shiftKey && e.keyCode === 67) { e.preventDefault(); showWarning('Inspect disabled!'); return false; }
-        if (e.ctrlKey && e.keyCode === 85) { e.preventDefault(); showWarning('View Source disabled!'); return false; }
-        if (e.ctrlKey && e.keyCode === 83) { e.preventDefault(); showWarning('Saving disabled!'); return false; }
-        if (e.ctrlKey && e.keyCode === 80) { e.preventDefault(); showWarning('Printing disabled!'); return false; }
+        if (e.keyCode === 123) { 
+            e.preventDefault(); 
+            showWarning('Developer Tools disabled!'); 
+            return false; 
+        }
+        if (e.ctrlKey && e.shiftKey && e.keyCode === 73) { 
+            e.preventDefault(); 
+            showWarning('Inspect disabled!'); 
+            return false; 
+        }
+        if (e.ctrlKey && e.shiftKey && e.keyCode === 74) { 
+            e.preventDefault(); 
+            showWarning('Console disabled!'); 
+            return false; 
+        }
+        if (e.ctrlKey && e.shiftKey && e.keyCode === 67) { 
+            e.preventDefault(); 
+            showWarning('Inspect disabled!'); 
+            return false; 
+        }
+        if (e.ctrlKey && e.keyCode === 85) { 
+            e.preventDefault(); 
+            showWarning('View Source disabled!'); 
+            return false; 
+        }
+        if (e.ctrlKey && e.keyCode === 83) { 
+            e.preventDefault(); 
+            showWarning('Saving page disabled!'); 
+            return false; 
+        }
     });
     
-    // Image Drag Block
+    // Sirf Images ka drag block karo
     document.addEventListener('dragstart', function(e) {
-        if (e.target.tagName === 'IMG') { e.preventDefault(); return false; }
-    });
-    
-    // Copy Block
-    document.addEventListener('copy', function(e) {
-        e.preventDefault();
-        showWarning('Copying not allowed!');
-        return false;
+        if (e.target.tagName === 'IMG') { 
+            e.preventDefault(); 
+            return false; 
+        }
     });
     
     // DevTools Detection
@@ -671,7 +695,6 @@ document.addEventListener('keydown',function(e){
         }
     }, 1000);
     
-    // Block Website Function
     function blockWebsite() {
         document.body.innerHTML = `
             <div style="display:flex;justify-content:center;align-items:center;min-height:100vh;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);font-family:Arial;text-align:center;padding:20px;">
@@ -686,7 +709,6 @@ document.addEventListener('keydown',function(e){
         `;
     }
     
-    // Warning Message
     function showWarning(message) {
         const oldWarning = document.getElementById('security-warning');
         if (oldWarning) oldWarning.remove();
@@ -699,7 +721,6 @@ document.addEventListener('keydown',function(e){
         setTimeout(() => warning.remove(), 3000);
     }
     
-    // Console Warning
     console.clear();
     console.log('%c⛔ STOP!', 'color:red;font-size:60px;font-weight:bold;');
     console.log('%cThis is a protected website!', 'color:red;font-size:20px;font-weight:bold;');
@@ -707,12 +728,14 @@ document.addEventListener('keydown',function(e){
     
 })();
 
-// Image Protection CSS
+// Sirf Images ka protection (Text select ALLOW hai)
 const secStyle = document.createElement('style');
 secStyle.innerHTML = `
-    img { -webkit-user-drag: none; user-drag: none; pointer-events: auto; }
-    body { -webkit-user-select: none; -moz-user-select: none; user-select: none; }
-    input, textarea { -webkit-user-select: text; user-select: text; }
+    img { 
+        -webkit-user-drag: none; 
+        user-drag: none; 
+        pointer-events: auto; 
+    }
 `;
 document.head.appendChild(secStyle);
 </script>
